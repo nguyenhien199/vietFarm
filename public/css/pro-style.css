@@ -1,0 +1,51 @@
+#nav-top h1{
+    color: #8c8c8c;
+}
+.content{
+    background: #eeeeee;
+    padding-top: 20px;
+}
+.nav-menu a {
+    color: #8c8c8c;
+    -webkit-transition: 0.2s color;
+    transition: 0.2s color;
+}
+.nav-menu>li>a {
+    display: block;
+    padding: 10px 15px;
+    line-height: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+.nav-menu a:hover, .nav-menu a:focus {
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+    background: #d90808
+
+}
+.post {
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.section .post{
+     background: #fff;
+ }
+.section .post .post-body{
+     padding-top: 20px;
+ }
+.section .post .post-body,.section .post .post-img{
+     border-radius: 5px;
+ }
+.section .col-md-6{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.section-product .carousel-control{
+    width: 0;
+}
+
