@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'WebController@index');
+Route::get('/product', 'ProductController@index');
+Route::get('/product/detail', 'ProductController@getDetail');
+Route::get('/contact', 'HomeController@contact');
+Route::get('/new/new-detail', 'HomeController@getNewDetail');
 
 Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');

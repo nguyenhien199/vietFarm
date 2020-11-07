@@ -29,7 +29,7 @@
                 <li class="nav-header">
                     <div class="dropdown profile-element">
                         <span>
-                            <img alt="image" src="{{asset('cms/img/logo.png')}}" />
+                            <img alt="image" height="40" src="{{asset('./img/logo-viet-farm.png')}}" />
                         </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
@@ -52,14 +52,10 @@
                     <a href="media.html"><i class="fa fa-picture-o"></i> <span class="nav-label">Thư viện ảnh</span></a>
                 </li>
                 <li class="admin-nav">
-                    <a href="{{url('/admin/new')}}"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Bài viết</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li><a href="{{url('/admin/new')}}">Tất cả bài viết</a></li>
-                        <li><a href="{{url('/new/create')}}">Thêm bài viết</a></li>
-                    </ul>
+                    <a href="{{url('/admin/new')}}"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Bài viết</span></a>
                 </li>
                 <li>
-                    <a href="page.html"><i class="fa fa-twitch"></i> <span class="nav-label">Product</span><span class="fa arrow"></span></a>
+                    <a href="{{url('/admin/new')}}"><i class="fa fa-twitch"></i> <span class="nav-label">Product</span></a>
                     <ul class="nav nav-second-level collapse">
                         <li><a href="page.html">Danh sách sản phẩm</a></li>
                         <li><a href="add_page.html">Thêm sản phẩm</a></li>
@@ -67,7 +63,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="page.html"><i class="fa fa-twitch"></i> <span class="nav-label">Dịch vụ</span><span class="fa arrow"></span></a>
+                    <a href="page.html"><i class="fa fa-twitch"></i> <span class="nav-label">Dịch vụ</span></a>
                     <ul class="nav nav-second-level collapse">
                         <li><a href="page.html">Danh sách dịch vụ</a></li>
                         <li><a href="add_page.html">Thêm dịch vụ</a></li>
@@ -75,7 +71,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="page.html"><i class="fa fa-twitch"></i> <span class="nav-label">Chuyển giao công nghệ</span><span class="fa arrow"></span></a>
+                    <a href="page.html"><i class="fa fa-twitch"></i> <span class="nav-label">Chuyển giao công nghệ</span></a>
                     <ul class="nav nav-second-level collapse">
                         <li><a href="page.html">Danh sách chuyển giao công nghệ</a></li>
                         <li><a href="add_page.html">Thêm thêm chuyển giao công nghệ</a></li>
@@ -83,7 +79,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="page.html"><i class="fa fa-twitch"></i> <span class="nav-label">Phân bón</span><span class="fa arrow"></span></a>
+                    <a href="page.html"><i class="fa fa-twitch"></i> <span class="nav-label">Phân bón</span></a>
                     <ul class="nav nav-second-level collapse">
                         <li><a href="page.html">Danh sách phân bón</a></li>
                         <li><a href="add_page.html">Thêm phân bón </a></li>

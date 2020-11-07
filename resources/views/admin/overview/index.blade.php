@@ -7,7 +7,7 @@
                 <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
                 <form role="search" class="navbar-form-custom" action="search_results.html">
                     <div class="form-group">
-                        <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                        <input type="text" placeholder="Tìm kiếm..." class="form-control" name="top-search" id="top-search">
                     </div>
                 </form>
             </div>
@@ -23,7 +23,7 @@
                         <li>
                             <div class="dropdown-messages-box">
                                 <a href="profile.html" class="pull-left">
-                                    <img alt="image" class="img-circle" src="cms/img/a7.jpg">
+                                    <img alt="image" class="img-circle" src="{{asset('cms/img/a7.jpg')}}">
                                 </a>
                                 <div>
                                     <small class="pull-right">46h ago</small>
@@ -49,7 +49,7 @@
                         <li>
                             <div class="dropdown-messages-box">
                                 <a href="profile.html" class="pull-left">
-                                    <img alt="image" class="img-circle" src="img/profile.jpg">
+                                    <img alt="image" class="img-circle" src="{{asset('img/profile.jpg')}}">
                                 </a>
                                 <div>
                                     <small class="pull-right">23h ago</small>
@@ -109,13 +109,6 @@
                             </div>
                         </li>
                     </ul>
-                </li>
-
-
-                <li>
-                    <a href="login.html">
-                        <i class="fa fa-sign-out"></i> Log out
-                    </a>
                 </li>
                 <li>
                     <a class="right-sidebar-toggle">
@@ -235,8 +228,5 @@
                 </div>
             </div>
         </div>
-
-
-
     </div>
 @endsection

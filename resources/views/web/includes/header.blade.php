@@ -18,7 +18,7 @@
 {{--                </div>--}}
                 <!-- logo -->
                 <div class="nav-logo">
-                    <a href="index.html" class="logo"><img src="./img/logo-viet-farm.png" alt=""></a>
+                    <a href="index.html" class="logo"><img src="{{url('./img/logo-viet-farm.png')}}" alt=""></a>
                 </div>
                 <!-- /logo -->
                 <!-- /logo -->
@@ -41,11 +41,11 @@
                 <div id="nav-aside">
                     <ul class="nav-aside-menu">
                         <li><a href="{{asset('/')}}">VIET FARM</a></li>
-                        <li><a href="{{asset('/product')}}">THỰC PHẨM SẠCH</a></li>
+                        <li><a href="{{url('/product')}}">THỰC PHẨM SẠCH</a></li>
                         <li><a href="#">DỊCH VỤ</a></li>
                         <li><a href="#">CHUYỂN GIAO CÔNG NGHỆ</a></li>
                         <li><a href="#">PHÂN BÓN</a></li>
-                        <li><a href="{{asset('/contact')}}">LIÊN HỆ</a></li>
+                        <li><a href="{{url('/contact')}}">LIÊN HỆ</a></li>
                     </ul>
                     <button class="nav-close nav-aside-close"><span></span></button>
                 </div>

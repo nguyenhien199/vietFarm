@@ -8,7 +8,7 @@
         <div class="row">
             <div class="intro intro-carousel">
                 <div id="carousel" class="owl-carousel owl-theme">
-                    <div class="carousel-item-a intro-item bg-image" style="background-image: url(assets/img/slide-1.jpg)">
+                    <div class="carousel-item-a intro-item bg-image" style="background-image: url('./img/galery-1.jpg');">
                         <div class="overlay overlay-a"></div>
                         <div class="intro-content display-table">
                             <div class="table-cell">
@@ -66,7 +66,7 @@
                             <h2 class="title">Chứng Nhận</h2>
                         </div>
                         <div class="galery-widget">
-                            <img src="./img/galery-1.jpg" alt="" style="width: 250px">
+                            <img src="{{asset('./img/galery-1.jpg')}}" alt="" style="width: 250px">
                         </div>
                     </div>
                     <!-- /galery widget -->
@@ -194,7 +194,7 @@
                 <div class="carousel-item-c">
                     <div class="card-box-b card-shadow news-box">
                         <div class="img-box-b">
-                            <img src="assets/img/post-2.jpg" alt="" class="img-b img-fluid">
+                            <img src="{{asset('/img/post-2.jpg')}}" alt="" class="img-b img-fluid">
                         </div>
                         <div class="card-overlay">
                             <div class="card-header-b">
@@ -207,9 +207,9 @@
                                             <br> new</a>
                                     </h2>
                                 </div>
-                                <div class="card-date">
-                                    <span class="date-b">3.450.000 đ</span>
-                                </div>
+                                {{--<div class="card-date">--}}
+                                    {{--<span class="date-b">3.450.000 đ</span>--}}
+                                {{--</div>--}}
                             </div>
                         </div>
                     </div>
@@ -217,7 +217,7 @@
                 <div class="carousel-item-c">
                     <div class="card-box-b card-shadow news-box">
                         <div class="img-box-b">
-                            <img src="assets/img/post-5.jpg" alt="" class="img-b img-fluid">
+                            <img src="{{asset('/img/post-5.jpg')}}" alt="" class="img-b img-fluid">
                         </div>
                         <div class="card-overlay">
                             <div class="card-header-b">
@@ -230,9 +230,9 @@
                                             <br> new</a>
                                     </h2>
                                 </div>
-                                <div class="card-date">
-                                    <span class="date-b">3.450.000 đ</span>
-                                </div>
+                                {{--<div class="card-date">--}}
+                                    {{--<span class="date-b">3.450.000 đ</span>--}}
+                                {{--</div>--}}
                             </div>
                         </div>
                     </div>
@@ -240,7 +240,7 @@
                 <div class="carousel-item-c">
                     <div class="card-box-b card-shadow news-box">
                         <div class="img-box-b">
-                            <img src="assets/img/post-7.jpg" alt="" class="img-b img-fluid">
+                            <img src="{{asset('/img/post-7.jpg')}}" alt="" class="img-b img-fluid">
                         </div>
                         <div class="card-overlay">
                             <div class="card-header-b">
@@ -253,9 +253,9 @@
                                             <br> new</a>
                                     </h2>
                                 </div>
-                                <div class="card-date">
-                                    <span class="date-b">3.450.000 đ</span>
-                                </div>
+                                {{--<div class="card-date">--}}
+                                    {{--<span class="date-b">3.450.000 đ</span>--}}
+                                {{--</div>--}}
                             </div>
                         </div>
                     </div>
@@ -263,7 +263,7 @@
                 <div class="carousel-item-c">
                     <div class="card-box-b card-shadow news-box">
                         <div class="img-box-b">
-                            <img src="assets/img/post-3.jpg" alt="" class="img-b img-fluid">
+                            <img src="{{asset('/img/post-3.jpg')}}" alt="" class="img-b img-fluid">
                         </div>
                         <div class="card-overlay">
                             <div class="card-header-b">
@@ -276,9 +276,9 @@
                                             <br> new</a>
                                     </h2>
                                 </div>
-                                <div class="card-date">
-                                    <span class="date-b">3.450.000 đ</span>
-                                </div>
+                                {{--<div class="card-date">--}}
+                                    {{--<span class="date-b">3.450.000 đ</span>--}}
+                                {{--</div>--}}
                             </div>
                         </div>
                     </div>

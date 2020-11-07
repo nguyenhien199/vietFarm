@@ -152,7 +152,7 @@
                             <p>
                                {{$new->description}}
                             </p>
-                            <a class="btn btn-info btn-x-ch-tit" href="">XEM CHI TIẾT</a>
+                            <a class="btn btn-info btn-x-ch-tit" href="{{url('new/new-detail')}}">XEM CHI TIẾT</a>
                         </div>
                     </div>
                 </div>

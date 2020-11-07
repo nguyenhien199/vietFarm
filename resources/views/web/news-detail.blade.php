@@ -25,7 +25,7 @@
                         <p>Lorem ipsum dolor sit amet, mea ad idque detraxit, cu soleat graecis invenire eam. Vidisse suscipit liberavisse has ex, vocibus patrioque vim et, sed ex tation reprehendunt. Mollis volumus no vix, ut qui clita habemus, ipsum senserit est et. Ut has soluta epicurei mediocrem, nibh nostrum his cu, sea clita electram reformidans an.</p>
                         <p>Est in saepe accusam luptatum. Purto deleniti philosophia eum ea, impetus copiosae id mel. Vis at ignota delenit democritum, te summo tamquam delicata pro. Utinam concludaturque et vim, mei ullum intellegam ei. Eam te illum nostrud, suas sonet corrumpit ea per. Ut sea regione posidonium. Pertinax gubergren ne qui, eos an harum mundi quaestio.</p>
                         <figure class="pull-right">
-                            <img src="./img/media-1.jpg" alt="">
+                            <img src="{{asset('./img/media-1.jpg')}}" alt="">
                             <figcaption>Lorem ipsum dolor sit amet, mea ad idque detraxit,</figcaption>
                         </figure>
                         <p>Nihil persius id est, iisque tincidunt abhorreant no duo. Eripuit placerat mnesarchum ius at, ei pro laoreet invenire persecuti, per magna tibique scriptorem an. Aeque oportere incorrupte ius ea, utroque erroribus mel in, posse dolore nam in. Per veniam vulputate intellegam et, id usu case reprimique, ne aperiam scaevola sed. Veritus omnesque qui ad. In mei admodum maiorum iracundia, no omnis melius eum, ei erat vivendo his. In pri nonumes suscipit.</p>
@@ -59,7 +59,7 @@
                             <!-- post -->
                             <div class="col-md-4">
                                 <div class="post post-sm">
-                                    <a class="post-img" href="blog-post.html"><img src="./img/post-4.jpg" alt=""></a>
+                                    <a class="post-img" href="blog-post.html"><img src="{{asset('./img/post-4.jpg')}}" alt=""></a>
                                     <div class="post-body">
                                         <div class="post-category">
                                             <a href="category.html">Health</a>
@@ -77,7 +77,7 @@
                             <!-- post -->
                             <div class="col-md-4">
                                 <div class="post post-sm">
-                                    <a class="post-img" href="blog-post.html"><img src="./img/post-6.jpg" alt=""></a>
+                                    <a class="post-img" href="blog-post.html"><img src="{{asset('./img/post-6.jpg')}}" alt=""></a>
                                     <div class="post-body">
                                         <div class="post-category">
                                             <a href="category.html">Fashion</a>
@@ -96,7 +96,7 @@
                             <!-- post -->
                             <div class="col-md-4">
                                 <div class="post post-sm">
-                                    <a class="post-img" href="blog-post.html"><img src="./img/post-7.jpg" alt=""></a>
+                                    <a class="post-img" href="blog-post.html"><img src="{{asset('./img/post-7.jpg')}}" alt=""></a>
                                     <div class="post-body">
                                         <div class="post-category">
                                             <a href="category.html">Health</a>
@@ -124,7 +124,7 @@
                             <!-- comment -->
                             <div class="media">
                                 <div class="media-left">
-                                    <img class="media-object" src="./img/avatar-2.jpg" alt="">
+                                    <img class="media-object" src="{{asset('./img/avatar-2.jpg')}}" alt="">
                                 </div>
                                 <div class="media-body">
                                     <div class="media-heading">
@@ -136,7 +136,7 @@
                                     <!-- comment -->
                                     <div class="media media-author">
                                         <div class="media-left">
-                                            <img class="media-object" src="./img/avatar-1.jpg" alt="">
+                                            <img class="media-object" src="{{asset('./img/avatar-1.jpg')}}" alt="">
                                         </div>
                                         <div class="media-body">
                                             <div class="media-heading">
@@ -155,7 +155,7 @@
                             <!-- comment -->
                             <div class="media">
                                 <div class="media-left">
-                                    <img class="media-object" src="./img/avatar-3.jpg" alt="">
+                                    <img class="media-object" src="{{asset('./img/avatar-3.jpg')}}" alt="">
                                 </div>
                                 <div class="media-body">
                                     <div class="media-heading">

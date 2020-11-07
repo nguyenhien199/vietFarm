@@ -37,7 +37,7 @@
                 <div class="carousel-item-c">
                     {{--                    <div class="card-box-b card-shadow news-box">--}}
                     <div class="post post-row">
-                        <a class="post-img" href="blog-post.html"><img src="./img/post-13.jpg" alt=""></a>
+                        <a class="post-img" href="{{url('product/detail')}}"><img src="./img/post-13.jpg" alt=""></a>
                         <div class="post-body">
                             <h3 class="post-title"><a href="blog-post.html">Dưa Lưới</a></h3>
                             {{--                            <ul class="post-meta">--}}
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                     <div class="post post-row">
-                        <a class="post-img" href="blog-post.html"><img src="./img/post-13.jpg" alt=""></a>
+                        <a class="post-img" href="{{url('product/detail')}}"><img src="./img/post-13.jpg" alt=""></a>
                         <div class="post-body">
                             <h3 class="post-title"><a href="blog-post.html">Dưa Lưới</a></h3>
                             {{--                            <ul class="post-meta">--}}
@@ -65,7 +65,7 @@
                 <div class="carousel-item-c">
                     {{--                    <div class="card-box-b card-shadow news-box">--}}
                     <div class="post post-row">
-                        <a class="post-img" href="blog-post.html"><img src="./img/post-13.jpg" alt=""></a>
+                        <a class="post-img" href="{{url('product/detail')}}"><img src="./img/post-13.jpg" alt=""></a>
                         <div class="post-body">
                             <h3 class="post-title"><a href="blog-post.html">Rượu Dưa Lưới</a></h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
@@ -73,7 +73,7 @@
                         </div>
                     </div>
                     <div class="post post-row">
-                        <a class="post-img" href="blog-post.html"><img src="./img/post-13.jpg" alt=""></a>
+                        <a class="post-img" href="{{url('product/detail')}}"><img src="./img/post-13.jpg" alt=""></a>
                         <div class="post-body">
                             <h3 class="post-title"><a href="blog-post.html">Rượu Dưa Lưới</a></h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
