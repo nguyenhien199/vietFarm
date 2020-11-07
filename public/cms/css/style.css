@@ -8517,3 +8517,33 @@ object-fit: contain;
 .float-right{
     text-align: right;
 }
+.flash {
+    position: fixed;
+    width: 100%;
+    z-index: 2002;
+    top: 0;
+    left: 0;
+    right: 0;
+    animation: slide-down 5.0s 0s ease forwards;
+    padding:0;
+}
+@keyframes slide-down {
+    0%,100% {
+        transform: translateY(-100px);
+    }
+    10%,90% {
+        transform: translateY(0px);
+    }
+}
+.message-info{
+    margin-bottom: 0;
+}
+.ml-5{
+    margin-left: 10px;
+}
+.btn-logout
+{
+    padding: 10px 15px;
+    margin: 5px 0;
+    font-size: 14px;
+}

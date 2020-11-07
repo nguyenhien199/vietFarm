@@ -5,12 +5,13 @@ use App\Http\Controllers\Controller;
 use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Session;
 
 class NewsController extends Controller
 {
     public function index()
     {
-        $news = News::where('status', 1)->get();
+        $news = News::where('status', 1)->orderBy('id', 'DESC')->paginate(10);
         return view('admin.new.index',['news' => $news]);
     }
 
@@ -20,9 +21,9 @@ class NewsController extends Controller
         try{
             $dataNew['status'] = 1;
             News::create($dataNew);
-            return response()->json([
-                'status' => 'success',
-            ]);
+            Session::flash('message', 'Add SuccessFully!');
+            Session::flash('alert-class', 'alert-success');
+            return redirect()->back()->with('');
         }catch (\Exception $error){
             return false;
         }
