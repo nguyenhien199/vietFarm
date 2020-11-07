@@ -8509,3 +8509,11 @@ object-fit: contain;
   top: 0;
   left: 100%;
 }
+.d-flex.justify-content-end{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.float-right{
+    text-align: right;
+}

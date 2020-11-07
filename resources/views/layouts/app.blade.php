@@ -119,5 +119,6 @@
 <script src="{{asset('/cms/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('/cms/js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
 <script src="{{asset('/cms/js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
+<script src="{{asset('/cms/js/admin.js')}}"></script>
 </body>
 </html>
