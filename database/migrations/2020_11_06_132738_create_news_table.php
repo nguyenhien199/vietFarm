@@ -20,6 +20,7 @@ class CreateNewsTable extends Migration
             $table->string('description');
             $table->text('content');
             $table->boolean('status');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

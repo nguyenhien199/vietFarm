@@ -45,4 +45,18 @@ class NewsController extends Controller
             }
         }
     }
+
+    public function destroy($id){
+        try{
+            $item = News::where('id', $id)->delete();
+            Session::flash('message', 'Delete SuccessFully!');
+            Session::flash('alert-class', 'alert-success');
+            return redirect()->route('news');
+        }catch (\Exception $error){
+            Session::flash('message', 'Delete Error!');
+            Session::flash('alert-class', 'alert-danger');
+            return redirect()->back();
+        }
+
+    }
 }

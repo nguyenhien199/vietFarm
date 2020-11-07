@@ -28,8 +28,8 @@
                         <td>{{$new->description}}</td>
                         <td>{{$new->status}}</td>
                         <td>
-                            <button class="btn btn-warning" onclick="new_edit({{$new}})">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
+                            <button class="btn btn-warning" onclick="Admin.new_edit({{$new}})">Edit</button>
+                            <a href="{{url('/admin/new/delete', $new->id)}}"><button class="btn btn-danger">Delete</button></a>
                         </td>
                        <?php $i++; ?>
                     </tr>

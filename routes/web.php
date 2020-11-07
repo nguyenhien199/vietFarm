@@ -22,4 +22,5 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/admin/new', 'Admin\NewsController@index')->name('news');
     Route::post('/admin/new/create', 'Admin\NewsController@create');
+    Route::get('/admin/new/delete/{id}', 'Admin\NewsController@destroy');
 });
