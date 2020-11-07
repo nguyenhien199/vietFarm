@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'WebController@index');
 
 Auth::routes();
-
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::post('/login_admin', 'AdminController@index')->name('login_admin');
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/home', 'Admin\AdminController@index')->name('home');

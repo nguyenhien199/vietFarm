@@ -37,6 +37,9 @@
                 </tbody>
             </table>
         </div>
+        <div class="pagination float-right">
+            {!! $news->fragment('foo')->links() !!}
+        </div>
     </div>
     <div class="modal fade" id="create_new" role="dialog">
         <div class="modal-dialog">
@@ -48,8 +51,8 @@
                     <h4 class="modal-title">Create New</h4>
                 </div>
                 <div class="modal-body">
-                    <form id="newForm" action="" method="POST">
-                        <meta name="csrf-token" content="{{ csrf_token() }}" />
+                    <form id="newForm" action="{{url('/admin/new/create')}}" method="POST">
+                        @csrf
                         <div class="form-group">
                             <label class="">Tittle (*)</label>
                             <input value="" class="form-control" name="title" />
@@ -67,8 +70,8 @@
                             <textarea value="" class="form-control" name="content"></textarea>
                         </div>
                         <div class="float-right">
-                            <button id="save_new" class="btn btn-success" type="reset">Save</button>
-                            <button class="btn btn-white">Reset</button>
+                            <button class="btn btn-success" type="submit">Save</button>
+                            <button class="btn btn-white" type="reset">Reset</button>
                         </div>
                     </form>
                 </div>

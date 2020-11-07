@@ -18,6 +18,11 @@
 
 <body>
 <div id="wrapper">
+    @if(Session::has('message'))
+        <article class="flash message">
+            <p class="alert {{ Session::get('alert-class') }} message-info">{{ Session::get('message') }}</p>
+        </article>
+    @endif
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
             <ul class="nav metismenu" id="side-menu">
@@ -128,7 +133,18 @@
 
         </div>
     </nav>
-
+    <div class="navbar-menu" id="navbar-mobile">
+        <div class="navbar-end float-right">
+            <div class="navbar-item">
+                <form action="{{route('logout')}}" method="POST">
+                    @csrf
+                    <button class="button is-primary is-medium has-text-weight-semibold btn-logout" type="submit">
+                        Logout<i class="fa fa-sign-out ml-5"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
     <div id="page-wrapper" class="gray-bg">
         @yield('content')
     </div>
