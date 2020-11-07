@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Webify Content Management System V1.10</title>
+    <title>VietFarmSolution</title>
 
     <link href="{{asset('cms/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('cms/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
@@ -28,13 +28,12 @@
                         </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
-                        <span class="block m-t-xs"> <strong class="font-bold">CMS Webify V1.10</strong>
+                        <span class="block m-t-xs"> <strong class="font-bold">VietFarmSolution</strong>
                         </span>
                           <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li><a href="#">Về Webify</a></li>
+                            {{--<li><a href="#">Về Webify</a></li>--}}
                             <li><a href="#">Liên hệ</a></li>
                             <li><a href="#">Hướng dẫn sử dụng</a></li>
-
                           </ul>
                     </div>
                     <div class="logo-element">
@@ -42,10 +41,10 @@
                     </div>
                 </li>
                 <li class="active">
-                    <a href="index.html"><i class="fa fa-tachometer"></i> <span class="nav-label">Trung tâm</span>  </a>
+                    <a href="{{url('/admin/overview')}}"><i class="fa fa-tachometer"></i> <span class="nav-label">Tổng quam</span>  </a>
                 </li>
                 <li>
-                    <a href="media.html"><i class="fa fa-picture-o"></i> <span class="nav-label">Thư viện</span></a>
+                    <a href="media.html"><i class="fa fa-picture-o"></i> <span class="nav-label">Thư viện ảnh</span></a>
                 </li>
                 <li class="admin-nav">
                     <a href="{{url('/admin/new')}}"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Bài viết</span><span class="fa arrow"></span></a>
@@ -55,23 +54,46 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="page.html"><i class="fa fa-twitch"></i> <span class="nav-label">Trang</span><span class="fa arrow"></span></a>
+                    <a href="page.html"><i class="fa fa-twitch"></i> <span class="nav-label">Product</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="page.html">Tất cả trang</a></li>
-                        <li><a href="add_page.html">Thêm trang mới</a></li>
+                        <li><a href="page.html">Danh sách sản phẩm</a></li>
+                        <li><a href="add_page.html">Thêm sản phẩm</a></li>
 
                     </ul>
                 </li>
-
-
                 <li>
-                    <a href="#"><i class="fa fa-sliders"></i> <span class="nav-label">Giao diện</span><span class="fa arrow"></span></a>
+                    <a href="page.html"><i class="fa fa-twitch"></i> <span class="nav-label">Dịch vụ</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="menu.html">Menu</a></li>
-                        <li><a href="custom_theme.html">Tùy biến giao diện</a></li>
+                        <li><a href="page.html">Danh sách dịch vụ</a></li>
+                        <li><a href="add_page.html">Thêm dịch vụ</a></li>
 
                     </ul>
                 </li>
+                <li>
+                    <a href="page.html"><i class="fa fa-twitch"></i> <span class="nav-label">Chuyển giao công nghệ</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="page.html">Danh sách chuyển giao công nghệ</a></li>
+                        <li><a href="add_page.html">Thêm thêm chuyển giao công nghệ</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="page.html"><i class="fa fa-twitch"></i> <span class="nav-label">Phân bón</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="page.html">Danh sách phân bón</a></li>
+                        <li><a href="add_page.html">Thêm phân bón </a></li>
+
+                    </ul>
+                </li>
+
+                {{--<li>--}}
+                    {{--<a href="#"><i class="fa fa-sliders"></i> <span class="nav-label">Giao diện</span><span class="fa arrow"></span></a>--}}
+                    {{--<ul class="nav nav-second-level collapse">--}}
+                        {{--<li><a href="menu.html">Menu</a></li>--}}
+                        {{--<li><a href="custom_theme.html">Tùy biến giao diện</a></li>--}}
+
+                    {{--</ul>--}}
+                {{--</li>--}}
                 <li>
                     <a href="#"><i class="fa fa-cog"></i> <span class="nav-label">Cấu hình</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">

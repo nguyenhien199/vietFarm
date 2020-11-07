@@ -19,7 +19,8 @@ Auth::routes();
 
 Route::post('/login_admin', 'AdminController@index')->name('login_admin');
 Route::group(['middleware' => 'auth'], function(){
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'Admin\AdminController@index')->name('home');
+    Route::get('/admin/overview', 'Admin\AdminController@index')->name('overview');
     Route::get('/admin/new', 'Admin\NewsController@index');
     Route::post('/admin/new/create', 'Admin\NewsController@create');
 });
