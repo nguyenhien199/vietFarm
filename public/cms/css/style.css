@@ -8547,3 +8547,11 @@ object-fit: contain;
     margin: 5px 0;
     font-size: 14px;
 }
+.pagination{
+    float: right;
+    font-size: 18px;
+}
+.pagination .page-item.active span{
+    background: #0d6aad;
+    color: #ffffff;
+}
