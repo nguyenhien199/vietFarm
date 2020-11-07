@@ -11,21 +11,38 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $news = News::where('status', 1)->orderBy('id', 'DESC')->paginate(10);
+        $news = News::orderBy('id', 'DESC')->paginate(10);
         return view('admin.new.index',['news' => $news]);
     }
 
     public function create(Request $request)
     {
-        $dataNew = $request->all();
-        try{
-            $dataNew['status'] = 1;
-            News::create($dataNew);
-            Session::flash('message', 'Add SuccessFully!');
-            Session::flash('alert-class', 'alert-success');
-            return redirect()->back()->with('');
-        }catch (\Exception $error){
-            return false;
+        $data = $request->all();
+        if(!isset($data['id'])){
+            try{
+                $data['status'] = 1;
+                News::create($data);
+                Session::flash('message', 'Add SuccessFully!');
+                Session::flash('alert-class', 'alert-success');
+                return redirect()->route('news');
+            }catch (\Exception $error){
+                Session::flash('message', 'Add Error!');
+                Session::flash('alert-class', 'alert-danger');
+                return redirect()->back();
+            }
+        }
+        else{
+            $dataEdit =  $request->except('_token', 'id');
+            try {
+                News::where('id', $data['id'])->update($dataEdit);
+                Session::flash('message', 'Edit SuccessFully!');
+                Session::flash('alert-class', 'alert-success');
+                return redirect()->route('news');
+            } catch (\Exception $error){
+                Session::flash('message', 'Edit Error!');
+                Session::flash('alert-class', 'alert-danger');
+                return redirect()->back();
+            }
         }
     }
 }

@@ -20,6 +20,6 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::post('/login_admin', 'AdminController@index')->name('login_admin');
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/admin/new', 'Admin\NewsController@index');
+    Route::get('/admin/new', 'Admin\NewsController@index')->name('news');
     Route::post('/admin/new/create', 'Admin\NewsController@create');
 });
