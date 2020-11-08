@@ -29,7 +29,7 @@
                         <td>{{$new->status}}</td>
                         <td>
                             <button class="btn btn-warning" onclick="Admin.new_edit({{$new}})">Edit</button>
-                            <a href="{{url('/admin/new/delete', $new->id)}}"><button class="btn btn-danger">Delete</button></a>
+                            <a href="{{url('/admin/news/delete', $new->id)}}"><button class="btn btn-danger">Delete</button></a>
                         </td>
                        <?php $i++; ?>
                     </tr>
@@ -51,7 +51,7 @@
                     <h4 class="modal-title">Create New</h4>
                 </div>
                 <div class="modal-body">
-                    <form id="newForm" action="{{url('/admin/new/create')}}" method="POST">
+                    <form id="newForm" action="{{url('/admin/news/create')}}" method="POST">
                         @csrf
                         <input type="hidden" name="id" value="" />
                         <div class="form-group">

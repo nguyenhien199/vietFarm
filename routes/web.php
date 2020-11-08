@@ -18,9 +18,15 @@ Route::get('/', 'WebController@index');
 Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::post('/login_admin', 'AdminController@index')->name('login_admin');
-Route::group(['middleware' => 'auth'], function(){
-    Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/admin/new', 'Admin\NewsController@index')->name('news');
-    Route::post('/admin/new/create', 'Admin\NewsController@create');
-    Route::get('/admin/new/delete/{id}', 'Admin\NewsController@destroy');
+Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
+    Route::get('/', 'HomeController@index')->name('admin');
+    // news
+    Route::get('/news', 'Admin\NewsController@index')->name('news');
+    Route::post('/news/create', 'Admin\NewsController@create');
+    Route::get('/new/delete/{id}', 'Admin\NewsController@destroy');
+    // products
+    Route::get('/products', 'Admin\ProductsController@index')->name('news');
+    Route::post('/products/create', 'Admin\ProductsController@create');
+    Route::get('/products/delete/{id}', 'Admin\ProductsController@destroy');
+
 });
