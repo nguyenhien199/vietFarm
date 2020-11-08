@@ -386,19 +386,19 @@
                 </div>
                 <div class="col-md-4">
                     <!-- category widget -->
-                    <div class="aside-widget">
-                        <div class="section-title">
-                            <h2 class="title">Danh Mục</h2>
-                        </div>
-                        <div class="category-widget">
-                            <ul>
-                                <li><a href="#">VietFarm <span>451</span></a></li>
-                                <li><a href="#">Sản Phẩm <span>230</span></a></li>
-                                <li><a href="#">Nhà màng <span>40</span></a></li>
-                                <li><a href="#">Chuyển giao CN <span>38</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    {{--<div class="aside-widget">--}}
+                        {{--<div class="section-title">--}}
+                            {{--<h2 class="title">Danh Mục</h2>--}}
+                        {{--</div>--}}
+                        {{--<div class="category-widget">--}}
+                            {{--<ul>--}}
+                                {{--<li><a href="#">VietFarm <span>451</span></a></li>--}}
+                                {{--<li><a href="#">Sản Phẩm <span>230</span></a></li>--}}
+                                {{--<li><a href="#">Nhà màng <span>40</span></a></li>--}}
+                                {{--<li><a href="#">Chuyển giao CN <span>38</span></a></li>--}}
+                            {{--</ul>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                     <!-- /category widget -->
                     <!-- galery widget -->
                     <div class="aside-widget">
@@ -422,6 +422,29 @@
             <!-- /row -->
         </div>
         <!-- /container -->
+    </div>
+    <!-- /SECTION -->
+
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class=" block-info-3" style="background-image: url(./img/bg-home3.jpg); background-size:100%;   background-position: center;
+  background-repeat: no-repeat; min-height: 200px">
+            <div class="row" style="height: 50%">
+                <div class="col-md-offset-5 col-md-7">
+                    <p>
+                        VietFarm đi tiên phong về ứng dụng công nghệ cao
+                    </p>
+                    <h3>
+                        VÌ MỘT NỀN NÔNG NGHIỆP CHUẨN ORGANIC
+                    </h3>
+                    <p>
+                        MANG LẠI NHỮNG GIÁ TRỊ BỀN VỮNG CHO CUỘC SÔNG <br>
+                        VÀ ĐEM LẠI NHỮNG BỮA ĂN CHẤT LƯỢNG CHO GIA ĐÌNH BẠN
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- /SECTION -->
 
@@ -486,27 +509,5 @@
 
         </div>
     </section>
-    <!-- /SECTION -->
-    <!-- SECTION -->
-    <div class="section">
-        <!-- container -->
-        <div class=" block-info-3" style="background-image: url(./img/bg-home3.jpg); background-size:100%;   background-position: center;
-  background-repeat: no-repeat; min-height: 200px">
-            <div class="row" style="height: 50%">
-                <div class="col-md-offset-5 col-md-7">
-                    <p>
-                        VietFarm đi tiên phong về ứng dụng công nghệ cao
-                    </p>
-                    <h3>
-                        VÌ MỘT NỀN NÔNG NGHIỆP CHUẨN ORGANIC
-                    </h3>
-                    <p>
-                        MANG LẠI NHỮNG GIÁ TRỊ BỀN VỮNG CHO CUỘC SÔNG <br>
-                        VÀ ĐEM LẠI NHỮNG BỮA ĂN CHẤT LƯỢNG CHO GIA ĐÌNH BẠN
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- /SECTION -->
 @endsection

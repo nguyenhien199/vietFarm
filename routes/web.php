@@ -23,8 +23,9 @@ Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::post('/login_admin', 'AdminController@index')->name('login_admin');
 Route::group(['middleware' => 'auth'], function(){
+
     Route::get('/home', 'Admin\AdminController@index')->name('home');
     Route::get('/admin/overview', 'Admin\AdminController@index')->name('overview');
-    Route::get('/admin/new', 'Admin\NewsController@index');
+    Route::get('/admin/new', 'Admin\NewsController@index')->name('news');
     Route::post('/admin/new/create', 'Admin\NewsController@create');
 });

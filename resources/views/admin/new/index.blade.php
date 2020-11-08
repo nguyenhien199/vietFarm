@@ -28,8 +28,8 @@
                         <td>{{$new->description}}</td>
                         <td>{{$new->status}}</td>
                         <td>
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
+                            <button class="btn btn-warning" onclick="new_edit({{$new}})">Edit</button>
+                            <button class="btn btn-danger" onclick="newsDelete({{$new['id']}})" >Delete</button>
                         </td>
                        <?php $i++; ?>
                     </tr>
@@ -53,6 +53,7 @@
                 <div class="modal-body">
                     <form id="newForm" action="{{url('/admin/new/create')}}" method="POST">
                         @csrf
+                        <input type="hidden" name="id" value="" />
                         <div class="form-group">
                             <label class="">Tittle (*)</label>
                             <input value="" class="form-control" name="title" />
@@ -68,6 +69,13 @@
                         <div class="form-group">
                             <label class="">Content (*)</label>
                             <textarea value="" class="form-control" name="content"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="">status (*)</label>
+                            <div class="radio">
+                                <label><input type="radio" id="radio_1" value="0" name="status">Disable</label>
+                                <label class="ml-5"><input type="radio" id="radio_2" value="1" name="status">Enable</label>
+                            </div>
                         </div>
                         <div class="float-right">
                             <button class="btn btn-success" type="submit">Save</button>
