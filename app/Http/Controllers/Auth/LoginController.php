@@ -4,9 +4,13 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
@@ -45,13 +49,34 @@ class LoginController extends Controller
         Auth::logout();
         return redirect('/login');
     }
-
+    
     public function login(Request $request)
     {
         $credential = $request->except('_token');
         if(!Auth::attempt($credential)){
-            return redirect('login');
+            $message = 'Email or password is incorrect';
+            return Redirect::back()->withErrors([$message]);
         }
         return redirect()->route('admin');
+    }
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|confirmed|min:6',
+        ]);
+    }
+    
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        $user_data = $request->except('_token', 'password_confirmation');
+        $user_data['role'] = User::USER;
+        event(new Registered($user = User::create($user_data)));
+    
+        $this->guard()->login($user);
+    
+        return redirect('/admin');
     }
 }

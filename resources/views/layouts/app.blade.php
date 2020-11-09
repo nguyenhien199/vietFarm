@@ -77,9 +77,9 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-cog"></i> <span class="nav-label">Cấu hình</span><span class="fa arrow"></span></a>
+                    <a href="{{url('admin/users/list')}}"><i class="fa fa-user"></i> <span class="nav-label">Quản lý Users</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="information.html">Thông tin</a></li>
+                        <li><a href="{{'admin/users/list'}}">Thông tin</a></li>
                         <li><a href="account.html">Tài khoản</a></li>
                         <li><a href="setting.html">Cài đặt hiển thị</a></li>
 

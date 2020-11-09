@@ -17,11 +17,9 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('code');
             $table->string('name');
-            $table->string('image');
-            $table->string('description');
+            $table->text('image');
             $table->string('description');
             $table->softDeletes();
-
             $table->timestamps();
         });
     }
