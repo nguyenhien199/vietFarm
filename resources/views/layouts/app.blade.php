@@ -77,12 +77,11 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="{{url('admin/users/list')}}"><i class="fa fa-user"></i> <span class="nav-label">Quản lý Users</span><span class="fa arrow"></span></a>
+                    <a href="{{url('admin/users')}}"><i class="fa fa-user"></i> <span class="nav-label">Quản lý Users</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="{{'admin/users/list'}}">Thông tin</a></li>
+                        <li><a href="{{'admin/users'}}">Thông tin</a></li>
                         <li><a href="account.html">Tài khoản</a></li>
                         <li><a href="setting.html">Cài đặt hiển thị</a></li>
-
                     </ul>
                 </li>
                 <!-- <li>

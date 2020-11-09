@@ -21,7 +21,7 @@ Route::post('register', 'Auth\LoginController@register');
 Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
     Route::get('/', 'HomeController@index')->name('admin');
     // user
-    Route::get('/users/list', 'Admin\UsersController@index')->name('users');
+    Route::get('/users', 'Admin\UsersController@index')->name('users');
     Route::post('/users/create', 'Admin\UsersController@create');
     Route::get('/users/delete/{id}', 'Admin\UsersController@destroy');
     // news
