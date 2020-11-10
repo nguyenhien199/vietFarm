@@ -33,4 +33,8 @@ var Admin = {
         }).modal('show');
     }
 }
+if ($('#editor').length == 1)
+{
+    CKEDITOR.replace("editor");
+}
 

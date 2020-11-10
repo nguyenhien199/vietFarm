@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="">
-        <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-end header-page">
                 <h2>List Users</h2>
             <div>
                 <button class="btn btn-primary" data-toggle="modal" data-target="#create_new"> + New</button>

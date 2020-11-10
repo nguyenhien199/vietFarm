@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="">
-        <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-end header-page">
                 <h2>List News</h2>
             <div>
-                <button class="btn btn-primary" data-toggle="modal" data-target="#create_new"> + New</button>
+                <a href="{{url('/admin/news/create')}}"><button class="btn btn-primary"> + Add News</button></a>
             </div>
         </div>
         <div>

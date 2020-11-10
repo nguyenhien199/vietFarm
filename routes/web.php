@@ -26,6 +26,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
     Route::get('/users/delete/{id}', 'Admin\UsersController@destroy');
     // news
     Route::get('/news', 'Admin\NewsController@index')->name('news');
+    Route::get('/news/create', 'Admin\NewsController@showCreate');
     Route::post('/news/create', 'Admin\NewsController@create');
     Route::get('/new/delete/{id}', 'Admin\NewsController@destroy');
     // products
