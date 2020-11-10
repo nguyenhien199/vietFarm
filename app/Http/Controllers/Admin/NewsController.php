@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\NewsRequest;
 use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,8 +16,12 @@ class NewsController extends Controller
         return view('admin.new.index',['news' => $news]);
     }
 
-    public function create(Request $request)
-    {
+    public function showCreate(){
+        return view('admin.new.create');
+    }
+    
+    public function create(NewsRequest $request)
+{
         $data = $request->all();
         if(!isset($data['id'])){
             try{
@@ -45,10 +50,17 @@ class NewsController extends Controller
             }
         }
     }
-    public function delete($id)
-    {
-        $news = News::where('id',$id)->first();
-        News::where('id',$id)->delete();
-        return redirect()->back();
+
+    public function destroy($id){
+        try{
+            $item = News::where('id', $id)->delete();
+            Session::flash('message', 'Delete SuccessFully!');
+            Session::flash('alert-class', 'alert-success');
+            return redirect()->route('news');
+        }catch (\Exception $error){
+            Session::flash('message', 'Delete Error!');
+            Session::flash('alert-class', 'alert-danger');
+            return redirect()->back();
+        }
     }
 }

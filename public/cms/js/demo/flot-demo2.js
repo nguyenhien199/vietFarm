@@ -292,7 +292,7 @@ $(function() {
 
 });
 
-//Flot Pie Chart User type
+//Flot Pie Chart user type
 $(function() {
 
     var data = [{

@@ -14,18 +14,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'WebController@index');
+
 Route::get('/product', 'ProductController@index');
 Route::get('/product/detail', 'ProductController@getDetail');
 Route::get('/contact', 'HomeController@contact');
 Route::get('/new/new-detail', 'HomeController@getNewDetail');
 
 Auth::routes();
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-Route::post('/login_admin', 'AdminController@index')->name('login_admin');
-Route::group(['middleware' => 'auth'], function(){
+Route::get('logout', 'Auth\LoginController@logout');
+Route::post('register', 'Auth\LoginController@register');
 
-    Route::get('/home', 'Admin\AdminController@index')->name('home');
-    Route::get('/admin/overview', 'Admin\AdminController@index')->name('overview');
-    Route::get('/admin/new', 'Admin\NewsController@index')->name('news');
-    Route::post('/admin/new/create', 'Admin\NewsController@create');
+Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
+    Route::get('/', 'HomeController@index')->name('admin');
+    // user
+    Route::get('/users', 'Admin\UsersController@index')->name('users');
+    Route::post('/users/create', 'Admin\UsersController@create');
+    Route::get('/users/delete/{id}', 'Admin\UsersController@destroy');
+    // news
+    Route::get('/news', 'Admin\NewsController@index')->name('news');
+    Route::get('/news/create', 'Admin\NewsController@showCreate');
+    Route::post('/news/create', 'Admin\NewsController@create');
+    Route::get('/new/delete/{id}', 'Admin\NewsController@destroy');
+    // products
+    Route::get('/products', 'Admin\ProductsController@index')->name('news');
+    Route::post('/products/create', 'Admin\ProductsController@create');
+    Route::get('/products/delete/{id}', 'Admin\ProductsController@destroy');
 });

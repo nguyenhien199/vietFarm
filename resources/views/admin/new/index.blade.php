@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="">
-        <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-end header-page">
                 <h2>List News</h2>
             <div>
-                <button class="btn btn-primary" data-toggle="modal" data-target="#create_new"> + New</button>
+                <a href="{{url('/admin/news/create')}}"><button class="btn btn-primary"> + Add News</button></a>
             </div>
         </div>
         <div>
@@ -28,8 +28,8 @@
                         <td>{{$new->description}}</td>
                         <td>{{$new->status}}</td>
                         <td>
-                            <button class="btn btn-warning" onclick="new_edit({{$new}})">Edit</button>
-                            <button class="btn btn-danger" onclick="newsDelete({{$new['id']}})" >Delete</button>
+                            <button class="btn btn-warning" onclick="Admin.new_edit({{$new}})">Edit</button>
+                            <a href="{{url('/admin/news/delete', $new->id)}}"><button class="btn btn-danger">Delete</button></a>
                         </td>
                        <?php $i++; ?>
                     </tr>
@@ -51,7 +51,7 @@
                     <h4 class="modal-title">Create New</h4>
                 </div>
                 <div class="modal-body">
-                    <form id="newForm" action="{{url('/admin/new/create')}}" method="POST">
+                    <form id="newForm" action="{{url('/admin/news/create')}}" method="POST">
                         @csrf
                         <input type="hidden" name="id" value="" />
                         <div class="form-group">

@@ -2866,7 +2866,7 @@ Object.defineProperty(FontLoader, 'isSyncFontLoadingSupported', {
 
     var supported = false;
 
-    // User agent string sniffing is bad, but there is no reliable way to tell
+    // user agent string sniffing is bad, but there is no reliable way to tell
     // if font is fully loaded and ready to be used with canvas.
     var m = /Mozilla\/5.0.*?rv:(\d+).*? Gecko/.exec(navigator.userAgent);
     if (m && m[1] >= 14) {

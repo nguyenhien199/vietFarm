@@ -31,20 +31,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                     <form action="{{ route('login') }}" method="POST">
                         @csrf
-                        <input type="text" name="email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User name';}"/>
-                        <input type="password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"/>
+                        <input type="text" name="email" placeholder="email" />
+                        <input type="password" name="password" placeholder="password"/>
                         <div class="remember">
-			             <span class="checkbox1">
-							   <label class="checkbox"><input type="checkbox" name="" checked=""><i> </i>Remember me</label>
-						 </span>
                             <div class="forgot">
-                                <h6><a href="#">Forgot Password?</a></h6>
+                                <h6><a href="{{ route('password.update') }}">Forgot Password?</a></h6>
                             </div>
                             <div class="clear"> </div>
                         </div>
 
                         <input type="submit" value="Login">
+                        @if($errors->any())
+                            <span class="invalid-feedback mt-5" role="alert">
+                                <strong>{{$errors->first()}}</strong>
+                            </span>
+                        @endif
                     </form>
+                    <a href="{{ route('register') }}">
+                        <button class="btn btn-design">Create an account</button>
+                    </a>
                     {{--<div class="header-left-top">--}}
                     {{--<div class="sign-up"> <h2>or</h2> </div>--}}
 

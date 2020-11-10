@@ -36,13 +36,13 @@ background-attachment: fixed;
     -moz-background-size: cover;
     -o-background-size: cover;
 padding:0;
-margin:0; 
+margin:0;
 font-family: 'Roboto Condensed', sans-serif;
  font-size: 100%;
-}  
+}
 h1,h2,h3,h4,h5,h6{
-	margin:0;			   
-}	
+	margin:0;
+}
 p{
 	margin:0;
 }
@@ -127,6 +127,20 @@ span.login-color {
     padding: 12px 13px 20px 44px;
 	border:none;
     border-bottom:1px solid #fff;
+    width: 87%;
+    margin: 0 0 20px;
+    display: inline-block;
+}
+.header-left-bottom input[type="email"] {
+    background: url(../images/mail.png)no-repeat 0px 7px;
+    outline: none;
+    background-size: 24px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    padding: 12px 13px 20px 44px;
+    border: none;
+    border-bottom: 1px solid #fff;
     width: 87%;
     margin: 0 0 20px;
     display: inline-block;
@@ -574,7 +588,7 @@ span.sin-color {
 
 @media(max-width:1440px){
 .header-main {
-    width: 33%;	
+    width: 33%;
 }
 }
 @media(max-width:1366px){
@@ -585,7 +599,7 @@ span.sin-color {
 @media(max-width:1280px){
 .header-main {
     width: 38%;
-}	
+}
 }
 @media(max-width:1024px){
 .header-main {
@@ -593,7 +607,7 @@ span.sin-color {
 }
 .header-main h1 {
     font-size: 63px;
-}	
+}
 }
 @media(max-width:991px){
 .header-main {
@@ -749,7 +763,7 @@ span.sin-color {
     width: 85%;
 }
 .header-main {
-    padding: 25px 0px 15px 0px;	
+    padding: 25px 0px 15px 0px;
 }
 .header-left-bottom input[type="text"] {
     padding: 12px 13px 15px 44px;
@@ -803,3 +817,40 @@ span.sin-color {
 }
 }
 /*--meadia quries end here--*/
+.btn-register{
+    background: #ff3366;
+    color: #FFF;
+    font-size: 26px;
+    padding: 0.3em 1.2em;
+    width: 100%;
+    font-weight: 500;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+a:hover{
+    cursor: pointer;
+}
+.btn-design{
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    background: transparent;
+    width: 100%;
+    color: #fff;
+}
+.invalid-feedback{
+    color: #f36;
+}
+.header-left-bottom input.is-invalid {
+    border-bottom: 1px solid #f36;
+}
+
