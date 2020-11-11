@@ -47,9 +47,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </span>
                         @endif
                     </form>
-                    <a href="{{ route('register') }}">
-                        <button class="btn btn-design">Create an account</button>
-                    </a>
                     {{--<div class="header-left-top">--}}
                     {{--<div class="sign-up"> <h2>or</h2> </div>--}}
 

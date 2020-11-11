@@ -20,9 +20,9 @@ Route::get('/product/detail', 'ProductController@getDetail');
 Route::get('/contact', 'HomeController@contact');
 Route::get('/new/new-detail', 'HomeController@getNewDetail');
 
-Auth::routes();
+Auth::routes(['register' => false]);
 Route::get('logout', 'Auth\LoginController@logout');
-Route::post('register', 'Auth\LoginController@register');
+//Route::post('register', 'Auth\LoginController@register');
 
 Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
     Route::get('/', 'HomeController@index')->name('admin');
@@ -35,7 +35,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
     Route::get('/news/create', 'Admin\NewsController@showCreate');
     Route::post('/news/create', 'Admin\NewsController@create');
     Route::get('/news/edit/{id}', 'Admin\NewsController@showEdit');
-    Route::get('/new/delete/{id}', 'Admin\NewsController@destroy');
+    Route::get('/news/delete/{id}', 'Admin\NewsController@destroy');
     // products
     Route::get('/products', 'Admin\ProductsController@index');
     Route::post('/products/create', 'Admin\ProductsController@create');

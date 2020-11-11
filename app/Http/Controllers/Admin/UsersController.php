@@ -2,10 +2,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UsersRequests;
 use App\Models\News;
 use App\User;
+use http\Client\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Session;
 
 class UsersController extends Controller
@@ -16,45 +19,53 @@ class UsersController extends Controller
         return view('admin.user.index',['users' => $users]);
     }
     
-    public function create(Request $request)
+    public function create(UsersRequests $request)
     {
         $data = $request->all();
         if(!isset($data['id'])){
+            $user = $request->except('_token', 'current_password');
             try{
-                $data['status'] = 1;
-                News::create($data);
-                Session::flash('message', 'Add SuccessFully!');
+                $user['password'] = Hash::make($user['password']);
+                User::create($user);
+                Session::flash('message', 'Update user SuccessFully!');
                 Session::flash('alert-class', 'alert-success');
-                return redirect()->route('news');
+                return response()->json(['status' => '200']);
             }catch (\Exception $error){
-                Session::flash('message', 'Add Error!');
+                Session::flash('message', 'Update user Error!');
                 Session::flash('alert-class', 'alert-danger');
-                return redirect()->back();
+                return response()->json(['status' => '500']);
             }
         }
         else{
-            $dataEdit =  $request->except('_token', 'id');
+            $dataEdit =  $request->except('_token', 'id', 'current_password');
             try {
-                News::where('id', $data['id'])->update($dataEdit);
-                Session::flash('message', 'Edit SuccessFully!');
+                if(empty($request->password)) unset($dataEdit['password']);
+                else{
+                    $dataEdit['password'] = Hash::make($dataEdit['password']);
+                }
+                User::where('id', $data['id'])->update($dataEdit);
+                Session::flash('message', 'Update user successFully!');
                 Session::flash('alert-class', 'alert-success');
-                return redirect()->route('news');
+                return response()->json(['status' => '200']);
             } catch (\Exception $error){
-                Session::flash('message', 'Edit Error!');
+                Session::flash('message', 'Update user error!');
                 Session::flash('alert-class', 'alert-danger');
-                return redirect()->back();
+                return response()->json(['status' => '500']);
             }
         }
     }
     
     public function destroy($id){
         try{
-            $item = News::where('id', $id)->delete();
-            Session::flash('message', 'Delete SuccessFully!');
+            $item = User::where([
+                'id' => $id,
+                'status' => User::NOTACTIVE
+            ])->delete();
+            Session::flash('message', 'Delete user SuccessFully!');
             Session::flash('alert-class', 'alert-success');
-            return redirect()->route('news');
+            return redirect()->back();
         }catch (\Exception $error){
-            Session::flash('message', 'Delete Error!');
+            Session::flash('message', 'Delete user Error!');
             Session::flash('alert-class', 'alert-danger');
             return redirect()->back();
         }
