@@ -12,15 +12,12 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 1; $i <= 20; $i++){
-            \App\User::create([
-                'name' => 'admin',
-                'email' => $i.'admin@gmail.com',
-                'password' => Hash::make('12345678'),
-                'role' => \App\User::ADMIN,
-                'status' => \App\User::ACTIVE,
-            ]);
-        }
-       
+        \App\User::create([
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('12345678'),
+            'role' => \App\User::ADMIN,
+            'status' => \App\User::ACTIVE,
+        ]);
     }
 }
