@@ -7,6 +7,7 @@ use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Session;
+use Auth;
 
 class NewsController extends Controller
 {
@@ -21,36 +22,71 @@ class NewsController extends Controller
     }
     
     public function create(NewsRequest $request)
-{
-        $data = $request->all();
-        if(!isset($data['id'])){
-            try{
-                $data['status'] = 1;
-                News::create($data);
-                Session::flash('message', 'Add SuccessFully!');
+    {
+        $data = $request->except('_token');
+        if($request->id){
+            try {
+                if($data['remove_image'] == 1){
+                    $data['image'] = '';
+                }
+                News::findOrFail($request->id)->update($data);
+                $files = $request->file('image');
+                if(!empty($files) && $data['remove_image'] == 0){
+                    $file_name = $files->getClientOriginalName();
+                    $files->storeAs('/public/images/news/' . $request->id, $file_name);
+                    News::findOrFail($request->id)->update(['image' => '/storage/images/news/' . $request->id . '/' . $file_name]);
+                }
+                Session::flash('message', 'Update SuccessFully!');
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->route('news');
             }catch (\Exception $error){
-                Session::flash('message', 'Add Error!');
+                Session::flash('message', 'Update Error!');
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
             }
-        }
-        else{
-            $dataEdit =  $request->except('_token', 'id');
-            try {
-                News::where('id', $data['id'])->update($dataEdit);
-                Session::flash('message', 'Edit SuccessFully!');
-                Session::flash('alert-class', 'alert-success');
-                return redirect()->route('news');
-            } catch (\Exception $error){
-                Session::flash('message', 'Edit Error!');
-                Session::flash('alert-class', 'alert-danger');
-                return redirect()->back();
+        }else{
+            if(!isset($data['id'])){
+                try{
+                    $data['created_by'] = Auth::user()->id;
+                    $data['updated_by'] = Auth::user()->id;
+                    $new = News::create($data);
+                    $files = $request->file('image');
+                    if(!empty($files) && $data['remove_image'] == 0){
+                        $file_name = $files->getClientOriginalName();
+                        $files->storeAs('/public/images/news/' . $new->id, $file_name);
+                        News::findOrFail($new->id)->update(['image' => '/storage/images/news/' . $new->id . '/' . $file_name]);
+                    }
+                    Session::flash('message', 'Add SuccessFully!');
+                    Session::flash('alert-class', 'alert-success');
+                    return redirect()->route('news');
+                }catch (\Exception $error){
+                    Session::flash('message', 'Add Error!');
+                    Session::flash('alert-class', 'alert-danger');
+                    return redirect()->back();
+                }
+            }
+            else{
+                $dataEdit =  $request->except('_token', 'id');
+                try {
+                    News::where('id', $data['id'])->update($dataEdit);
+                    Session::flash('message', 'Edit SuccessFully!');
+                    Session::flash('alert-class', 'alert-success');
+                    return redirect()->route('news');
+                } catch (\Exception $error){
+                    Session::flash('message', 'Edit Error!');
+                    Session::flash('alert-class', 'alert-danger');
+                    return redirect()->back();
+                }
             }
         }
     }
 
+    public function showEdit($id)
+    {
+        $data = News::findOrFail($id);
+        return view('admin.new.create', ['data' => $data]);
+    }
+    
     public function destroy($id){
         try{
             $item = News::where('id', $id)->delete();

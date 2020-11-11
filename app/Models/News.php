@@ -17,5 +17,8 @@ class News extends Model
         'description',
         'content',
         'status',
+        'created_by',
+        'updated_by'
     ];
+    
 }

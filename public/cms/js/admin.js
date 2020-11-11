@@ -16,22 +16,19 @@ $('#save_new').click(function (e) {
     });
 })
 
-var Admin = {
-    new_edit($new) {
-        console.log($new)
-        $('#create_new').on('show.bs.modal', function(){
-            $form = $(this).find('#newForm');
-            $form.find('input[name="id"]').val($new.id)
-            $form.find('input[name="image"]').val($new.image)
-            $form.find('input[name="title"]').val($new.title)
-            $form.find('input[name="description"]').val($new.description)
-            $form.find('textarea[name="content"]').val($new.content)
-            if($new.status == 0){
-                $("#radio_1").attr('checked', 'checked');
-            }else $("#radio_2").attr('checked', 'checked');
-
-        }).modal('show');
+function change_file(event) {
+    if ($(event).val() == undefined || $(event).val() == '')
+    {
+        return false;
     }
+    var filename = $(event).val().split('\\').pop();
+    $(event).parents('.file-control').find('.removeFile').val(0);
+    $(event).parents('.file-control').find('.form-control').val(filename);
+}
+
+function removeImage(event) {
+    $(event).parents('.file-control').find('.form-control').val('');
+    $(event).find('.removeFile').val(1);
 }
 
 if ($('#editor').length == 1)

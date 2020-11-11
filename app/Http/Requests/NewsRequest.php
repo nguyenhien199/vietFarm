@@ -20,11 +20,10 @@ class NewsRequest extends FormRequest
     {
         return [
             'title'        => 'required',
-            'image'        => 'mimes:jpeg,bmp,png',
+            'image'        => 'max:2048|mimes:jpg,jpeg,bmp,png',
             'description'  => 'required|max:2000',
             'content'      => 'required',
             'status'       => 'required',
         ];
     }
-    
 }

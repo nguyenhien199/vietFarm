@@ -8676,3 +8676,23 @@ object-fit: contain;
 .message-login{
     color: #ed5565;
 }
+.d-flex{
+    display: flex;
+}
+.file-control{
+    display: flex;
+}
+.input-group-btn{
+    width: auto;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+.remove-file{
+    cursor: pointer;
+    font-size: 22px;
+    padding: 6px;
+}
+#page-wrapper {
+    padding-bottom: 50px;
+}

@@ -52,7 +52,7 @@
                     <a href="media.html"><i class="fa fa-picture-o"></i> <span class="nav-label">Thư viện ảnh</span></a>
                 </li>
                 <li class="admin-nav">
-                    <a href="{{url('/admin/new')}}"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Bài viết</span></a>
+                    <a href="{{url('/admin/news')}}"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Bài viết</span></a>
                 </li>
                 <li class="admin-nav">
                     <a href="{{url('/admin/products')}}"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Sản Phẩm</span><span class="fa arrow"></span></a>
