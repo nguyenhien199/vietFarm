@@ -13,7 +13,7 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $news = News::orderBy('id', 'DESC')->paginate(10);
+        $news = News::orderBy('id', 'DESC')->paginate(PAGINATION);
         return view('admin.new.index',['news' => $news]);
     }
 
@@ -47,8 +47,10 @@ class NewsController extends Controller
         }else{
             if(!isset($data['id'])){
                 try{
+                    
                     $data['created_by'] = Auth::user()->id;
                     $data['updated_by'] = Auth::user()->id;
+                    $data['image'] = '';
                     $new = News::create($data);
                     $files = $request->file('image');
                     if(!empty($files) && $data['remove_image'] == 0){

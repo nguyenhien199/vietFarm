@@ -26,10 +26,14 @@ Route::get('logout', 'Auth\LoginController@logout');
 
 Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
     Route::get('/', 'HomeController@index')->name('admin');
-    // user
-    Route::get('/users', 'Admin\UsersController@index')->name('users');
-    Route::post('/users/create', 'Admin\UsersController@create');
-    Route::get('/users/delete/{id}', 'Admin\UsersController@destroy');
+    
+    Route::group(['middleware' => 'check_admin'],function () {
+        // user
+        Route::get('/users', 'Admin\UsersController@index')->name('users');
+        Route::post('/users/create', 'Admin\UsersController@create');
+        Route::get('/users/delete/{id}', 'Admin\UsersController@destroy');
+    });
+    
     // news
     Route::get('/news', 'Admin\NewsController@index')->name('news');
     Route::get('/news/create', 'Admin\NewsController@showCreate');
@@ -40,4 +44,14 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
     Route::get('/products', 'Admin\ProductsController@index');
     Route::post('/products/create', 'Admin\ProductsController@create');
     Route::get('/products/delete/{id}', 'Admin\ProductsController@destroy');
+    
+    // category products
+    Route::get('/category-products', 'Admin\CategoryProductsController@index');
+    Route::post('/category-products/create', 'Admin\CategoryProductsController@create');
+    Route::get('/category-products/delete/{id}', 'Admin\CategoryProductsController@destroy');
+    
+    Route::get('/category-services', 'Admin\CategoryProductsController@indexService');
+    Route::get('/category-technologies', 'Admin\CategoryProductsController@indexTechnology');
+    Route::get('/category-fertilizers', 'Admin\CategoryProductsController@indexFertilizer');
+   
 });

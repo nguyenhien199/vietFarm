@@ -48,17 +48,14 @@
                 <li class="active">
                     <a href="{{url('/admin/overview')}}"><i class="fa fa-tachometer"></i> <span class="nav-label">Tổng quam</span>  </a>
                 </li>
-                <li>
-                    <a href="media.html"><i class="fa fa-picture-o"></i> <span class="nav-label">Thư viện ảnh</span></a>
-                </li>
                 <li class="admin-nav">
                     <a href="{{url('/admin/news')}}"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Bài viết</span></a>
                 </li>
                 <li class="admin-nav">
-                    <a href="{{url('/admin/products')}}"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Sản Phẩm</span><span class="fa arrow"></span></a>
+                    <a href="{{url('/admin/category-products')}}"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Danh mục Sản Phẩm</span><span class="fa arrow"></span></a>
                 </li>
                 <li>
-                    <a href="page.html"><i class="fa fa-twitch"></i> <span class="nav-label">Dịch vụ</span></a>
+                    <a href="{{url('/admin/category-services')}}"><i class="fa fa-server"></i> <span class="nav-label">Danh mục dịch vụ</span></a>
                     <ul class="nav nav-second-level collapse">
                         <li><a href="page.html">Danh sách dịch vụ</a></li>
                         <li><a href="add_page.html">Thêm dịch vụ</a></li>
@@ -66,7 +63,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="page.html"><i class="fa fa-twitch"></i> <span class="nav-label">Chuyển giao công nghệ</span></a>
+                    <a href="{{url('/admin/category-technologies')}}"><i class="fa fa-twitch"></i> <span class="nav-label">Danh mục công nghệ</span></a>
                     <ul class="nav nav-second-level collapse">
                         <li><a href="page.html">Danh sách chuyển giao công nghệ</a></li>
                         <li><a href="add_page.html">Thêm thêm chuyển giao công nghệ</a></li>
@@ -74,7 +71,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="page.html"><i class="fa fa-twitch"></i> <span class="nav-label">Phân bón</span></a>
+                    <a href="{{url('/admin/category-fertilizers')}}"><i class="fa fa-twitch"></i> <span class="nav-label">Danh mục phân bón</span></a>
                     <ul class="nav nav-second-level collapse">
                         <li><a href="page.html">Danh sách phân bón</a></li>
                         <li><a href="add_page.html">Thêm phân bón </a></li>
@@ -90,6 +87,7 @@
 
                     {{--</ul>--}}
                 {{--</li>--}}
+                @if(\Illuminate\Support\Facades\Auth::user()->role == \App\User::ADMIN)
                 <li>
                     <a href="{{url('admin/users')}}"><i class="fa fa-user"></i> <span class="nav-label">Quản lý Users</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
@@ -98,6 +96,7 @@
                         <li><a href="setting.html">Cài đặt hiển thị</a></li>
                     </ul>
                 </li>
+                @endif
                 <!-- <li>
                     <a href="#"><i class="fa fa-paper-plane"></i> <span class="nav-label">Marketing</span><span class="fa arrow"></span><span class="new label-warning pull-right">New</span></a>
                     <ul class="nav nav-second-level collapse">

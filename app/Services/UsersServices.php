@@ -17,9 +17,9 @@ class UsersServices
     
     public static function getStatus($status)
     {
-        $action =  'Active';
+        $action =  'Hoạt động';
         if(User::NOTACTIVE == $status){
-            $action = 'Not active';
+            $action = 'Không hoạt động';
         }
         return $action;
     }

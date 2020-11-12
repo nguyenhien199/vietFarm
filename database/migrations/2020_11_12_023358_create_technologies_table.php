@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNewsTable extends Migration
+class CreateTechnologiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,19 @@ class CreateNewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('news', function (Blueprint $table) {
+        Schema::create('Categorytechnologies', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('url')->unique();
-            $table->text('image')->nullable('true');
+            $table->unsignedBigInteger('category_id');
+            $table->string('name');
+            $table->string('image')->nullable();
             $table->text('description');
             $table->text('content');
             $table->boolean('status');
             $table->softDeletes();
             $table->timestamps();
-            $table->integer('created_by')->nullable(false);
-            $table->integer('updated_by')->nullable(false);
+    
+            // constraint
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
@@ -35,6 +36,6 @@ class CreateNewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news');
+        Schema::dropIfExists('Categorytechnologies');
     }
 }

@@ -6,20 +6,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class News extends Model
+class Categories extends Model
 {
     use SoftDeletes;
-
-    protected $table = 'news';
-    protected $fillable = [
-        'title',
-        'url',
-        'image',
-        'description',
-        'content',
-        'status',
-        'created_by',
-        'updated_by'
-    ];
     
+    const CATEGORY_SP = 'SP';
+    const CATEGORY_DV = 'DV';
+    const CATEGORY_CN = 'CN';
+    const CATEGORY_PB = 'PB';
+    const NOTACTIVE = 0;
+    
+    protected $fillable = [
+        'name',
+        'code',
+        'description',
+        'status',
+    ];
 }
