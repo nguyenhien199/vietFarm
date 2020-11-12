@@ -24,7 +24,7 @@ class NewsController extends Controller
     public function create(NewsRequest $request)
     {
         $data = $request->except('_token');
-        if($request->id){
+        if($data['id']){
             try {
                 if($data['remove_image'] == 1){
                     $data['image'] = '';
@@ -45,40 +45,24 @@ class NewsController extends Controller
                 return redirect()->back();
             }
         }else{
-            if(!isset($data['id'])){
-                try{
-                    
-                    $data['created_by'] = Auth::user()->id;
-                    $data['updated_by'] = Auth::user()->id;
-                    $data['image'] = '';
-                    $new = News::create($data);
-                    $files = $request->file('image');
-                    if(!empty($files) && $data['remove_image'] == 0){
-                        $file_name = $files->getClientOriginalName();
-                        $files->storeAs('/public/images/news/' . $new->id, $file_name);
-                        News::findOrFail($new->id)->update(['image' => '/storage/images/news/' . $new->id . '/' . $file_name]);
-                    }
-                    Session::flash('message', 'Add SuccessFully!');
-                    Session::flash('alert-class', 'alert-success');
-                    return redirect()->route('news');
-                }catch (\Exception $error){
-                    Session::flash('message', 'Add Error!');
-                    Session::flash('alert-class', 'alert-danger');
-                    return redirect()->back();
+            try{
+                
+                $data['created_by'] = Auth::user()->id;
+                $data['updated_by'] = Auth::user()->id;
+                $new = News::create($data);
+                $files = $request->file('image');
+                if(!empty($files) && $data['remove_image'] == 0){
+                    $file_name = $files->getClientOriginalName();
+                    $files->storeAs('/public/images/news/' . $new->id, $file_name);
+                    News::findOrFail($new->id)->update(['image' => '/storage/images/news/' . $new->id . '/' . $file_name]);
                 }
-            }
-            else{
-                $dataEdit =  $request->except('_token', 'id');
-                try {
-                    News::where('id', $data['id'])->update($dataEdit);
-                    Session::flash('message', 'Edit SuccessFully!');
-                    Session::flash('alert-class', 'alert-success');
-                    return redirect()->route('news');
-                } catch (\Exception $error){
-                    Session::flash('message', 'Edit Error!');
-                    Session::flash('alert-class', 'alert-danger');
-                    return redirect()->back();
-                }
+                Session::flash('message', 'Add SuccessFully!');
+                Session::flash('alert-class', 'alert-success');
+                return redirect()->route('news');
+            }catch (\Exception $error){
+                Session::flash('message', 'Add Error!');
+                Session::flash('alert-class', 'alert-danger');
+                return redirect()->back();
             }
         }
     }

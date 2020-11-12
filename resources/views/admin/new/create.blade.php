@@ -29,7 +29,7 @@
                     <div class="col-sm-10 inter-content">
                         <input type="text" id="changeUrl" name="url" class="form-input form-control" value="{{ old('url',  $data->url ?? '') }}" />
                         <div class="d-none fill-data" id="fill-title"></div>
-                        <div class="errorTxt message-url title"></div>
+                        <div class="errorTxt message-login title"></div>
                         @if($errors->has('Url'))
                             <span class="error message-login">{{ $errors->first('Url') }}</span>
                         @endif
