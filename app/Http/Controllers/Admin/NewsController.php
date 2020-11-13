@@ -29,6 +29,7 @@ class NewsController extends Controller
                 if($data['remove_image'] == 1){
                     $data['image'] = '';
                 }
+                $data['updated_by'] = Auth::user()->id;
                 News::findOrFail($request->id)->update($data);
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
@@ -46,7 +47,6 @@ class NewsController extends Controller
             }
         }else{
             try{
-                
                 $data['created_by'] = Auth::user()->id;
                 $data['updated_by'] = Auth::user()->id;
                 $new = News::create($data);

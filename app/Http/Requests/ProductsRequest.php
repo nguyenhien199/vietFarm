@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class NewsRequest extends FormRequest
+class ProductsRequest extends FormRequest
 {
     public function authorize()
     {
@@ -21,7 +21,8 @@ class NewsRequest extends FormRequest
     {
         if(!isset($this->id)){
             return [
-                'title'        => 'required',
+                'name'        => 'required',
+                'category_id' => 'required',
                 'url'          => 'required|unique:news',
                 'image'        => 'max:2048|mimes:jpg,jpeg,bmp,png',
                 'description'  => 'required|max:'. MAX_DESCRIPTION,
@@ -30,11 +31,12 @@ class NewsRequest extends FormRequest
             ];
         }else
             return [
-                'title'        => 'required',
+                'name'        => 'required',
+                'category_id' => 'required',
                 'url'          => [
-                                    'required',
-                                    Rule::unique('news', 'url')->ignore($this->id),
-                                    ],
+                    'required',
+                    Rule::unique('news', 'url')->ignore($this->id),
+                ],
                 'image'        => 'max:2048|mimes:jpg,jpeg,bmp,png',
                 'description'  => 'required|max:'. MAX_DESCRIPTION,
                 'content'      => 'required',

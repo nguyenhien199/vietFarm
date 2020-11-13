@@ -3,22 +3,41 @@
 @section('content')
     <div class="">
         <div class="d-flex justify-content-end header-page">
-            <h2>Thêm bài viết mới</h2>
+            <h2>Thêm sản phẩm mới</h2>
         </div>
         <div class="content">
-            <form action="{{url('/admin/news/create')}}" method="POST" enctype="Multipart/form-data">
+            <form action="{{url('/admin/products/create')}}" method="POST" enctype="Multipart/form-data">
                 @csrf
                 <input type="hidden" name="id" value="{{$data->id ?? ''}}">
                 <div class="row d-flex align-center">
                     <div class="col-sm-2">
-                        <label class="form-label-group">Title (*)</label>
+                        <label class="form-label-group">Tên sản phẩm (*)</label>
                     </div>
                     <div class="col-sm-10 inter-content">
-                        <input type="text" name="title" class="form-input form-control" value="{{ old('title',  $data->title ?? '') }}" />
+                        <input type="text" name="name" class="form-input form-control" value="{{ old('name',  $data->name ?? '') }}" />
                         <div class="d-none fill-data" id="fill-title"></div>
                         <div class="errorTxt message-login title"></div>
-                        @if($errors->has('title'))
-                            <span class="error message-login">{{ $errors->first('title') }}</span>
+                        @if($errors->has('name'))
+                            <span class="error message-login">{{ $errors->first('name') }}</span>
+                        @endif
+                    </div>
+                </div>
+                <div class="row d-flex align-center mt-5">
+                    <div class="col-sm-2">
+                        <label class="form-label-group">Danh mục (*)</label>
+                    </div>
+                    <div class="col-sm-10 inter-content">
+                        <select class="form-control" name="category_id">
+                            <option value="" selected>Vui lòng chọn danh mục</option>
+
+                        @foreach($categories as $cate)
+                                <option value="{{$cate->id}}" @if(isset($data->category_id) && $data->category_id === $cate->id) selected @endif>{{$cate->name}}</option>
+                            @endforeach
+                        </select>
+                        <div class="d-none fill-data" id="fill-title"></div>
+                        <div class="errorTxt message-login title"></div>
+                        @if($errors->has('category_id'))
+                            <span class="error message-login">{{ $errors->first('category_id') }}</span>
                         @endif
                     </div>
                 </div>

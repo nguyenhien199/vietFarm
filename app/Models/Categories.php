@@ -15,6 +15,7 @@ class Categories extends Model
     const CATEGORY_CN = 'CN';
     const CATEGORY_PB = 'PB';
     const NOTACTIVE = 0;
+    const ACTIVE = 1;
     
     protected $fillable = [
         'name',

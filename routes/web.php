@@ -41,8 +41,10 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
     Route::get('/news/edit/{id}', 'Admin\NewsController@showEdit');
     Route::get('/news/delete/{id}', 'Admin\NewsController@destroy');
     // products
-    Route::get('/products', 'Admin\ProductsController@index');
+    Route::get('/products', 'Admin\ProductsController@index')->name('products');
+    Route::get('/products/create', 'Admin\ProductsController@showGet');
     Route::post('/products/create', 'Admin\ProductsController@create');
+    Route::get('/products/edit/{id}', 'Admin\ProductsController@edit');
     Route::get('/products/delete/{id}', 'Admin\ProductsController@destroy');
     
     // category products

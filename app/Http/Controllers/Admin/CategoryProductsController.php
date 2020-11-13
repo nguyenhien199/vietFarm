@@ -2,7 +2,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Category;
+use App\Http\Requests\CategoryRequests;
 use App\Models\Categories;
 use Session;
 
@@ -32,7 +32,7 @@ class CategoryProductsController extends Controller
         return view('admin.categoryFertilizers.index',['categoryProducts' => $cate_products]);
     }
 
-    public function create(Category $request)
+    public function create(CategoryRequests $request)
     {
         $data = $request->all();
         if(!isset($data['id'])){

@@ -59,6 +59,7 @@ function newUser() {
        $('#usersForm').trigger("reset")
         $('#usersForm').find('.password-hidden').addClass('hidden')
         $('#usersForm').find('input[name="password"]').removeAttr('disabled')
+        $('#usersForm').find('input[name="id"]').val('')
         $('#usersForm').find('input[name="current_password"]').removeAttr('disabled')
         $('#usersForm').find("#radio_2").attr('checked', 'checked');
         $('#usersForm').find("#radio_status2").attr('checked', 'checked')
@@ -69,6 +70,7 @@ function newUser() {
 function newCategory() {
     $('#create_new').on('show.bs.modal',function(){
         $('#categoryProduct').trigger("reset")
+        $('#categoryProduct').find('input[name="id"]').val('')
     }).modal('show');
 }
 function editCategoryProducts($category) {
