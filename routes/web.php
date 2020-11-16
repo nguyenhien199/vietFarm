@@ -55,5 +55,19 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
     Route::get('/category-services', 'Admin\CategoryProductsController@indexService');
     Route::get('/category-technologies', 'Admin\CategoryProductsController@indexTechnology');
     Route::get('/category-fertilizers', 'Admin\CategoryProductsController@indexFertilizer');
+    
+    // service
+    Route::get('/services', 'Admin\ServicesController@index')->name('services');
+    Route::get('/services/create', 'Admin\ServicesController@showGet');
+    Route::post('/services/create', 'Admin\ServicesController@create');
+    Route::get('/services/edit/{id}', 'Admin\ServicesController@edit');
+    Route::get('/services/delete/{id}', 'Admin\ServicesController@destroy');
+    
+    // technologies
+    Route::get('/technologies', 'Admin\TechnologiesController@index')->name('services');
+    Route::get('/technologies/create', 'Admin\TechnologiesController@showGet');
+    Route::post('/technologies/create', 'Admin\TechnologiesController@create');
+    Route::get('/technologies/edit/{id}', 'Admin\TechnologiesController@edit');
+    Route::get('/technologies/delete/{id}', 'Admin\TechnologiesController@destroy');
    
 });

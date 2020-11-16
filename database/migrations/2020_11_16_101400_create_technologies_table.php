@@ -13,7 +13,7 @@ class CreateTechnologiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('Categorytechnologies', function (Blueprint $table) {
+        Schema::create('technologies', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('category_id');
             $table->string('name');
@@ -39,6 +39,6 @@ class CreateTechnologiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Categorytechnologies');
+        Schema::dropIfExists('technologies');
     }
 }

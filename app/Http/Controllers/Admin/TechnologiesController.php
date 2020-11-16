@@ -4,49 +4,52 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\NewsRequest;
 use App\Http\Requests\ProductsRequest;
+use App\Http\Requests\TechnologiesRequest;
 use App\Models\Categories;
 use App\Models\News;
 use App\Models\Products;
+use App\Models\Technologies;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Session;
 use Auth;
 
-class ProductsController extends Controller
+class TechnologiesController extends Controller
 {
     public function index()
     {
-        $products = Products::orderBy('id', 'DESC')->paginate(PAGINATION);
-        return view('admin.products.index',['products' => $products]);
+        $technologies = Technologies::orderBy('id', 'DESC')->paginate(PAGINATION);
+        return view('admin.technologies.index',['technologies' => $technologies]);
     }
     
     public function showGet()
     {
         $categories = Categories::where([
             'status' => Categories::ACTIVE,
-            'code' => Categories::CATEGORY_SP
+            'code' => Categories::CATEGORY_CN
         ])->select('id', 'name')->get();
-        return view('admin.products.create', ['categories' => $categories]);
+        return view('admin.technologies.create', ['categories' => $categories]);
     }
     
-    public function create(ProductsRequest $request)
+    public function create(TechnologiesRequest $request)
     {
+        dd(11);
         $data = $request->all();
         if(empty($data['id'])){
             $product = $request->except('_token');
             try{
                 $product['created_by'] = Auth::user()->id;
                 $product['updated_by'] = Auth::user()->id;
-                $create = Products::create($product);
+                $create = Technologies::create($product);
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
                     $files->storeAs('/public/images/products/' . $create->id, $file_name);
-                    Products::findOrFail($create->id)->update(['image' => '/storage/images/products/' . $create->id . '/' . $file_name]);
+                    Technologies::findOrFail($create->id)->update(['image' => '/storage/images/products/' . $create->id . '/' . $file_name]);
                 }
                 Session::flash('message', 'Thêm sản phẩm thành công!');
                 Session::flash('alert-class', 'alert-success');
-                return redirect()->route('products');
+                return redirect()->route('technologies');
             }catch (\Exception $error){
                 Session::flash('message', 'Đã xảy ra lỗi! Xin vui lòng thử lại');
                 Session::flash('alert-class', 'alert-danger');
@@ -59,16 +62,16 @@ class ProductsController extends Controller
                 if($data['remove_image'] == 1){
                     $data['image'] = '';
                 }
-                Products::findOrFail($data['id'])->update($data);
+                Technologies::findOrFail($data['id'])->update($data);
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
                     $files->storeAs('/public/images/news/' . $data['id'], $file_name);
-                    Products::findOrFail($data['id'])->update(['image' => '/storage/images/news/' . $data['id'] . '/' . $file_name]);
+                    Technologies::findOrFail($data['id'])->update(['image' => '/storage/images/news/' . $data['id'] . '/' . $file_name]);
                 }
                 Session::flash('message', 'Sửa sản phẩm thành công!');
                 Session::flash('alert-class', 'alert-success');
-                return redirect()->route('products');
+                return redirect()->route('technologies');
             }catch (\Exception $error){
                 Session::flash('message', 'Đã xảy ra lỗi! Xin vui lòng thử lại');
                 Session::flash('alert-class', 'alert-danger');
@@ -81,21 +84,21 @@ class ProductsController extends Controller
     {
         $categories = Categories::where([
             'status' => Categories::ACTIVE,
-            'code' => Categories::CATEGORY_SP
+            'code' => Categories::CATEGORY_CN
         ])->select('id', 'name')->get();
-        $product = Products::where('id', $id)->firstOrFail();
-        return view('admin.products.create', ['data' => $product, 'categories' => $categories]);
+        $product = Technologies::where('id', $id)->firstOrFail();
+        return view('admin.Technologies.create', ['data' => $product, 'categories' => $categories]);
     }
     
     public function destroy($id)
     {
         try{
-            $delete = Products::where([
+            $delete = Technologies::where([
                 'status' => Products::NOTACTIVE,
                 'id' => $id
             ])->delete();
             if($delete){
-                Session::flash('message', 'Xóa sản phẩm thành công!');
+                Session::flash('message', 'Xóa dịch vụ thành công!');
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->back();
             }

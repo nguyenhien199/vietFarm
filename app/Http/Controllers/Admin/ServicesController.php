@@ -4,32 +4,34 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\NewsRequest;
 use App\Http\Requests\ProductsRequest;
+use App\Http\Requests\ServicesRequest;
 use App\Models\Categories;
 use App\Models\News;
 use App\Models\Products;
+use App\Models\Services;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Session;
 use Auth;
 
-class ProductsController extends Controller
+class ServicesController extends Controller
 {
     public function index()
     {
-        $products = Products::orderBy('id', 'DESC')->paginate(PAGINATION);
-        return view('admin.products.index',['products' => $products]);
+        $services = Services::orderBy('id', 'DESC')->paginate(PAGINATION);
+        return view('admin.services.index',['services' => $services]);
     }
     
     public function showGet()
     {
         $categories = Categories::where([
             'status' => Categories::ACTIVE,
-            'code' => Categories::CATEGORY_SP
+            'code' => Categories::CATEGORY_DV
         ])->select('id', 'name')->get();
-        return view('admin.products.create', ['categories' => $categories]);
+        return view('admin.services.create', ['categories' => $categories]);
     }
     
-    public function create(ProductsRequest $request)
+    public function create(ServicesRequest $request)
     {
         $data = $request->all();
         if(empty($data['id'])){
@@ -37,12 +39,12 @@ class ProductsController extends Controller
             try{
                 $product['created_by'] = Auth::user()->id;
                 $product['updated_by'] = Auth::user()->id;
-                $create = Products::create($product);
+                $create = Services::create($product);
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
                     $files->storeAs('/public/images/products/' . $create->id, $file_name);
-                    Products::findOrFail($create->id)->update(['image' => '/storage/images/products/' . $create->id . '/' . $file_name]);
+                    Services::findOrFail($create->id)->update(['image' => '/storage/images/products/' . $create->id . '/' . $file_name]);
                 }
                 Session::flash('message', 'Thêm sản phẩm thành công!');
                 Session::flash('alert-class', 'alert-success');
@@ -59,12 +61,12 @@ class ProductsController extends Controller
                 if($data['remove_image'] == 1){
                     $data['image'] = '';
                 }
-                Products::findOrFail($data['id'])->update($data);
+                Services::findOrFail($data['id'])->update($data);
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
                     $files->storeAs('/public/images/news/' . $data['id'], $file_name);
-                    Products::findOrFail($data['id'])->update(['image' => '/storage/images/news/' . $data['id'] . '/' . $file_name]);
+                    Services::findOrFail($data['id'])->update(['image' => '/storage/images/news/' . $data['id'] . '/' . $file_name]);
                 }
                 Session::flash('message', 'Sửa sản phẩm thành công!');
                 Session::flash('alert-class', 'alert-success');
@@ -81,21 +83,21 @@ class ProductsController extends Controller
     {
         $categories = Categories::where([
             'status' => Categories::ACTIVE,
-            'code' => Categories::CATEGORY_SP
+            'code' => Categories::CATEGORY_DV
         ])->select('id', 'name')->get();
-        $product = Products::where('id', $id)->firstOrFail();
-        return view('admin.products.create', ['data' => $product, 'categories' => $categories]);
+        $product = Services::where('id', $id)->firstOrFail();
+        return view('admin.services.create', ['data' => $product, 'categories' => $categories]);
     }
     
     public function destroy($id)
     {
         try{
-            $delete = Products::where([
+            $delete = Services::where([
                 'status' => Products::NOTACTIVE,
                 'id' => $id
             ])->delete();
             if($delete){
-                Session::flash('message', 'Xóa sản phẩm thành công!');
+                Session::flash('message', 'Xóa dịch vụ thành công!');
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->back();
             }

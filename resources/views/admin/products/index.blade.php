@@ -25,14 +25,14 @@
                     <tr>
                         <td>{{$i}}</td>
                         <td>{{$new->name}}</td>
-                        <td>{{$new->category_id}}</td>
+                        <td>{{$new->category->name}}</td>
                         <td><img width="150" src="{{!empty($new->image) ? URL::to($new->image) : URL::to('/images/noimage.jpg')}}"/></td>
                         <td>{{$new->description}}</td>
-                        <td>{{$new->status}}</td>
+                        <td>{{\App\Services\UsersServices::getStatus($new->status)}}</td>
                         <td>
                             <div class="d-flex">
                                 <a href="{{url('/admin/products/edit/'. $new->id)}}"><button class="btn btn-warning mr-5">Edit</button></a>
-                                <a href="{{url('/admin/productsdelete', $new->id)}}"><button class="btn btn-danger">Delete</button></a>
+                                <a href="{{url('/admin/products/delete', $new->id)}}"><button class="btn btn-danger">Delete</button></a>
                             </div>
                         </td>
                         <?php $i++; ?>

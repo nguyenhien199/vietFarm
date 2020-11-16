@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\NewsRequest;
 use App\Models\News;
+use App\Models\Products;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Session;
@@ -75,7 +76,7 @@ class NewsController extends Controller
     
     public function destroy($id){
         try{
-            $item = News::where('id', $id)->delete();
+            $item = Products::where('id', $id)->delete();
             Session::flash('message', 'Delete SuccessFully!');
             Session::flash('alert-class', 'alert-success');
             return redirect()->route('news');
