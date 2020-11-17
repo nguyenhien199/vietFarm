@@ -3,22 +3,41 @@
 @section('content')
     <div class="">
         <div class="d-flex justify-content-end header-page">
-            <h2>Thêm bài viết mới</h2>
+            <h2>Thêm phân bón mới</h2>
         </div>
         <div class="content">
-            <form action="{{url('/admin/news/create')}}" method="POST" enctype="Multipart/form-data">
+            <form action="{{url('/admin/fertilizers/create')}}" method="POST" enctype="Multipart/form-data">
                 @csrf
                 <input type="hidden" name="id" value="{{$data->id ?? ''}}">
                 <div class="row d-flex align-center">
                     <div class="col-sm-2">
-                        <label class="form-label-group">Title (*)</label>
+                        <label class="form-label-group">Tên sản phẩm (*)</label>
                     </div>
                     <div class="col-sm-10 inter-content">
-                        <input type="text" name="title" class="form-input form-control" value="{{ old('title',  $data->title ?? '') }}" />
+                        <input type="text" name="name" class="form-input form-control" value="{{ old('name',  $data->name ?? '') }}" />
                         <div class="d-none fill-data" id="fill-title"></div>
                         <div class="errorTxt message-login title"></div>
-                        @if($errors->has('title'))
-                            <span class="error message-login">{{ $errors->first('title') }}</span>
+                        @if($errors->has('name'))
+                            <span class="error message-login">{{ $errors->first('name') }}</span>
+                        @endif
+                    </div>
+                </div>
+                <div class="row d-flex align-center mt-5">
+                    <div class="col-sm-2">
+                        <label class="form-label-group">Danh mục (*)</label>
+                    </div>
+                    <div class="col-sm-10 inter-content">
+                        <select class="form-control" name="category_id">
+                            <option value="" selected>Vui lòng chọn danh mục</option>
+
+                        @foreach($categories as $cate)
+                                <option value="{{$cate->id}}" @if(isset($data->category_id) && $data->category_id === $cate->id) selected @endif>{{$cate->name}}</option>
+                            @endforeach
+                        </select>
+                        <div class="d-none fill-data" id="fill-title"></div>
+                        <div class="errorTxt message-login title"></div>
+                        @if($errors->has('category_id'))
+                            <span class="error message-login">{{ $errors->first('category_id') }}</span>
                         @endif
                     </div>
                 </div>
@@ -37,7 +56,7 @@
                 </div>
                 <div class="row d-flex align-center mt-5">
                     <div class="col-sm-2">
-                        <label class="form-label-group">Hình ảnh</label>
+                        <label class="form-label-group">Image</label>
                     </div>
                     <div class="col-sm-10 inter-content">
                         <div class="file-control">
@@ -60,7 +79,7 @@
                 </div>
                 <div class="row d-flex mt-5">
                     <div class="col-sm-2">
-                        <label class="form-label-group">Mô tả (*)</label>
+                        <label class="form-label-group">Description (*)</label>
                     </div>
                     <div class="col-sm-10 inter-content">
                         <textarea name="description" class="form-input form-control">{{ old('description', $data->description ?? '') }}</textarea>
@@ -73,7 +92,7 @@
                 </div>
                 <div class="row d-flex mt-5">
                     <div class="col-sm-2">
-                        <label class="form-label-group">Nội dung (*)</label>
+                        <label class="form-label-group">Content (*)</label>
                     </div>
                     <div class="col-sm-10 inter-content">
                        <textarea id="editor" name="content" rows="10" class="form-textarea">
@@ -87,19 +106,19 @@
                     </div>
                 </div>
                 <div class="row d-flex mt-5">
-                    <div class="col-sm-2"><label class="form-label">Trạng thái (*)</label></div>
+                    <div class="col-sm-2"><label class="form-label">Status (*)</label></div>
                     <div class="col-sm-10 inter-content">
                         <ul class="form-radio clearfix access-authorization">
                             <li>
                                 <div class="custom-control custom-radio custom-control-inline">
                                     <input type="radio" id="radio0" name="status" class="custom-control-input" value="0" checked {{ isset($data->status) && $data->status == 0 ? 'checked' : '' }}>
-                                    <label for="radio0" class="custom-control-label">Không hoạt động</label>
+                                    <label for="radio0" class="custom-control-label">Disable</label>
                                 </div>
                             </li>
                             <li>
                                 <div class="custom-control custom-radio custom-control-inline">
                                     <input type="radio" id="radio1" name="status" class="custom-control-input" value="1" {{ isset($data->status) && $data->status == 1 ? 'checked' : '' }}>
-                                    <label for="radio1" class="custom-control-label">Hoạt động</label>
+                                    <label for="radio1" class="custom-control-label">Enable</label>
                                 </div>
                             </li>
                         </ul>

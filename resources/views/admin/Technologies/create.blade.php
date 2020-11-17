@@ -3,7 +3,7 @@
 @section('content')
     <div class="">
         <div class="d-flex justify-content-end header-page">
-            <h2>Thêm sản phẩm mới</h2>
+            <h2>Thêm mới công nghệ</h2>
         </div>
         <div class="content">
             <form action="{{url('/admin/technologies/create')}}" method="POST" enctype="Multipart/form-data">

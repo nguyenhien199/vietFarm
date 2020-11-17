@@ -3,44 +3,46 @@
 @section('content')
     <div class="">
         <div class="d-flex justify-content-end header-page">
-                <h2>Danh sách bài viết</h2>
+            <h2>Danh sách phân bón</h2>
             <div>
-                <a href="{{url('/admin/news/create')}}"><button class="btn btn-primary"> + Thêm bài viết mới</button></a>
+                <a href="{{url('/admin/fertilizers/create')}}"><button class="btn btn-primary"> + Thêm phân bón mới</button></a>
             </div>
         </div>
         <div>
             <table class="table table-bordered">
                 <thead>
-                    <td>STT</td>
-                    <td>Tiêu đề</td>
-                    <td>Hình ảnh</td>
-                    <td>Mô tả</td>
-                    <td>Trạng thái</td>
-                    <td>Hành động</td>
+                <td>STT</td>
+                <td>Tên Sản phẩm</td>
+                <td>Danh mục sản phẩm</td>
+                <td>Hình ảnh</td>
+                <td>Mô tả</td>
+                <td>Trạng thái</td>
+                <td>Hành động</td>
                 </thead>
                 <tbody>
                 <?php $i = 1; ?>
-                @foreach($news as $new)
+                @foreach($fertilizers as $new)
                     <tr>
                         <td>{{$i}}</td>
-                        <td>{{$new->title}}</td>
+                        <td>{{$new->name}}</td>
+                        <td>{{$new->category->name}}</td>
                         <td><img width="150" src="{{!empty($new->image) ? URL::to($new->image) : URL::to('/images/noimage.jpg')}}"/></td>
                         <td>{{$new->description}}</td>
                         <td>{{\App\Services\UsersServices::getStatus($new->status)}}</td>
                         <td>
                             <div class="d-flex">
-                                <a href="{{url('/admin/news/edit/'. $new->id)}}"><button class="btn btn-warning mr-5">Edit</button></a>
-                                <a href="{{url('/admin/news/delete', $new->id)}}"><button class="btn btn-danger">Delete</button></a>
+                                <a href="{{url('/admin/fertilizers/edit/'. $new->id)}}"><button class="btn btn-warning mr-5">Edit</button></a>
+                                <a href="{{url('/admin/fertilizers/delete', $new->id)}}"><button class="btn btn-danger">Delete</button></a>
                             </div>
                         </td>
-                       <?php $i++; ?>
+                        <?php $i++; ?>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
         </div>
         <div class="pagination float-right">
-            {!! $news->fragment('foo')->links() !!}
+            {!! $fertilizers->fragment('foo')->links() !!}
         </div>
     </div>
     <div class="modal fade" id="create_new" role="dialog">

@@ -2,15 +2,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\NewsRequest;
-use App\Http\Requests\ProductsRequest;
 use App\Http\Requests\ServicesRequest;
 use App\Models\Categories;
-use App\Models\News;
 use App\Models\Products;
 use App\Models\Services;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Session;
 use Auth;
 
@@ -43,8 +38,8 @@ class ServicesController extends Controller
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
-                    $files->storeAs('/public/images/products/' . $create->id, $file_name);
-                    Services::findOrFail($create->id)->update(['image' => '/storage/images/products/' . $create->id . '/' . $file_name]);
+                    $files->storeAs('/public/images/services/' . $create->id, $file_name);
+                    Services::findOrFail($create->id)->update(['image' => '/storage/images/services/' . $create->id . '/' . $file_name]);
                 }
                 Session::flash('message', 'Thêm sản phẩm thành công!');
                 Session::flash('alert-class', 'alert-success');
@@ -65,8 +60,8 @@ class ServicesController extends Controller
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
-                    $files->storeAs('/public/images/news/' . $data['id'], $file_name);
-                    Services::findOrFail($data['id'])->update(['image' => '/storage/images/news/' . $data['id'] . '/' . $file_name]);
+                    $files->storeAs('/public/images/services/' . $data['id'], $file_name);
+                    Services::findOrFail($data['id'])->update(['image' => '/storage/images/services/' . $data['id'] . '/' . $file_name]);
                 }
                 Session::flash('message', 'Sửa sản phẩm thành công!');
                 Session::flash('alert-class', 'alert-success');

@@ -64,10 +64,16 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
     Route::get('/services/delete/{id}', 'Admin\ServicesController@destroy');
     
     // technologies
-    Route::get('/technologies', 'Admin\TechnologiesController@index')->name('services');
+    Route::get('/technologies', 'Admin\TechnologiesController@index')->name('technologies');
     Route::get('/technologies/create', 'Admin\TechnologiesController@showGet');
     Route::post('/technologies/create', 'Admin\TechnologiesController@create');
     Route::get('/technologies/edit/{id}', 'Admin\TechnologiesController@edit');
     Route::get('/technologies/delete/{id}', 'Admin\TechnologiesController@destroy');
-   
+    
+    // fertilizers
+    Route::get('/fertilizers', 'Admin\FertilizersController@index')->name('fertilizers');
+    Route::get('/fertilizers/create', 'Admin\FertilizersController@showGet');
+    Route::post('/fertilizers/create', 'Admin\FertilizersController@create');
+    Route::get('/fertilizers/edit/{id}', 'Admin\FertilizersController@edit');
+    Route::get('/fertilizers/delete/{id}', 'Admin\FertilizersController@destroy');
 });

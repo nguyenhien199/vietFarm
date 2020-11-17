@@ -6,14 +6,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class News extends Model
+class Fertilizers extends Model
 {
     use SoftDeletes;
+    const ACTIVE = 1;
     const NOTACTIVE = 0;
     
-    protected $table = 'news';
     protected $fillable = [
-        'title',
+        'name',
+        'category_id',
         'url',
         'image',
         'description',
@@ -23,4 +24,8 @@ class News extends Model
         'updated_by'
     ];
     
+    public function category()
+    {
+        return $this->BelongsTo(Categories::class);
+    }
 }

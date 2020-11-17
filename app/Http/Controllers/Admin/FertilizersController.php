@@ -2,51 +2,48 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\NewsRequest;
-use App\Http\Requests\ProductsRequest;
+use App\Http\Requests\TechnologiesRequest;
 use App\Models\Categories;
-use App\Models\News;
-use App\Models\Products;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\Fertilizers;
 use Session;
 use Auth;
 
-class ProductsController extends Controller
+class FertilizersController extends Controller
 {
     public function index()
     {
-        $products = Products::orderBy('id', 'DESC')->paginate(PAGINATION);
-        return view('admin.products.index',['products' => $products]);
+        $fertilizers = Fertilizers::orderBy('id', 'DESC')->paginate(PAGINATION);
+        return view('admin.fertilizers.index',['fertilizers' => $fertilizers]);
     }
     
     public function showGet()
     {
         $categories = Categories::where([
             'status' => Categories::ACTIVE,
-            'code' => Categories::CATEGORY_SP
+            'code' => Categories::CATEGORY_PB
         ])->select('id', 'name')->get();
-        return view('admin.products.create', ['categories' => $categories]);
+        return view('admin.fertilizers.create', ['categories' => $categories]);
     }
     
-    public function create(ProductsRequest $request)
+    public function create(TechnologiesRequest $request)
     {
         $data = $request->all();
         if(empty($data['id'])){
-            $product = $request->except('_token');
+            $fertilizers = $request->except('_token');
             try{
-                $product['created_by'] = Auth::user()->id;
-                $product['updated_by'] = Auth::user()->id;
-                $create = Products::create($product);
+                $fertilizers['created_by'] = Auth::user()->id;
+                $fertilizers['updated_by'] = Auth::user()->id;
+                $fertilizers['image'] = '';
+                $create = Fertilizers::create($fertilizers);
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
-                    $files->storeAs('/public/images/products/' . $create->id, $file_name);
-                    Products::findOrFail($create->id)->update(['image' => '/storage/images/products/' . $create->id . '/' . $file_name]);
+                    $files->storeAs('/public/images/fertilizers/' . $create->id, $file_name);
+                    Fertilizers::findOrFail($create->id)->update(['image' => '/storage/images/fertilizers/' . $create->id . '/' . $file_name]);
                 }
-                Session::flash('message', 'Thêm sản phẩm thành công!');
+                Session::flash('message', 'Thêm phân bón thành công!');
                 Session::flash('alert-class', 'alert-success');
-                return redirect()->route('products');
+                return redirect()->route('fertilizers');
             }catch (\Exception $error){
                 Session::flash('message', 'Đã xảy ra lỗi! Xin vui lòng thử lại');
                 Session::flash('alert-class', 'alert-danger');
@@ -59,16 +56,16 @@ class ProductsController extends Controller
                 if($data['remove_image'] == 1){
                     $data['image'] = '';
                 }
-                Products::findOrFail($data['id'])->update($data);
+                Fertilizers::findOrFail($data['id'])->update($data);
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
-                    $files->storeAs('/public/images/products/' . $data['id'], $file_name);
-                    Products::findOrFail($data['id'])->update(['image' => '/storage/images/products/' . $data['id'] . '/' . $file_name]);
+                    $files->storeAs('/public/images/fertilizers/' . $data['id'], $file_name);
+                    Fertilizers::findOrFail($data['id'])->update(['image' => '/storage/images/fertilizers/' . $data['id'] . '/' . $file_name]);
                 }
-                Session::flash('message', 'Sửa sản phẩm thành công!');
+                Session::flash('message', 'Sửa phân bón thành công!');
                 Session::flash('alert-class', 'alert-success');
-                return redirect()->route('products');
+                return redirect()->route('fertilizers');
             }catch (\Exception $error){
                 Session::flash('message', 'Đã xảy ra lỗi! Xin vui lòng thử lại');
                 Session::flash('alert-class', 'alert-danger');
@@ -81,26 +78,26 @@ class ProductsController extends Controller
     {
         $categories = Categories::where([
             'status' => Categories::ACTIVE,
-            'code' => Categories::CATEGORY_SP
+            'code' => Categories::CATEGORY_PB
         ])->select('id', 'name')->get();
-        $product = Products::where('id', $id)->firstOrFail();
-        return view('admin.products.create', ['data' => $product, 'categories' => $categories]);
+        $fertilizers = Fertilizers::where('id', $id)->firstOrFail();
+        return view('admin.fertilizers.create', ['data' => $fertilizers, 'categories' => $categories]);
     }
     
     public function destroy($id)
     {
         try{
-            $delete = Products::where([
-                'status' => Products::NOTACTIVE,
+            $delete = Fertilizers::where([
+                'status' => Fertilizers::NOTACTIVE,
                 'id' => $id
             ])->delete();
             if($delete){
-                Session::flash('message', 'Xóa sản phẩm thành công!');
+                Session::flash('message', 'Xóa phân bón thành công!');
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->back();
             }
             else{
-                Session::flash('message', 'Đã sẩy ra lỗi xin vui lòng thử lại!');
+                Session::flash('message', 'Không thể xóa phân bón này khi còn hoạt động!');
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
             }

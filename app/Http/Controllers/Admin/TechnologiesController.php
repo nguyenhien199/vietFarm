@@ -2,15 +2,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\NewsRequest;
-use App\Http\Requests\ProductsRequest;
 use App\Http\Requests\TechnologiesRequest;
 use App\Models\Categories;
-use App\Models\News;
-use App\Models\Products;
+use App\Models\Fertilizers;
 use App\Models\Technologies;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Session;
 use Auth;
 
@@ -33,19 +28,19 @@ class TechnologiesController extends Controller
     
     public function create(TechnologiesRequest $request)
     {
-        dd(11);
         $data = $request->all();
         if(empty($data['id'])){
-            $product = $request->except('_token');
+            $technology = $request->except('_token');
             try{
-                $product['created_by'] = Auth::user()->id;
-                $product['updated_by'] = Auth::user()->id;
-                $create = Technologies::create($product);
+                $technology['created_by'] = Auth::user()->id;
+                $technology['updated_by'] = Auth::user()->id;
+                $technology['image'] = '';
+                $create = Technologies::create($technology);
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
-                    $files->storeAs('/public/images/products/' . $create->id, $file_name);
-                    Technologies::findOrFail($create->id)->update(['image' => '/storage/images/products/' . $create->id . '/' . $file_name]);
+                    $files->storeAs('/public/images/technologies/' . $create->id, $file_name);
+                    Technologies::findOrFail($create->id)->update(['image' => '/storage/images/technologies/' . $create->id . '/' . $file_name]);
                 }
                 Session::flash('message', 'Thêm sản phẩm thành công!');
                 Session::flash('alert-class', 'alert-success');
@@ -66,8 +61,8 @@ class TechnologiesController extends Controller
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
-                    $files->storeAs('/public/images/news/' . $data['id'], $file_name);
-                    Technologies::findOrFail($data['id'])->update(['image' => '/storage/images/news/' . $data['id'] . '/' . $file_name]);
+                    $files->storeAs('/public/images/technologies/' . $data['id'], $file_name);
+                    Technologies::findOrFail($data['id'])->update(['image' => '/storage/images/technologies/' . $data['id'] . '/' . $file_name]);
                 }
                 Session::flash('message', 'Sửa sản phẩm thành công!');
                 Session::flash('alert-class', 'alert-success');
@@ -94,7 +89,7 @@ class TechnologiesController extends Controller
     {
         try{
             $delete = Technologies::where([
-                'status' => Products::NOTACTIVE,
+                'status' => Technologies::NOTACTIVE,
                 'id' => $id
             ])->delete();
             if($delete){
@@ -103,7 +98,7 @@ class TechnologiesController extends Controller
                 return redirect()->back();
             }
             else{
-                Session::flash('message', 'Đã sẩy ra lỗi xin vui lòng thử lại!');
+                Session::flash('message', 'Không thể xóa dịnh vụ này khi còn hoạt động!');
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
             }

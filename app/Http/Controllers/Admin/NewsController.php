@@ -42,7 +42,7 @@ class NewsController extends Controller
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->route('news');
             }catch (\Exception $error){
-                Session::flash('message', 'Update Error!');
+                Session::flash('message', 'Đã sẩy ra lỗi xin vui lòng thử lại!');
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
             }
@@ -61,7 +61,7 @@ class NewsController extends Controller
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->route('news');
             }catch (\Exception $error){
-                Session::flash('message', 'Add Error!');
+                Session::flash('message', 'Đã sẩy ra lỗi xin vui lòng thử lại!');
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
             }
@@ -76,12 +76,22 @@ class NewsController extends Controller
     
     public function destroy($id){
         try{
-            $item = Products::where('id', $id)->delete();
-            Session::flash('message', 'Delete SuccessFully!');
-            Session::flash('alert-class', 'alert-success');
-            return redirect()->route('news');
+            $delete = News::where([
+                'id' => $id,
+                'status' => News::NOTACTIVE
+            ])->delete();
+            if($delete){
+                Session::flash('message', 'Xóa bài viết thành công!');
+                Session::flash('alert-class', 'alert-success');
+                return redirect()->back();
+            }
+            else{
+                Session::flash('message', 'Đã sẩy ra lỗi xin vui lòng thử lại!');
+                Session::flash('alert-class', 'alert-danger');
+                return redirect()->back();
+            }
         }catch (\Exception $error){
-            Session::flash('message', 'Delete Error!');
+            Session::flash('message', 'Đã sẩy ra lỗi xin vui lòng thử lại!');
             Session::flash('alert-class', 'alert-danger');
             return redirect()->back();
         }
