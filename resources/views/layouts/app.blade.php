@@ -48,34 +48,50 @@
                 <li class="active">
                     <a href="{{url('/admin/overview')}}"><i class="fa fa-tachometer"></i> <span class="nav-label">Tổng quam</span>  </a>
                 </li>
-                <li class="admin-nav">
-                    <a href="{{url('/admin/news')}}"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Bài viết</span></a>
+                <li class="{{ request()->is('admin/*news*') ? 'active' : '' }}">
+                    <a href="{{url('/admin/news')}}"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Slides</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li class="{{ request()->is('admin/news') ? 'active' : '' }}"><a href="{{url('/admin/news')}}">Danh sách Bài viết</a></li>
+                        <li class="{{ request()->is('admin/news/create') ? 'active' : '' }}"><a href="{{url('/admin/news/create')}}">Thêm bài viết mới</a></li>
+                    </ul>
                 </li>
-                <li class="admin-nav">
+                <li class="{{ request()->is('admin/*news*') ? 'active' : '' }}">
+                    <a href="{{url('/admin/news')}}"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Bài viết</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li class="{{ request()->is('admin/news') ? 'active' : '' }}"><a href="{{url('/admin/news')}}">Danh sách Bài viết</a></li>
+                        <li class="{{ request()->is('admin/news/create') ? 'active' : '' }}"><a href="{{url('/admin/news/create')}}">Thêm bài viết mới</a></li>
+                    </ul>
+                </li>
+                <li class="{{ request()->is('admin/*products*') ? 'active' : '' }}" >
                     <a href="{{url('/admin/category-products')}}"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Danh mục Sản Phẩm</span><span class="fa arrow"></span></a>
-                </li>
-                <li>
-                    <a href="{{url('/admin/category-services')}}"><i class="fa fa-server"></i> <span class="nav-label">Danh mục dịch vụ</span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="page.html">Danh sách dịch vụ</a></li>
-                        <li><a href="add_page.html">Thêm dịch vụ</a></li>
-
+                        <li class="{{ request()->is('admin/category-products') ? 'active' : '' }}"><a href="{{url('/admin/category-products')}}">Danh mục sản phẩm</a></li>
+                        <li class="{{ request()->is('admin/products') ? 'active' : '' }}"><a href="{{url('/admin/products')}}">Danh sách sản phẩm</a></li>
+                        <li class="{{ request()->is('admin/products/create') ? 'active' : '' }}"><a href="{{url('/admin/products/create')}}">Thêm Sản phảm mới</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="{{url('/admin/category-technologies')}}"><i class="fa fa-twitch"></i> <span class="nav-label">Danh mục công nghệ</span></a>
+                <li class="{{ request()->is('admin/*services*') ? 'active' : '' }}">
+                    <a href="{{url('/admin/category-services')}}"><i class="fa fa-server"></i> <span class="nav-label">Danh mục dịch vụ</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="page.html">Danh sách chuyển giao công nghệ</a></li>
-                        <li><a href="add_page.html">Thêm thêm chuyển giao công nghệ</a></li>
-
+                        <li class="{{ request()->is('admin/category-services') ? 'active' : '' }}"><a href="{{url('/admin/category-services')}}">Danh mục dịch vụ</a></li>
+                        <li class="{{ request()->is('admin/services') ? 'active' : '' }}"><a href="{{url('/admin/services')}}">Danh sách dịch vụ</a></li>
+                        <li class="{{ request()->is('admin/services/create') ? 'active' : '' }}"><a href="{{url('/admin/services/create')}}">Thêm dịch vụ mới</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="{{url('/admin/category-fertilizers')}}"><i class="fa fa-twitch"></i> <span class="nav-label">Danh mục phân bón</span></a>
+                <li class="{{ request()->is('admin/*technologies*') ? 'active' : '' }}">
+                    <a href="{{url('/admin/category-technologies')}}"><i class="fa fa-twitch"></i> <span class="nav-label">Danh mục công nghệ<span class="fa arrow"></span></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="page.html">Danh sách phân bón</a></li>
-                        <li><a href="add_page.html">Thêm phân bón </a></li>
-
+                        <li class="{{ request()->is('admin/category-technologies*') ? 'active' : '' }}"><a href="{{url('/admin/category-technologies')}}">Danh mục công nghệ</a></li>
+                        <li class="{{ request()->is('admin/technologies') ? 'active' : '' }}"><a href="{{url('/admin/technologies')}}">Danh sách công nghệ</a></li>
+                        <li class="{{ request()->is('admin/technologies/create') ? 'active' : '' }}"><a href="{{url('/admin/technologies/create')}}">Thêm công nghệ mới</a></li>
+                    </ul>
+                </li>
+                <li class="{{ request()->is('admin/*fertilizers*') ? 'active' : '' }}">
+                    <a href="{{url('/admin/category-fertilizers')}}"><i class="fa fa-twitch"></i> <span class="nav-label">Danh mục phân bón<span class="fa arrow"></span></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li class="{{ request()->is('admin/category-fertilizers') ? 'active' : '' }}"><a href="{{url('/admin/category-fertilizers')}}">Danh mục phân bón</a></li>
+                        <li class="{{ request()->is('admin/fertilizers') ? 'active' : '' }}"><a href="{{url('/admin/fertilizers')}}">Danh sách phân bón</a></li>
+                        <li class="{{ request()->is('admin/fertilizers/create') ? 'active' : '' }}"><a href="{{url('/admin/fertilizers/create')}}">Thêm phân bón mới</a></li>
                     </ul>
                 </li>
 
@@ -89,12 +105,12 @@
                 {{--</li>--}}
                 @if(\Illuminate\Support\Facades\Auth::user()->role == \App\User::ADMIN)
                 <li>
-                    <a href="{{url('admin/users')}}"><i class="fa fa-user"></i> <span class="nav-label">Quản lý Users</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li><a href="{{'admin/users'}}">Thông tin</a></li>
-                        <li><a href="account.html">Tài khoản</a></li>
-                        <li><a href="setting.html">Cài đặt hiển thị</a></li>
-                    </ul>
+                    <a href="{{url('admin/users')}}"><i class="fa fa-user"></i> <span class="nav-label">Quản lý Users</span></a>
+{{--                    <ul class="nav nav-second-level collapse">--}}
+{{--                        <li><a href="{{'admin/users'}}">Thông tin</a></li>--}}
+{{--                        <li><a href="account.html">Tài khoản</a></li>--}}
+{{--                        <li><a href="setting.html">Cài đặt hiển thị</a></li>--}}
+{{--                    </ul>--}}
                 </li>
                 @endif
                 <!-- <li>
@@ -168,5 +184,10 @@
 <script src="{{asset('/cms/js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
 <script src="{{asset('/ckeditor/ckeditor.js')}}"></script>
 <script src="{{asset('/cms/js/admin.js')}}"></script>
+<!-- Custom and plugin javascript -->
+<script src="{{asset('/cms/js/inspinia.js')}}"></script>
+
+<!-- jQuery UI -->
+<script src="{{asset('/cms/js/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 </body>
 </html>

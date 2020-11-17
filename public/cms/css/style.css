@@ -8500,15 +8500,6 @@ object-fit: contain;
     font-size: 16px;
     font-weight: bold;
 }
-.admin-nav{
-  position: relative;
-}
-.admin-nav:hover .nav-second-level {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 100%;
-}
 .d-flex.justify-content-end{
     display: flex;
     justify-content: space-between;
