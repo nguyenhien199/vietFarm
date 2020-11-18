@@ -17,7 +17,8 @@ class CreateSlidesTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('image');
-            $table->string('author');
+            $table->string('content');
+            $table->string('author')->nullable();
             $table->boolean('status')->default(1);
             $table->timestamps();
         });

@@ -48,11 +48,11 @@
                 <li class="active">
                     <a href="{{url('/admin/overview')}}"><i class="fa fa-tachometer"></i> <span class="nav-label">Tổng quam</span>  </a>
                 </li>
-                <li class="{{ request()->is('admin/*news*') ? 'active' : '' }}">
+                <li class="{{ request()->is('admin/*slides*') ? 'active' : '' }}">
                     <a href="{{url('/admin/news')}}"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Slides</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li class="{{ request()->is('admin/news') ? 'active' : '' }}"><a href="{{url('/admin/news')}}">Danh sách Bài viết</a></li>
-                        <li class="{{ request()->is('admin/news/create') ? 'active' : '' }}"><a href="{{url('/admin/news/create')}}">Thêm bài viết mới</a></li>
+                        <li class="{{ request()->is('admin/slides') ? 'active' : '' }}"><a href="{{url('/admin/slides')}}">Danh sách slides</a></li>
+                        <li class="{{ request()->is('admin/slides/create') ? 'active' : '' }}"><a href="{{url('/admin/slides/create')}}">Thêm slides mới</a></li>
                     </ul>
                 </li>
                 <li class="{{ request()->is('admin/*news*') ? 'active' : '' }}">

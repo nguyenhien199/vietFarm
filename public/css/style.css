@@ -1701,3 +1701,6 @@ textarea.input {
     background-repeat: no-repeat;
     border: 4px solid transparent;
 }
+.owl-carousel.owl-loaded {
+    height: 100%;
+}

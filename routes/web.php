@@ -76,4 +76,11 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
     Route::post('/fertilizers/create', 'Admin\FertilizersController@create');
     Route::get('/fertilizers/edit/{id}', 'Admin\FertilizersController@edit');
     Route::get('/fertilizers/delete/{id}', 'Admin\FertilizersController@destroy');
+    
+    //slide
+    Route::get('/slides', 'Admin\SlidesController@index')->name('slides');
+    Route::get('/slides/create', 'Admin\SlidesController@showGet');
+    Route::post('/slides/create', 'Admin\SlidesController@create');
+    Route::get('/slides/edit/{id}', 'Admin\SlidesController@edit');
+    Route::get('/slides/delete/{id}', 'Admin\SlidesController@destroy');
 });

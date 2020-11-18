@@ -14,12 +14,10 @@
 
     <!-- Bootstrap -->
     <link type="text/css" rel="stylesheet" href="{{asset("css/bootstrap.min.css")}}" />
-
-
-
-
+    <link href="{{asset("assets/css/style.css")}}" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{{asset("css/style.css")}}" />
     <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset("css/font-awesome.min.css")}}">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
@@ -29,8 +27,7 @@
 {{--    <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">--}}
     <link href="{{asset("assets/vendor/owl.carousel/assets/owl.carousel.min.css")}}" rel="stylesheet">
     <!-- Custom stlylesheet -->
-    <link href="{{asset("assets/css/style.css")}}" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="{{asset("css/style.css")}}" />
+
     <section class="free-style">
         @yield('free-style')
     </section>
@@ -45,7 +42,7 @@
 
 <body>
 <!-- HEADER -->
-
+@include('web.includes.header')
 <!-- /HEADER -->
 {{--@include('web.includes.header')--}}
 <!--End Footer -->

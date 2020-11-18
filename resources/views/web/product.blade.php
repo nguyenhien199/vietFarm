@@ -1,8 +1,5 @@
 @extends('web.app')
 
-@section('free-style')
-    <link type="text/css" rel="stylesheet" href="css/pro-style.css"/>
-@endsection
 @section('content')
     <header id="header">
         <!-- NAV -->
