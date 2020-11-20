@@ -192,8 +192,7 @@ h5 {
   color: #8095a8;
 }
 .minimalize-styl-2 {
-  padding: 4px 12px;
-  margin: 14px 5px 5px 20px;
+  margin: 5px 10px;
   font-size: 14px;
   float: left;
 }
@@ -8505,9 +8504,6 @@ object-fit: contain;
     justify-content: space-between;
     align-items: center;
 }
-.float-right{
-    text-align: right;
-}
 .flash {
     position: fixed;
     width: 100%;
@@ -8565,7 +8561,6 @@ object-fit: contain;
 }
 .user-hearder{
     position: relative;
-    color: #ffffff;
 }
 .manage_user{
     padding: 0px 20px 10px;
@@ -8686,4 +8681,9 @@ object-fit: contain;
 }
 #page-wrapper {
     padding-bottom: 50px;
+}
+.navbar-item{
+    background: #f3f3f4;
+    color: #888888;
+    border-bottom: 1px solid #cccccc7a;
 }

@@ -18,11 +18,6 @@
 
 <body>
 <div id="wrapper">
-    @if(Session::has('message'))
-        <article class="flash message">
-            <p class="alert {{ Session::get('alert-class') }} message-info">{{ Session::get('message') }}</p>
-        </article>
-    @endif
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
             <ul class="nav metismenu" id="side-menu">
@@ -45,8 +40,8 @@
                         IN+
                     </div>
                 </li>
-                <li class="active">
-                    <a href="{{url('/admin/overview')}}"><i class="fa fa-tachometer"></i> <span class="nav-label">Tổng quam</span>  </a>
+                <li class="{{ (\Request::getRequestUri() === '/admin' || \Request::getRequestUri() === '/admin/') ? 'active' : '' }}">
+                    <a href="{{url('/admin')}}"><i class="fa fa-tachometer"></i> <span class="nav-label">Tổng quam</span>  </a>
                 </li>
                 <li class="{{ request()->is('admin/*slides*') ? 'active' : '' }}">
                     <a href="{{url('/admin/news')}}"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Slides</span><span class="fa arrow"></span></a>
@@ -79,7 +74,7 @@
                     </ul>
                 </li>
                 <li class="{{ request()->is('admin/*technologies*') ? 'active' : '' }}">
-                    <a href="{{url('/admin/category-technologies')}}"><i class="fa fa-twitch"></i> <span class="nav-label">Danh mục công nghệ<span class="fa arrow"></span></span></a>
+                    <a href="{{url('/admin/category-technologies')}}"><i class="fa fa-twitch"></i> <span class="nav-label">Danh mục công nghệ</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li class="{{ request()->is('admin/category-technologies*') ? 'active' : '' }}"><a href="{{url('/admin/category-technologies')}}">Danh mục công nghệ</a></li>
                         <li class="{{ request()->is('admin/technologies') ? 'active' : '' }}"><a href="{{url('/admin/technologies')}}">Danh sách công nghệ</a></li>
@@ -87,7 +82,7 @@
                     </ul>
                 </li>
                 <li class="{{ request()->is('admin/*fertilizers*') ? 'active' : '' }}">
-                    <a href="{{url('/admin/category-fertilizers')}}"><i class="fa fa-twitch"></i> <span class="nav-label">Danh mục phân bón<span class="fa arrow"></span></span></a>
+                    <a href="{{url('/admin/category-fertilizers')}}"><i class="fa fa-twitch"></i> <span class="nav-label">Danh mục phân bón</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
                         <li class="{{ request()->is('admin/category-fertilizers') ? 'active' : '' }}"><a href="{{url('/admin/category-fertilizers')}}">Danh mục phân bón</a></li>
                         <li class="{{ request()->is('admin/fertilizers') ? 'active' : '' }}"><a href="{{url('/admin/fertilizers')}}">Danh sách phân bón</a></li>
@@ -104,7 +99,7 @@
                     {{--</ul>--}}
                 {{--</li>--}}
                 @if(\Illuminate\Support\Facades\Auth::user()->role == \App\User::ADMIN)
-                <li>
+                <li class="{{ request()->is('admin/*users*') ? 'active' : '' }}">
                     <a href="{{url('admin/users')}}"><i class="fa fa-user"></i> <span class="nav-label">Quản lý Users</span></a>
 {{--                    <ul class="nav nav-second-level collapse">--}}
 {{--                        <li><a href="{{'admin/users'}}">Thông tin</a></li>--}}
@@ -138,39 +133,13 @@
 
         </div>
     </nav>
-    <div class="navbar-menu" id="navbar-mobile">
-        <div class="navbar-end float-right">
-            <div class="navbar-item">
-                <li style="list-style: none;cursor: pointer;display: inline-block;" class="user-hearder">
-                    Hello <span class="img">{{strtoupper(Auth::user()->name[0])}}</span>
-                    <div class="manage_user">
-                        <div class="header-user" title="Account">Account</div>
-                        <div class="body-user">
-                            <div class="image">
-                                <span class="img">{{strtoupper(Auth::user()->name[0])}}</span>
-                            </div>
-                            <div class="info-user">
-                                <div class="_1njv2a9PIrnydF">{{Auth::user()->name}}</div>
-                                <span class="_2TvKKP0vwCN5Zd">{{Auth::user()->email}}</span>
-                            </div>
-                        </div>
-                        <div class="setting">
-                            <nav>
-                                <li><i class="fa fa-cog mr-5"></i>Setting</li>
-                                <li> <form action="{{route('logout')}}" method="POST">
-                                        @csrf
-                                        <button class="button is-primary is-medium has-text-weight-semibold btn-logout" type="submit">
-                                            <i class="fa fa-sign-out mr-5"></i>Logout
-                                        </button>
-                                    </form></li>
-                            </nav>
-                        </div>
-                    </div>
-                </li>
-            </div>
-        </div>
-    </div>
     <div id="page-wrapper" class="gray-bg">
+        @if(Session::has('message'))
+            <article class="flash message">
+                <p class="alert {{ Session::get('alert-class') }} message-info">{{ Session::get('message') }}</p>
+            </article>
+        @endif
+        @include('../admin/header')
         @yield('content')
     </div>
     <div id="right-sidebar">
@@ -189,5 +158,7 @@
 
 <!-- jQuery UI -->
 <script src="{{asset('/cms/js/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+
+@yield('javascript-custom')
 </body>
 </html>

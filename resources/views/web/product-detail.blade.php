@@ -1,5 +1,4 @@
 @extends('web.app')
-@include('web.includes.header')
 @section('content')
     <!-- SECTION -->
     <div class="section">

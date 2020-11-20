@@ -25,7 +25,7 @@ Route::get('logout', 'Auth\LoginController@logout');
 //Route::post('register', 'Auth\LoginController@register');
 
 Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
-    Route::get('/', 'HomeController@index')->name('admin');
+    Route::get('/', 'Admin\OverviewController@index')->name('overview');
     
     Route::group(['middleware' => 'check_admin'],function () {
         // user
@@ -33,6 +33,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
         Route::post('/users/create', 'Admin\UsersController@create');
         Route::get('/users/delete/{id}', 'Admin\UsersController@destroy');
     });
+    
     
     // news
     Route::get('/news', 'Admin\NewsController@index')->name('news');
