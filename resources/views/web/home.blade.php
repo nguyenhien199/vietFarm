@@ -144,17 +144,17 @@
                 <div class="carousel-item-a">
                     <div class="post row">
                         <div class="col-md-5">
-                            <a class="post-img" href="blog-post.html" style="margin-top: 50px"><img src="{{$new->image}}" alt=""></a>
+                            <a class="post-img" href="{{url('new/new-detail',[$new->id])}}" style="margin-top: 50px"><img src="{{$new->image}}" alt=""></a>
                         </div>
                         <div class="col-md-7" style="margin-top: 10px;">
                             <h3 class="post-title">
-                                <a href="blog-post.html">{{$new->title}}</a></h3>
+                                <a href="{{url('new/new-detail',[$new->id])}}">{{$new->title}}</a></h3>
                             <p>
                                {{$new->description}}
                             </p>
-                            <a class="btn btn-info btn-x-ch-tit" href="{{url('new/new-detail')}}">XEM CHI TIẾT</a>
-                        </div>
-                    </div>
+                            <a class="btn btn-info btn-x-ch-tit" href="{{url('new/new-detail',[$new->id])}}">XEM CHI TIẾT</a>
+                </div>
+            </div>
                 </div>
                 @endforeach
             </div>

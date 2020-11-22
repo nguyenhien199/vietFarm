@@ -32,7 +32,7 @@
                     <div class="newsletter-widget">
                         <form>
                             <input class="input" name="newsletter" placeholder="Nhập Email">
-                            <button class="btn btn-danger" style="margin-top: 20px">Gửi</button>
+                            <button class="btn btn-danger left" style="margin-top: 20px">Gửi</button>
                         </form>
                     </div>
                 </div>
@@ -43,19 +43,12 @@
         <!-- row -->
         <div class="footer-bottom row">
             <div class="col-md-6 col-md-push-6">
-                <ul class="footer-nav">
-                    <li><a href="#">VIET FARM</a></li>
-                    <li><a href="#">THỰC PHẨM SẠCH</a></li>
-                    <li><a href="#">DỊCH VỤ</a></li>
-                    <li><a href="#">CHUYỂN GIAO CÔNG NGHỆ</a></li>
-                    <li><a href="#">PHÂN BÓN</a></li>
-                    <li><a href="#">LIÊN HỆ</a></li>
-                </ul>
+
             </div>
             <div class="col-md-6 col-md-pull-6">
                 <div class="footer-copyright">
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                    Copyright &copy; VietFarmSolution
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </div>
             </div>

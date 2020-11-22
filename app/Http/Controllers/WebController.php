@@ -20,9 +20,8 @@ class WebController extends Controller
 
     public function getDetailNew($id)
     {
-        $new = News::with('projectDetails')->findOrFail($id);
-        return $new;
-        return view('web.new-detail',['new' => $new]);
+        $new = News::where('id',$id)->first();
+        return view('web.news-detail',compact('new'));
     }
 
 }

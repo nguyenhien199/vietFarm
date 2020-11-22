@@ -26,7 +26,6 @@ class ProductController extends Controller
     {
 
         $product = Products::where('status', 1)->latest()->take(2)->get();
-        return $product;
         return view('web.product' , ['product' => $product]);
     }
 
