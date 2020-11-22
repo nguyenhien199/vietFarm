@@ -264,6 +264,30 @@
         </div>
     </div>
     <!-- /SECTION -->
+
+    <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class=" block-info-3" style="background-image: url(./img/bg-home3.jpg); background-size:100%;   background-position: center;
+  background-repeat: no-repeat; min-height: 200px">
+            <div class="row" style="height: 50%">
+                <div class="col-md-offset-5 col-md-7">
+                    <p>
+                        VietFarm đi tiên phong về ứng dụng công nghệ cao
+                    </p>
+                    <h3>
+                        VÌ MỘT NỀN NÔNG NGHIỆP CHUẨN ORGANIC
+                    </h3>
+                    <p>
+                        MANG LẠI NHỮNG GIÁ TRỊ BỀN VỮNG CHO CUỘC SÔNG <br>
+                        VÀ ĐEM LẠI NHỮNG BỮA ĂN CHẤT LƯỢNG CHO GIA ĐÌNH BẠN
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /SECTION -->
+
     <!--SECTION -->
     <!-- ======= Latest News Section ======= -->
     <section class="section-news">
@@ -425,34 +449,12 @@
     </div>
     <!-- /SECTION -->
 
-    <!-- SECTION -->
-    <div class="section">
-        <!-- container -->
-        <div class=" block-info-3" style="background-image: url(./img/bg-home3.jpg); background-size:100%;   background-position: center;
-  background-repeat: no-repeat; min-height: 200px">
-            <div class="row" style="height: 50%">
-                <div class="col-md-offset-5 col-md-7">
-                    <p>
-                        VietFarm đi tiên phong về ứng dụng công nghệ cao
-                    </p>
-                    <h3>
-                        VÌ MỘT NỀN NÔNG NGHIỆP CHUẨN ORGANIC
-                    </h3>
-                    <p>
-                        MANG LẠI NHỮNG GIÁ TRỊ BỀN VỮNG CHO CUỘC SÔNG <br>
-                        VÀ ĐEM LẠI NHỮNG BỮA ĂN CHẤT LƯỢNG CHO GIA ĐÌNH BẠN
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /SECTION -->
 
     <!--SECTION -->
     <section id="clients" class="clients">
         <div class="container aos-init aos-animate" data-aos="fade-up">
 
-            <h2 class="text-center">ĐẠI LÝ PHÂN PHỐI</h2>
+            <h2 class="text-center">ĐỐI TÁC CỦA VIETFARM</h2>
             <hr style="width: 100px; text-align: center; border: 1px solid">
 
             <div class="row no-gutters clients-wrap clearfix aos-init aos-animate" data-aos="fade-up">
@@ -480,31 +482,6 @@
                         <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="client-logo">
-                        <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="client-logo">
-                        <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="client-logo">
-                        <img src="assets/img/clients/client-7.png" class="img-fluid" alt="">
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="client-logo">
-                        <img src="assets/img/clients/client-8.png" class="img-fluid" alt="">
-                    </div>
-                </div>
-
             </div>
 
         </div>

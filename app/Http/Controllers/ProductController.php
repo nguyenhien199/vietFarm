@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Products;
 
 class ProductController extends Controller
 {
@@ -23,7 +24,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('web.product');
+
+        $product = Products::where('status', 1)->latest()->take(2)->get();
+        return $product;
+        return view('web.product' , ['product' => $product]);
     }
 
     public function getDetail()

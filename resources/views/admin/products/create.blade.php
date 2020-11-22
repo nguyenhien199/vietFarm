@@ -43,7 +43,7 @@
                 </div>
                 <div class="row d-flex align-center mt-5">
                     <div class="col-sm-2">
-                        <label class="form-label-group">Url (*)</label>
+                        <label class="form-label-group">Url </label>
                     </div>
                     <div class="col-sm-10 inter-content">
                         <input type="text" id="changeUrl" name="url" class="form-input form-control" value="{{ old('url',  $data->url ?? '') }}" />
