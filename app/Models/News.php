@@ -12,7 +12,7 @@ class News extends Model
 {
     use SoftDeletes;
     const NOTACTIVE = 0;
-    
+
     protected $table = 'news';
     protected $fillable = [
         'title',
@@ -26,7 +26,7 @@ class News extends Model
     ];
     public function user()
     {
-        return $this->BeLongsTo(User::class);
+        return $this->belongsTo('App\User');
     }
-    
+
 }

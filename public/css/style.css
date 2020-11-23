@@ -1880,3 +1880,8 @@ textarea.input {
         opacity: .2;
     }
 }
+.col-6{
+    width: 50%;
+    float: left;
+    padding: 5px;
+}

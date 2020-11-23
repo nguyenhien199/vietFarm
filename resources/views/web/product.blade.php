@@ -17,12 +17,9 @@
                 <div class="container">
                     <!-- nav -->
                     <ul class="nav-menu">
-                        <li><a href="#">SẢN PHẨM MỚI</a></li>
-                        <li><a href="#">TRÁI CÂY</a></li>
-                        <li><a href="#">RAU CỦ</a></li>
-                        <li><a href="#">RƯỢU</a></li>
-                        <li><a href="#">GIỎ QUÀ</a></li>
-                        <li><a href="#">PHÂN BÓN</a></li>
+                        @foreach($categories as $category)
+                        <li><a data-toggle="tab" href="#{{$category->name}}_{{$category->id}}" href="">{{$category->name}}</a></li>
+                        @endforeach
                     </ul>
                     <!-- /nav -->
                 </div>
@@ -32,95 +29,29 @@
     </header>
     <!--SECTION -->
     <!-- ======= Latest News Section ======= -->
-    <section class="section section-news section-t8">
-        <div class="container">
-            <div id="new-carousel" class="owl-carousel owl-theme">
-                <div class="carousel-item-c">
-                    {{--                    <div class="card-box-b card-shadow news-box">--}}
-                    <div class="post post-row">
-                        <a class="post-img" href="{{url('product/detail')}}"><img src="./img/post-13.jpg" alt=""></a>
-                        <div class="post-body">
-                            <h3 class="post-title"><a href="blog-post.html">Dưa Lưới</a></h3>
-                            {{--                            <ul class="post-meta">--}}
-                            {{--                                <li><a href="author.html">John Doe</a></li>--}}
-                            {{--                                <li>20 April 2018</li>--}}
-                            {{--                            </ul>--}}
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-                        </div>
-                    </div>
-                    <div class="post post-row">
-                        <a class="post-img" href="{{url('product/detail')}}"><img src="./img/post-13.jpg" alt=""></a>
-                        <div class="post-body">
-                            <h3 class="post-title"><a href="blog-post.html">Dưa Lưới</a></h3>
-                            {{--                            <ul class="post-meta">--}}
-                            {{--                                <li><a href="author.html">John Doe</a></li>--}}
-                            {{--                                <li>20 April 2018</li>--}}
-                            {{--                            </ul>--}}
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-                        </div>
-                    </div>
-                    {{--                    </div>--}}
-                </div>
-                <div class="carousel-item-c">
-                    {{--                    <div class="card-box-b card-shadow news-box">--}}
-                    <div class="post post-row">
-                        <a class="post-img" href="{{url('product/detail')}}"><img src="./img/post-13.jpg" alt=""></a>
-                        <div class="post-body">
-                            <h3 class="post-title"><a href="blog-post.html">Rượu Dưa Lưới</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-                        </div>
-                    </div>
-                    <div class="post post-row">
-                        <a class="post-img" href="{{url('product/detail')}}"><img src="./img/post-13.jpg" alt=""></a>
-                        <div class="post-body">
-                            <h3 class="post-title"><a href="blog-post.html">Rượu Dưa Lưới</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-                        </div>
-                    </div>
-                    {{--                    </div>--}}
-                </div>
-                <div class="carousel-item-c">
-                    <div class="post post-row">
-                        <a class="post-img" href="blog-post.html"><img src="./img/post-13.jpg" alt=""></a>
-                        <div class="post-body">
-                            <h3 class="post-title"><a href="blog-post.html">Rượu Dưa Lưới</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-                        </div>
-                    </div>
-                    <div class="post post-row">
-                        <a class="post-img" href="blog-post.html"><img src="./img/post-13.jpg" alt=""></a>
-                        <div class="post-body">
-                            <h3 class="post-title"><a href="blog-post.html">Rượu Dưa Lưới</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-                        </div>
+    <section class="section section-news section-t8 tab-content">
+        <?php $i=1; ?>
+        @foreach($categories as $category)
+        <div class="container tab-pane fade @if($i==1) in active @endif" id="{{$category->name}}_{{$category->id}}">
+            {{--                    <div class="card-box-b card-shadow news-box">--}}
+            <div class="post post-row">
+                @foreach($products[$category->id] as $pro)
+                <div class="col-6">
+                    <a class="post-img" href="{{url('product/detail')}}"><img src="{{!empty($pro->image) ? URL::to($pro->image) : URL::to('/images/noimage.jpg')}}"/></a>
+                    <div class="post-body">
+                        <h3 class="post-title"><a href="{{url('/san-pham', $pro->url)}}">{{$pro->name}}</a></h3>
+                        {{--                            <ul class="post-meta">--}}
+                        {{--                                <li><a href="author.html">John Doe</a></li>--}}
+                        {{--                                <li>20 April 2018</li>--}}
+                        {{--                            </ul>--}}
+                        <p>{{$pro->description}}</p>
                     </div>
                 </div>
-                <div class="carousel-item-c">
-                    <div class="post post-row">
-                        <a class="post-img" href="blog-post.html"><img src="./img/post-13.jpg" alt=""></a>
-                        <div class="post-body">
-                            <h3 class="post-title"><a href="blog-post.html">Rượu Dưa Lưới</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-                        </div>
-                    </div>
-                    <div class="post post-row">
-                        <a class="post-img" href="blog-post.html"><img src="./img/post-13.jpg" alt=""></a>
-                        <div class="post-body">
-                            <h3 class="post-title"><a href="blog-post.html">Rượu Dưa Lưới</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
+                <?php $i++; ?>
+        @endforeach
     </section>
     <!-- End Latest News Section -->
     <!-- /SECTION -->

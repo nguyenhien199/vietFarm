@@ -16,7 +16,7 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('category_id');
-            $table->string('url');
+            $table->string('url')->unique();
             $table->string('name');
             $table->string('image')->nullable();
             $table->text('description');
@@ -26,7 +26,7 @@ class CreateProductsTable extends Migration
             $table->timestamps();
             $table->integer('created_by')->nullable(false);
             $table->integer('updated_by')->nullable(false);
-    
+
             // constraint
             $table->foreign('category_id')->references('id')->on('categories');
         });

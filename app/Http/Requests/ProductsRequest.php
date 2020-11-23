@@ -11,7 +11,7 @@ class ProductsRequest extends FormRequest
     {
         return true;
     }
-    
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -23,7 +23,7 @@ class ProductsRequest extends FormRequest
             return [
                 'name'        => 'required',
                 'category_id' => 'required',
-//                'url'          => 'required|unique:news',
+                'url'          => 'required|unique:news',
                 'image'        => 'max:2048|mimes:jpg,jpeg,bmp,png',
                 'description'  => 'required|max:'. MAX_DESCRIPTION,
                 'content'      => 'required',
@@ -33,10 +33,10 @@ class ProductsRequest extends FormRequest
             return [
                 'name'        => 'required',
                 'category_id' => 'required',
-//                'url'          => [
-//                    'required',
-//                    Rule::unique('news', 'url')->ignore($this->id),
-//                ],
+                'url'          => [
+                    'required',
+                    Rule::unique('news', 'url')->ignore($this->id),
+                ],
                 'image'        => 'max:2048|mimes:jpg,jpeg,bmp,png',
                 'description'  => 'required|max:'. MAX_DESCRIPTION,
                 'content'      => 'required',

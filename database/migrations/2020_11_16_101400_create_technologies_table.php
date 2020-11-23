@@ -17,7 +17,7 @@ class CreateTechnologiesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('category_id');
             $table->string('name');
-            $table->string('url');
+            $table->string('url')->unique();
             $table->string('image')->nullable();
             $table->text('description');
             $table->text('content');
@@ -26,7 +26,7 @@ class CreateTechnologiesTable extends Migration
             $table->timestamps();
             $table->integer('created_by')->nullable(false);
             $table->integer('updated_by')->nullable(false);
-    
+
             // constraint
             $table->foreign('category_id')->references('id')->on('categories');
         });

@@ -49,7 +49,7 @@ class LoginController extends Controller
         Auth::logout();
         return redirect('/login');
     }
-    
+
     public function login(Request $request)
     {
         $credential = $request->except('_token');
@@ -57,7 +57,7 @@ class LoginController extends Controller
             $message = 'Email or password is incorrect';
             return Redirect::back()->withErrors([$message]);
         }
-        return redirect()->route('admin');
+        return redirect('/admin');
     }
     protected function validator(array $data)
     {
@@ -67,16 +67,16 @@ class LoginController extends Controller
             'password' => 'required|confirmed|min:6',
         ]);
     }
-    
+
     public function register(Request $request)
     {
         $this->validator($request->all())->validate();
         $user_data = $request->except('_token', 'password_confirmation');
         $user_data['role'] = User::USER;
         event(new Registered($user = User::create($user_data)));
-    
+
         $this->guard()->login($user);
-    
+
         return redirect('/admin');
     }
 }

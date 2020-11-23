@@ -51,10 +51,9 @@
                         </div>
                         <div class="category-widget">
                             <ul>
-                                <li><a href="#">Sản phẩm mới <span>451</span></a></li>
-                                <li><a href="#">Trái cây <span>230</span></a></li>
-                                <li><a href="#">Rau củ<span>40</span></a></li>
-                                <li><a href="#">Giỏ Quà<span>38</span></a></li>
+                                @foreach($categories as $cat)
+                                <li><a href="#">{{$cat->name}} <span>451</span></a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -76,18 +75,18 @@
                             <div class="wrapper">
                                 <div class="image-gallery">
                                     <aside class="thumbnails">
-                                        <a href="javascript:void(0)" class="selected thumbnail" data-big="http://placekitten.com/420/600">
-                                            <div class="thumbnail-image" style="background-image: url(http://placekitten.com/420/600)"></div>
+                                        <a href="javascript:void(0)" class="selected thumbnail" data-big="{{$product->image}}">
+                                            <div class="thumbnail-image" style="background-image: url({{$product->image}})"></div>
                                         </a>
-                                        <a href="javascript:void(0)" class="thumbnail" data-big="http://placekitten.com/450/600">
-                                            <div class="thumbnail-image" style="background-image: url(http://placekitten.com/450/600)"></div>
+                                        <a href="javascript:void(0)" class="thumbnail" data-big="{{$product->image}}">
+                                            <div class="thumbnail-image" style="background-image: url({{$product->image}})"></div>
                                         </a>
-                                        <a href="javascript:void(0)" class="thumbnail" data-big="http://placekitten.com/460/700">
-                                            <div class="thumbnail-image" style="background-image: url(http://placekitten.com/460/700)"></div>
+                                        <a href="javascript:void(0)" class="thumbnail" data-big="{{$product->image}}">
+                                            <div class="thumbnail-image" style="background-image: url({{$product->image}})"></div>
                                         </a>
                                     </aside>
 
-                                    <main class="primary" style="background-image: url('http://placekitten.com/420/600');"></main>
+                                    <main class="primary" style="background-image: url({{$product->image}});"></main>
                                 </div>
 
                             </div>
@@ -149,18 +148,7 @@
                                 </div>
                             </div>
                             <div class="property-description">
-                                <p class="description color-text-a">
-                                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit
-                                    neque, auctor sit amet
-                                    aliquam vel, ullamcorper sit amet ligula. Cras ultricies ligula sed magna dictum porta.
-                                    Curabitur aliquet quam id dui posuere blandit. Mauris blandit aliquet elit, eget tincidunt
-                                    nibh pulvinar quam id dui posuere blandit.
-                                </p>
-                                <p class="description color-text-a no-margin">
-                                    Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec rutrum congue leo eget
-                                    malesuada. Quisque velit nisi,
-                                    pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada.
-                                </p>
+                                {!!$product->content!!}
                             </div>
                         </div>
                     </div>
@@ -190,10 +178,11 @@
                 </div>
             </div>
             <div id="pro-detail-carousel" class="owl-carousel owl-theme">
+                @foreach($sp_lienquan as $lq)
                 <div class="carousel-item-c">
                     <div class="card-box-b card-shadow news-box">
                         <div class="img-box-b">
-                            <img src="{{asset('/img/post-2.jpg')}}" alt="" class="img-b img-fluid">
+                            <img src="{{asset($lq->image)}}" alt="" class="img-b img-fluid">
                         </div>
                         <div class="card-overlay">
                             <div class="card-header-b">
@@ -202,8 +191,7 @@
                                 </div>
                                 <div class="card-title-b">
                                     <h2 class="title-2">
-                                        <a href="blog-single.html">House is comming
-                                            <br> new</a>
+                                        <a href="{{url('/san-pham', $lq->url)}}">{{$lq->name}}</a>
                                     </h2>
                                 </div>
                                 {{--<div class="card-date">--}}
@@ -213,75 +201,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item-c">
-                    <div class="card-box-b card-shadow news-box">
-                        <div class="img-box-b">
-                            <img src="{{asset('/img/post-5.jpg')}}" alt="" class="img-b img-fluid">
-                        </div>
-                        <div class="card-overlay">
-                            <div class="card-header-b">
-                                <div class="card-category-b">
-                                    <a href="#" class="category-b">Travel</a>
-                                </div>
-                                <div class="card-title-b">
-                                    <h2 class="title-2">
-                                        <a href="blog-single.html">Travel is comming
-                                            <br> new</a>
-                                    </h2>
-                                </div>
-                                {{--<div class="card-date">--}}
-                                    {{--<span class="date-b">3.450.000 đ</span>--}}
-                                {{--</div>--}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item-c">
-                    <div class="card-box-b card-shadow news-box">
-                        <div class="img-box-b">
-                            <img src="{{asset('/img/post-7.jpg')}}" alt="" class="img-b img-fluid">
-                        </div>
-                        <div class="card-overlay">
-                            <div class="card-header-b">
-                                <div class="card-category-b">
-                                    <a href="#" class="category-b">Park</a>
-                                </div>
-                                <div class="card-title-b">
-                                    <h2 class="title-2">
-                                        <a href="blog-single.html">Park is comming
-                                            <br> new</a>
-                                    </h2>
-                                </div>
-                                {{--<div class="card-date">--}}
-                                    {{--<span class="date-b">3.450.000 đ</span>--}}
-                                {{--</div>--}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item-c">
-                    <div class="card-box-b card-shadow news-box">
-                        <div class="img-box-b">
-                            <img src="{{asset('/img/post-3.jpg')}}" alt="" class="img-b img-fluid">
-                        </div>
-                        <div class="card-overlay">
-                            <div class="card-header-b">
-                                <div class="card-category-b">
-                                    <a href="#" class="category-b">Travel</a>
-                                </div>
-                                <div class="card-title-b">
-                                    <h2 class="title-2">
-                                        <a href="#">Travel is comming
-                                            <br> new</a>
-                                    </h2>
-                                </div>
-                                {{--<div class="card-date">--}}
-                                    {{--<span class="date-b">3.450.000 đ</span>--}}
-                                {{--</div>--}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section><!-- End Latest News Section -->

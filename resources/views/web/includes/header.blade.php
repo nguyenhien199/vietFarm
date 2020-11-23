@@ -87,7 +87,7 @@
 
                 <ul class="nav-menu">
                     <li><a href="{{asset('/')}}">VIET FARM</a></li>
-                    <li><a href="{{asset('/product')}}">THỰC PHẨM SẠCH</a></li>
+                    <li><a href="{{asset('/san-pham')}}">THỰC PHẨM SẠCH</a></li>
                     <li><a href="{{url('/service')}}">DỊCH VỤ</a></li>
                     <li><a href="{{url('/product')}}">CHUYỂN GIAO CÔNG NGHỆ</a></li>
                     <li><a href="{{url('/product')}}">PHÂN BÓN</a></li>

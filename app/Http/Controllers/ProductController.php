@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categories;
 use Illuminate\Http\Request;
 use App\Models\Products;
 
@@ -24,14 +25,34 @@ class ProductController extends Controller
      */
     public function index()
     {
-
-        $product = Products::where('status', 1)->latest()->take(8)->get();
-        return view('web.product' , ['product' => $product]);
+        $categories = Categories::where([
+            'code' => Categories::CATEGORY_SP,
+            'status' => Categories::ACTIVE,
+        ])->take(6)->select('id', 'name')->get();
+        $products = [];
+        foreach ($categories as $category){
+            $products[$category->id] = Products::where([
+                'category_id' => $category->id,
+                'status' => Products::ACTIVE,
+            ])->latest()->take(8)->get();
+        }
+        return view('web.product' , ['products' => $products, 'categories' => $categories]);
     }
 
-    public function getDetail($id)
+    public function show($url)
     {
-        $product = Products::where('id',$id)->first();
-        return view('web.product-detail');
+        $categories = Categories::where([
+            'code' => Categories::CATEGORY_SP,
+            'status' => Categories::ACTIVE,
+        ])->take(6)->select('id', 'name')->get();
+        $product = Products::where([
+            'status' => Products::ACTIVE,
+            'url' => $url
+        ])->first();
+        $sp_lienquan = Products::where([
+            'status' => Products::ACTIVE,
+            'category_id' => $product->category_id
+        ])->where('id','!=',$product->id)->take(6)->get();
+        return view('web.product-detail', ['product' => $product, 'categories' => $categories, 'sp_lienquan' => $sp_lienquan]);
     }
 }
