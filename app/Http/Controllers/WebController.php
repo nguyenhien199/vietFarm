@@ -18,9 +18,9 @@ class WebController extends Controller
             ]);
     }
 
-    public function getDetailNew($id)
+    public function getDetailNew($url)
     {
-        $new = News::where('id',$id)->first();
+        $new = News::where('url',$url)->first();
         return view('web.news-detail',compact('new'));
     }
 

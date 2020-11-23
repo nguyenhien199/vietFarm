@@ -19,7 +19,7 @@ Route::get('/product', 'ProductController@index');
 Route::get('/product/detail/{id}', 'ProductController@getDetail');
 Route::get('/service', 'ProductController@index');
 Route::get('/contact', 'HomeController@contact');
-Route::get('/new/new-detail/{id}', 'WebController@getDetailNew');
+Route::get('/bai-viet/{url}', 'WebController@getDetailNew');
 
 Auth::routes(['register' => false]);
 Route::get('logout', 'Auth\LoginController@logout');

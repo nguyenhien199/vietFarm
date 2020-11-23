@@ -25,12 +25,13 @@ class ProductController extends Controller
     public function index()
     {
 
-        $product = Products::where('status', 1)->latest()->take(2)->get();
+        $product = Products::where('status', 1)->latest()->take(8)->get();
         return view('web.product' , ['product' => $product]);
     }
 
-    public function getDetail()
+    public function getDetail($id)
     {
+        $product = Products::where('id',$id)->first();
         return view('web.product-detail');
     }
 }
