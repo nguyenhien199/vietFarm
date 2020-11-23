@@ -23,7 +23,7 @@ class ProductsRequest extends FormRequest
             return [
                 'name'        => 'required',
                 'category_id' => 'required',
-                'url'          => 'required|unique:news',
+                'url'          => 'required|unique:products',
                 'image'        => 'max:2048|mimes:jpg,jpeg,bmp,png',
                 'description'  => 'required|max:'. MAX_DESCRIPTION,
                 'content'      => 'required',
@@ -35,7 +35,7 @@ class ProductsRequest extends FormRequest
                 'category_id' => 'required',
                 'url'          => [
                     'required',
-                    Rule::unique('news', 'url')->ignore($this->id),
+                    Rule::unique('products', 'url')->ignore($this->id),
                 ],
                 'image'        => 'max:2048|mimes:jpg,jpeg,bmp,png',
                 'description'  => 'required|max:'. MAX_DESCRIPTION,

@@ -11,7 +11,7 @@ class TechnologiesRequest extends FormRequest
     {
         return true;
     }
-    
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -23,7 +23,7 @@ class TechnologiesRequest extends FormRequest
             return [
                 'name'        => 'required',
                 'category_id' => 'required',
-                'url'          => 'required|unique:news',
+                'url'          => 'required|unique:technologies',
                 'image'        => 'max:2048|mimes:jpg,jpeg,bmp,png',
                 'description'  => 'required|max:'. MAX_DESCRIPTION,
                 'content'      => 'required',
@@ -35,7 +35,7 @@ class TechnologiesRequest extends FormRequest
                 'category_id' => 'required',
                 'url'          => [
                     'required',
-                    Rule::unique('news', 'url')->ignore($this->id),
+                    Rule::unique('technologies', 'url')->ignore($this->id),
                 ],
                 'image'        => 'max:2048|mimes:jpg,jpeg,bmp,png',
                 'description'  => 'required|max:'. MAX_DESCRIPTION,
