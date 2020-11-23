@@ -4,6 +4,8 @@ namespace App\Models;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\User;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class News extends Model
@@ -22,5 +24,9 @@ class News extends Model
         'created_by',
         'updated_by'
     ];
+    public function user()
+    {
+        return $this->BeLongsTo(User::class);
+    }
     
 }

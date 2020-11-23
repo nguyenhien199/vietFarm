@@ -20,7 +20,7 @@
                     <!-- post content -->
                     <div class="section-row">
                         <h3>{{$new->title}}</h3>
-                        <span>{{$new->created_at}}</span>
+                        <span>{{$new->created_at}}  {{$new->user()->name}}</span>
                         <p >{!! $new->content !!}</p>
                         {{--<figure class="pull-right">--}}
                             {{--<img src="{{$new->image}}" alt="">--}}
