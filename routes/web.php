@@ -18,7 +18,7 @@ Route::get('/', 'WebController@index');
 Route::get('/san-pham', 'ProductController@index');
 Route::get('/san-pham/{url}', 'ProductController@show');
 Route::get('/product/detail/{id}', 'ProductController@getDetail');
-Route::get('/service', 'ProductController@index');
+Route::get('/dich-vu', 'ProductController@index');
 Route::get('/contact', 'HomeController@contact');
 Route::get('/bai-viet/{url}', 'WebController@getDetailNew');
 
