@@ -24,20 +24,10 @@
                 <li class="nav-header">
                     <div class="dropdown profile-element">
                         <span>
-                            <img alt="image" height="40" src="{{asset('./img/logo-viet-farm.png')}}" />
+                            <a href="{{url('/')}}"><img alt="image" height="40" src="{{asset('./img/logo-viet-farm.png')}}" /></a>
                         </span>
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <span class="clear">
-                        <span class="block m-t-xs"> <strong class="font-bold">VietFarmSolution</strong>
+                        <span class="block m-t-xs"> <strong class="font-bold" style="color: #fff;">VietFarmSolution</strong>
                         </span>
-                          <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            {{--<li><a href="#">Về Webify</a></li>--}}
-                            <li><a href="#">Liên hệ</a></li>
-                            <li><a href="#">Hướng dẫn sử dụng</a></li>
-                          </ul>
-                    </div>
-                    <div class="logo-element">
-                        IN+
                     </div>
                 </li>
                 <li class="{{ (\Request::getRequestUri() === '/admin' || \Request::getRequestUri() === '/admin/') ? 'active' : '' }}">

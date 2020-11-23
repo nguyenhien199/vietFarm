@@ -19,7 +19,7 @@
                         <div class="setting">
                             <nav>
 
-                <li><i class="fa fa-cog mr-5"></i>Setting</li>
+                {{--<li><i class="fa fa-cog mr-5"></i>Setting</li>--}}
                 <li>
                     <form action="{{route('logout')}}" method="POST">
                         @csrf
