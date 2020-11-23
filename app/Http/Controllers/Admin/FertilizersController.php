@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\FertilizersRequest;
 use App\Http\Requests\TechnologiesRequest;
 use App\Models\Categories;
 use App\Models\Fertilizers;
@@ -15,7 +16,7 @@ class FertilizersController extends Controller
         $fertilizers = Fertilizers::orderBy('id', 'DESC')->paginate(PAGINATION);
         return view('admin.fertilizers.index',['fertilizers' => $fertilizers]);
     }
-    
+
     public function showGet()
     {
         $categories = Categories::where([
@@ -24,8 +25,8 @@ class FertilizersController extends Controller
         ])->select('id', 'name')->get();
         return view('admin.fertilizers.create', ['categories' => $categories]);
     }
-    
-    public function create(TechnologiesRequest $request)
+
+    public function create(FertilizersRequest $request)
     {
         $data = $request->all();
         if(empty($data['id'])){
@@ -73,7 +74,7 @@ class FertilizersController extends Controller
             }
         }
     }
-    
+
     public function edit($id)
     {
         $categories = Categories::where([
@@ -83,7 +84,7 @@ class FertilizersController extends Controller
         $fertilizers = Fertilizers::where('id', $id)->firstOrFail();
         return view('admin.fertilizers.create', ['data' => $fertilizers, 'categories' => $categories]);
     }
-    
+
     public function destroy($id)
     {
         try{
