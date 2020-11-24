@@ -19,6 +19,7 @@ Route::get('/san-pham', 'ProductController@index');
 Route::get('/san-pham/{url}', 'ProductController@show');
 Route::get('/product/detail/{id}', 'ProductController@getDetail');
 Route::get('/dich-vu', 'ServiceController@index');
+Route::get('/dich-vu/{url}', 'ServiceController@show');
 Route::get('/cong-nghe', 'TechnologyController@index');
 Route::get('/phan-bon', 'FertilizerController@index');
 

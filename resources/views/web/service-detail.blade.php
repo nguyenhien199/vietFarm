@@ -43,17 +43,17 @@
                                 <div class="image-gallery">
                                     <aside class="thumbnails">
                                         <a href="javascript:void(0)" class="selected thumbnail" data-big="{{$service->image}}">
-                                            <div class="thumbnail-image" style="background-image: url({{$product->image}})"></div>
+                                            <div class="thumbnail-image" style="background-image: url({{$service->image}})"></div>
                                         </a>
                                         <a href="javascript:void(0)" class="thumbnail" data-big="{{$service->image}}">
-                                            <div class="thumbnail-image" style="background-image: url({{$product->image}})"></div>
+                                            <div class="thumbnail-image" style="background-image: url({{$service->image}})"></div>
                                         </a>
                                         <a href="javascript:void(0)" class="thumbnail" data-big="{{$service->image}}">
-                                            <div class="thumbnail-image" style="background-image: url({{$product->image}})"></div>
+                                            <div class="thumbnail-image" style="background-image: url({{$service->image}})"></div>
                                         </a>
                                     </aside>
 
-                                    <main class="primary" style="background-image: url({{$product->image}});"></main>
+                                    <main class="primary" style="background-image: url({{$service->image}});"></main>
                                 </div>
 
                             </div>
@@ -115,7 +115,7 @@
                                 </div>
                             </div>
                             <div class="property-description">
-                                {!!$product->content!!}
+                                {!!$service->content!!}
                             </div>
                         </div>
                     </div>
@@ -145,7 +145,7 @@
                 </div>
             </div>
             <div id="pro-detail-carousel" class="owl-carousel owl-theme">
-                @foreach($sp_lienquan as $lq)
+                @foreach($dv_lienquan as $lq)
                 <div class="carousel-item-c">
                     <div class="card-box-b card-shadow news-box">
                         <div class="img-box-b">

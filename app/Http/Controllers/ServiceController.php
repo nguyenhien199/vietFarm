@@ -48,7 +48,7 @@ class ServiceController extends Controller
             'status' => Services::ACTIVE,
             'category_id' => $services->category_id
         ])->where('id','!=',$services->id)->take(6)->get();
-        return view('web.service-detail', ['services' => $services, 'categories' => $categories, 'dv_lienquan' => $dv_lienquan]);
+        return view('web.service-detail', ['service' => $services, 'categories' => $categories, 'dv_lienquan' => $dv_lienquan]);
     }
 
 
