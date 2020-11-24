@@ -16,7 +16,7 @@ class TechnologiesController extends Controller
         $technologies = Technologies::orderBy('id', 'DESC')->paginate(PAGINATION);
         return view('admin.technologies.index',['technologies' => $technologies]);
     }
-    
+
     public function showGet()
     {
         $categories = Categories::where([
@@ -25,7 +25,7 @@ class TechnologiesController extends Controller
         ])->select('id', 'name')->get();
         return view('admin.technologies.create', ['categories' => $categories]);
     }
-    
+
     public function create(TechnologiesRequest $request)
     {
         $data = $request->all();
@@ -74,7 +74,7 @@ class TechnologiesController extends Controller
             }
         }
     }
-    
+
     public function edit($id)
     {
         $categories = Categories::where([
@@ -82,9 +82,9 @@ class TechnologiesController extends Controller
             'code' => Categories::CATEGORY_CN
         ])->select('id', 'name')->get();
         $product = Technologies::where('id', $id)->firstOrFail();
-        return view('admin.Technologies.create', ['data' => $product, 'categories' => $categories]);
+        return view('admin.technologies.create', ['data' => $product, 'categories' => $categories]);
     }
-    
+
     public function destroy($id)
     {
         try{
