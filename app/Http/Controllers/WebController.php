@@ -21,7 +21,6 @@ class WebController extends Controller
     public function getDetailNew($url)
     {
         $new = News::where('url',$url)->first();
-        dd($new->user);
         return view('web.news-detail',compact('new'));
     }
 
