@@ -149,7 +149,7 @@
                 <div class="carousel-item-c">
                     <div class="card-box-b card-shadow news-box">
                         <div class="img-box-b">
-                            <img src="{{asset($lq->image)}}" alt="" class="img-b img-fluid">
+                            <img src="{{!empty($lq->image) ? URL::to($lq->image) : URL::to('/images/noimage.jpg')}}" alt="" class="img-b img-fluid">
                         </div>
                         <div class="card-overlay">
                             <div class="card-header-b">
@@ -169,6 +169,7 @@
                     </div>
                 </div>
                 @endforeach
+
             </div>
         </div>
     </section><!-- End Latest News Section -->

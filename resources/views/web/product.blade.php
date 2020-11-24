@@ -17,8 +17,10 @@
                 <div class="container">
                     <!-- nav -->
                     <ul class="nav-menu">
+                        <?php $j=1; ?>
                         @foreach($categories as $category)
-                        <li><a data-toggle="tab" href="#{{$category->name}}_{{$category->id}}" href="">{{$category->name}}</a></li>
+                        <li class="@if($j==1) active @endif"><a data-toggle="tab" href="#{{$category->name}}_{{$category->id}}" href="">{{$category->name}}</a></li>
+                        <?php $j++; ?>
                         @endforeach
                     </ul>
                     <!-- /nav -->
