@@ -14,7 +14,7 @@
                         <label class="form-label-group">Tiêu đề (*)</label>
                     </div>
                     <div class="col-sm-10 inter-content">
-                        <input type="text" name="title" class="form-input form-control" value="{{ old('name',  $data->title ?? '') }}" />
+                        <input type="text" name="title" class="form-input form-control" value="{{ old('title',  $data->title ?? '') }}" />
                         @if($errors->has('title'))
                             <span class="error message-login">{{ $errors->first('title') }}</span>
                         @endif
@@ -59,7 +59,7 @@
                         <label class="form-label-group">Tác giả</label>
                     </div>
                     <div class="col-sm-10 inter-content">
-                       <input name="author" value="{!! old('content', $data->author ?? '') !!}" class="form-control" />
+                       <input name="author" value="{!! old('author', $data->author ?? '') !!}" class="form-control" />
                         @if($errors->has('author'))
                             <span class="error message-login">{{ $errors->first('author') }}</span>
                         @endif

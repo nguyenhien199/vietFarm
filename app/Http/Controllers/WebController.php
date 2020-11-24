@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use App\Models\Products;
+use App\Models\Slides;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
@@ -12,11 +13,14 @@ class WebController extends Controller
         $newPost = News::where('status', 1)->latest()->take(2)->get();
         $product = Products::where('status', 1)->latest()->take(8)->get()->toArray();
         $product = array_chunk($product,4);
-
+        $slide = Slides::where([
+            'status' => Slides::ACTIVE
+        ])->latest()->take(SLIDE_SHOW)->get();
         return view('web.home',
             [
                 'newPost' => $newPost,
-                'product' => $product
+                'product' => $product,
+                'slide' => $slide
             ]);
     }
     public function getDetailNew($url)

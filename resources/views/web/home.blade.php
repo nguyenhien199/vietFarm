@@ -10,7 +10,8 @@
                 <!-- ======= Intro Section ======= -->
                 <div class="intro intro-carousel">
                     <div id="carousel" class="owl-carousel owl-theme">
-                        <div class="carousel-item-a intro-item bg-image" style="background-image: url(assets/img/slide-1.jpg)">
+                        @foreach($slide as $sl)
+                        <div class="carousel-item-a intro-item bg-image" style="background-image: url({{asset($sl->image)}})">
                             <div class="overlay overlay-a"></div>
                             <div class="intro-content display-table">
                                 <div class="table-cell">
@@ -18,10 +19,8 @@
                                         <div class="row">
                                             <div class="col-lg-8">
                                                 <div class="intro-body">
-                                                    <span class="text-white">"Tại sao VietFarm chúng tôi chăm chỉ làm việc<br>
-                                        để đưa ra những sản phẩm hưu cơ,<br>
-                                        an toàn đến tận tay người tiêu dùng"</span>
-                                                    <p class="color-b">MARK ZUCKREBERG - Chuyên gia</p>
+                                                    <span class="text-white">{{$sl->content}}</span>
+                                                    <p class="color-b">{{$sl->author}}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -29,48 +28,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item-a intro-item bg-image" style="background-image: url(assets/img/slide-2.jpg)">
-                            <div class="overlay overlay-a"></div>
-                            <div class="intro-content display-table">
-                                <div class="table-cell">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-8">
-                                                <div class="intro-body">
-                                                    <p class="intro-title-top">Doral, Florida
-                                                        <br> 78345</p>
-                                                    <span class="text-white">"Tại sao VietFarm chúng tôi chăm chỉ làm việc<br>
-                                        để đưa ra những sản phẩm hưu cơ,<br>
-                                        an toàn đến tận tay người tiêu dùng"</span>
-                                                    <p class="color-b">MARK ZUCKREBERG - Chuyên gia</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item-a intro-item bg-image" style="background-image: url(assets/img/slide-3.jpg)">
-                            <div class="overlay overlay-a"></div>
-                            <div class="intro-content display-table">
-                                <div class="table-cell">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-8">
-                                                <div class="intro-body">
-                                                    <p class="intro-title-top">Doral, Florida
-                                                        <br> 78345</p>
-                                                    <span class="text-white">"Tại sao VietFarm chúng tôi chăm chỉ làm việc<br>
-                                        để đưa ra những sản phẩm hưu cơ,<br>
-                                        an toàn đến tận tay người tiêu dùng"</span>
-                                                    <p class="color-b">MARK ZUCKREBERG - Chuyên gia</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div><!-- End Intro Section -->
             </div>
