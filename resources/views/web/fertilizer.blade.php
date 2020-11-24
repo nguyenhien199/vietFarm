@@ -35,16 +35,16 @@
             <div class="container tab-pane fade @if($i==1) in active @endif" id="{{$category->name}}_{{$category->id}}">
                 {{--                    <div class="card-box-b card-shadow news-box">--}}
                 <div class="post post-row">
-                    @foreach($services[$category->id] as $service)
+                    @foreach($fertilizers[$category->id] as $fe)
                         <div class="col-6">
-                            <a class="post-img" href="{{url('product/detail')}}"><img src="{{!empty($service->image) ? URL::to($service->image) : URL::to('/images/noimage.jpg')}}"/></a>
+                            <a class="post-img" href="{{url('product/detail')}}"><img src="{{!empty($fe->image) ? URL::to($fe->image) : URL::to('/images/noimage.jpg')}}"/></a>
                             <div class="post-body">
-                                <h3 class="post-title"><a href="{{url('/san-pham', $service->url)}}">{{$service->name}}</a></h3>
+                                <h3 class="post-title"><a href="{{url('/san-pham', $fe->url)}}">{{$fe->name}}</a></h3>
                                 {{--                            <ul class="post-meta">--}}
                                 {{--                                <li><a href="author.html">John Doe</a></li>--}}
                                 {{--                                <li>20 April 2018</li>--}}
                                 {{--                            </ul>--}}
-                                <p>{{$service->description}}</p>
+                                <p>{{$fe->description}}</p>
                             </div>
                         </div>
                     @endforeach

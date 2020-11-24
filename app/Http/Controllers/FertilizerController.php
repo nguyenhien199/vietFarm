@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Categories;
 use Illuminate\Http\Request;
-use App\Models\Services;
+use App\Models\Fertilizers;
 
-class ServiceController extends Controller
+class FertilizerController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -22,17 +22,17 @@ class ServiceController extends Controller
     public function index()
     {
         $categories = Categories::where([
-            'code' => Categories::CATEGORY_DV,
+            'code' => Categories::CATEGORY_PB,
             'status' => Categories::ACTIVE,
         ])->take(6)->select('id', 'name')->get();
-        $services = [];
+        $fertilizers = [];
         foreach ($categories as $category){
-            $services[$category->id] = Services::where([
+            $fertilizers[$category->id] = Fertilizers::where([
                 'category_id' => $category->id,
-                'status' => Services::ACTIVE,
+                'status' => Fertilizers::ACTIVE,
             ])->latest()->take(8)->get();
         }
-        return view('web.service',['services' => $services, 'categories' => $categories] );
+        return view('web.fertilizer',['fertilizers' => $fertilizers, 'categories' => $categories] );
     }
     public function show($url)
     {

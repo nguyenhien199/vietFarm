@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Categories;
 use Illuminate\Http\Request;
-use App\Models\Services;
+use App\Models\Technologies;
 
-class ServiceController extends Controller
+class TechnologyController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -22,17 +22,17 @@ class ServiceController extends Controller
     public function index()
     {
         $categories = Categories::where([
-            'code' => Categories::CATEGORY_DV,
+            'code' => Categories::CATEGORY_CN,
             'status' => Categories::ACTIVE,
         ])->take(6)->select('id', 'name')->get();
-        $services = [];
+        $technologies = [];
         foreach ($categories as $category){
-            $services[$category->id] = Services::where([
+            $technologies[$category->id] = Technologies::where([
                 'category_id' => $category->id,
-                'status' => Services::ACTIVE,
+                'status' => Technologies::ACTIVE,
             ])->latest()->take(8)->get();
         }
-        return view('web.service',['services' => $services, 'categories' => $categories] );
+        return view('web.technology',['technologies' => $technologies, 'categories' => $categories] );
     }
     public function show($url)
     {

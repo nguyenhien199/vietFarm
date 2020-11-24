@@ -9,7 +9,7 @@
         <!-- NAV -->
         <div id="nav">
             <div id="nav-top">
-                <h1>DỊCH VỤ</h1>
+                <h1>CHUYỂN GIAO CÔNG NGHỆ</h1>
                 <hr style="width: 100px; text-align: center; border: 1px solid"/>
                 {{--<p>"Chọn lọc những gì tốt nhất từ thiên nhiên để chăm sóc gia đình bạn"</p>--}}
             </div>
@@ -35,16 +35,16 @@
             <div class="container tab-pane fade @if($i==1) in active @endif" id="{{$category->name}}_{{$category->id}}">
                 {{--                    <div class="card-box-b card-shadow news-box">--}}
                 <div class="post post-row">
-                    @foreach($services[$category->id] as $service)
+                    @foreach($technologies[$category->id] as $tech)
                         <div class="col-6">
-                            <a class="post-img" href="{{url('product/detail')}}"><img src="{{!empty($service->image) ? URL::to($service->image) : URL::to('/images/noimage.jpg')}}"/></a>
+                            <a class="post-img" href="{{url('product/detail')}}"><img src="{{!empty($tech->image) ? URL::to($tech->image) : URL::to('/images/noimage.jpg')}}"/></a>
                             <div class="post-body">
-                                <h3 class="post-title"><a href="{{url('/san-pham', $service->url)}}">{{$service->name}}</a></h3>
+                                <h3 class="post-title"><a href="{{url('/san-pham', $tech->url)}}">{{$tech->name}}</a></h3>
                                 {{--                            <ul class="post-meta">--}}
                                 {{--                                <li><a href="author.html">John Doe</a></li>--}}
                                 {{--                                <li>20 April 2018</li>--}}
                                 {{--                            </ul>--}}
-                                <p>{{$service->description}}</p>
+                                <p>{{$tech->description}}</p>
                             </div>
                         </div>
                     @endforeach

@@ -43,8 +43,8 @@
                     <ul class="nav-aside-menu">
                         <li><a href="{{asset('/')}}">VIET FARM</a></li>
                         <li><a href="{{url('/product')}}">THỰC PHẨM SẠCH</a></li>
-                        <li><a href="{{url('/service')}}">DỊCH VỤ</a></li>
-                        <li><a href="{{url('/product')}}">CHUYỂN GIAO CÔNG NGHỆ</a></li>
+                        <li><a href="{{url('/dich-vu')}}">DỊCH VỤ</a></li>
+                        <li><a href="{{url('/cong-nghe')}}">CHUYỂN GIAO CÔNG NGHỆ</a></li>
                         <li><a href="{{url('/product')}}">PHÂN BÓN</a></li>
                         <li><a href="{{url('/contact')}}">LIÊN HỆ</a></li>
                     </ul>
@@ -88,9 +88,9 @@
                 <ul class="nav-menu">
                     <li><a href="{{asset('/')}}">VIET FARM</a></li>
                     <li><a href="{{asset('/san-pham')}}">THỰC PHẨM SẠCH</a></li>
-                    <li><a href="{{url('/service')}}">DỊCH VỤ</a></li>
-                    <li><a href="{{url('/product')}}">CHUYỂN GIAO CÔNG NGHỆ</a></li>
-                    <li><a href="{{url('/product')}}">PHÂN BÓN</a></li>
+                    <li><a href="{{url('/dich-vu')}}">DỊCH VỤ</a></li>
+                    <li><a href="{{url('/cong-nghe')}}">CHUYỂN GIAO CÔNG NGHỆ</a></li>
+                    <li><a href="{{url('/phan-bon')}}">PHÂN BÓN</a></li>
                     <li><a href="{{asset('/contact')}}">LIÊN HỆ</a></li>
                 </ul>
                 <!-- /nav -->
