@@ -213,90 +213,29 @@
                 <hr style="width: 100px; text-align: center; border: 1px solid"/>
             </div>
             <div id="new-carousel" class="owl-carousel owl-theme">
+                @foreach($product as $pro)
                 <div class="carousel-item-c">
 {{--                    <div class="card-box-b card-shadow news-box">--}}
-                                <div class="post post-row">
-                                    <a class="post-img" href="blog-post.html"><img src="./img/post-13.jpg" alt=""></a>
-                                    <div class="post-body">
-                                        <h3 class="post-title"><a href="blog-post.html">Dưa Lưới</a></h3>
-                                        {{--                            <ul class="post-meta">--}}
-                                        {{--                                <li><a href="author.html">John Doe</a></li>--}}
-                                        {{--                                <li>20 April 2018</li>--}}
-                                        {{--                            </ul>--}}
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
+                    <div class="post post-row">
+                    @foreach($pro as $sp)
+
+                                    <div class="col-6">
+                                        <a class="post-img" href="{{url('/san-pham', $sp['url'])}}"><img src="{{!empty($pro->image) ? URL::to($sp->image) : URL::to('/images/noimage.jpg')}}" alt=""></a>
+                                        <div class="post-body">
+                                            <h3 class="post-title"><a href="{{url('/san-pham', $sp['url'])}}">{{$sp['name']}}</a></h3>
+                                            {{--                            <ul class="post-meta">--}}
+                                            {{--                                <li><a href="author.html">John Doe</a></li>--}}
+                                            {{--                                <li>20 April 2018</li>--}}
+                                            {{--                            </ul>--}}
+                                            <p>{{$sp['description']}}</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="post post-row">
-                                    <a class="post-img" href="blog-post.html"><img src="./img/post-13.jpg" alt=""></a>
-                                    <div class="post-body">
-                                        <h3 class="post-title"><a href="blog-post.html">Dưa Lưới</a></h3>
-                                        {{--                            <ul class="post-meta">--}}
-                                        {{--                                <li><a href="author.html">John Doe</a></li>--}}
-                                        {{--                                <li>20 April 2018</li>--}}
-                                        {{--                            </ul>--}}
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-                                    </div>
-                                </div>
+
+                    @endforeach
+                    </div>
 {{--                    </div>--}}
                 </div>
-                <div class="carousel-item-c">
-{{--                    <div class="card-box-b card-shadow news-box">--}}
-                        <div class="post post-row">
-                            <a class="post-img" href="blog-post.html"><img src="./img/post-13.jpg" alt=""></a>
-                            <div class="post-body">
-                                <h3 class="post-title"><a href="blog-post.html">Rượu Dưa Lưới</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-                            </div>
-                        </div>
-                        <div class="post post-row">
-                            <a class="post-img" href="blog-post.html"><img src="./img/post-13.jpg" alt=""></a>
-                            <div class="post-body">
-                                <h3 class="post-title"><a href="blog-post.html">Rượu Dưa Lưới</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-                            </div>
-                        </div>
-{{--                    </div>--}}
-                </div>
-                <div class="carousel-item-c">
-                    <div class="post post-row">
-                        <a class="post-img" href="blog-post.html"><img src="./img/post-13.jpg" alt=""></a>
-                        <div class="post-body">
-                            <h3 class="post-title"><a href="blog-post.html">Rượu Dưa Lưới</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-                        </div>
-                    </div>
-                    <div class="post post-row">
-                        <a class="post-img" href="blog-post.html"><img src="./img/post-13.jpg" alt=""></a>
-                        <div class="post-body">
-                            <h3 class="post-title"><a href="blog-post.html">Rượu Dưa Lưới</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item-c">
-                    <div class="post post-row">
-                        <a class="post-img" href="blog-post.html"><img src="./img/post-13.jpg" alt=""></a>
-                        <div class="post-body">
-                            <h3 class="post-title"><a href="blog-post.html">Rượu Dưa Lưới</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-                        </div>
-                    </div>
-                    <div class="post post-row">
-                        <a class="post-img" href="blog-post.html"><img src="./img/post-13.jpg" alt=""></a>
-                        <div class="post-body">
-                            <h3 class="post-title"><a href="blog-post.html">Rượu Dưa Lưới</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
