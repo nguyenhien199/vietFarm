@@ -16,7 +16,7 @@ class ServicesController extends Controller
         $services = Services::orderBy('id', 'DESC')->paginate(PAGINATION);
         return view('admin.services.index',['services' => $services]);
     }
-    
+
     public function showGet()
     {
         $categories = Categories::where([
@@ -25,7 +25,7 @@ class ServicesController extends Controller
         ])->select('id', 'name')->get();
         return view('admin.services.create', ['categories' => $categories]);
     }
-    
+
     public function create(ServicesRequest $request)
     {
         $data = $request->all();
@@ -43,7 +43,7 @@ class ServicesController extends Controller
                 }
                 Session::flash('message', 'Thêm sản phẩm thành công!');
                 Session::flash('alert-class', 'alert-success');
-                return redirect()->route('products');
+                return redirect()->route('services');
             }catch (\Exception $error){
                 Session::flash('message', 'Đã xảy ra lỗi! Xin vui lòng thử lại');
                 Session::flash('alert-class', 'alert-danger');
@@ -65,7 +65,7 @@ class ServicesController extends Controller
                 }
                 Session::flash('message', 'Sửa sản phẩm thành công!');
                 Session::flash('alert-class', 'alert-success');
-                return redirect()->route('products');
+                return redirect()->route('services');
             }catch (\Exception $error){
                 Session::flash('message', 'Đã xảy ra lỗi! Xin vui lòng thử lại');
                 Session::flash('alert-class', 'alert-danger');
@@ -73,7 +73,7 @@ class ServicesController extends Controller
             }
         }
     }
-    
+
     public function edit($id)
     {
         $categories = Categories::where([
@@ -83,7 +83,7 @@ class ServicesController extends Controller
         $product = Services::where('id', $id)->firstOrFail();
         return view('admin.services.create', ['data' => $product, 'categories' => $categories]);
     }
-    
+
     public function destroy($id)
     {
         try{
