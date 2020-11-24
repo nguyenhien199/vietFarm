@@ -19,5 +19,12 @@ class UsersSeeder extends Seeder
             'role' => \App\User::ADMIN,
             'status' => \App\User::ACTIVE,
         ]);
+        \App\User::create([
+            'name' => 'Việt farm',
+            'email' => 'vietfarm@gmail.com',
+            'password' => Hash::make('vietfarm123456'),
+            'role' => \App\User::ADMIN,
+            'status' => \App\User::ACTIVE,
+        ]);
     }
 }

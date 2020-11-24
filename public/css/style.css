@@ -1885,3 +1885,9 @@ textarea.input {
     float: left;
     padding: 5px;
 }
+.nav-menu li.active a {
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+    background: #d90808;
+}
