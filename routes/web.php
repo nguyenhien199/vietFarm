@@ -21,7 +21,9 @@ Route::get('/product/detail/{id}', 'ProductController@getDetail');
 Route::get('/dich-vu', 'ServiceController@index');
 Route::get('/dich-vu/{url}', 'ServiceController@show');
 Route::get('/cong-nghe', 'TechnologyController@index');
+Route::get('/cong-nghe/{url}', 'TechnologyController@show');
 Route::get('/phan-bon', 'FertilizerController@index');
+Route::get('/phan-bon/{url}', 'FertilizerController@show');
 
 Route::get('/contact', 'HomeController@contact');
 Route::get('/bai-viet/{url}', 'WebController@getDetailNew');

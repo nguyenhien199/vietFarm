@@ -37,18 +37,24 @@ class FertilizerController extends Controller
     public function show($url)
     {
         $categories = Categories::where([
-            'code' => Categories::CATEGORY_DV,
+            'code' => Categories::CATEGORY_PB,
             'status' => Categories::ACTIVE,
         ])->take(6)->select('id', 'name')->get();
-        $services = Services::where([
-            'status' => Services::ACTIVE,
+        foreach ($categories as $cate){
+            $cate->total = Fertilizers::where([
+                'status' => Fertilizers::ACTIVE,
+                'category_id' => $cate->id,
+            ])->count();
+        }
+        $fertilizers = Fertilizers::where([
+            'status' => Fertilizers::ACTIVE,
             'url' => $url
         ])->first();
-        $dv_lienquan = Services::where([
-            'status' => Services::ACTIVE,
-            'category_id' => $services->category_id
-        ])->where('id','!=',$services->id)->take(6)->get();
-        return view('web.service-detail', ['services' => $services, 'categories' => $categories, 'dv_lienquan' => $dv_lienquan]);
+        $dv_lienquan = Fertilizers::where([
+            'status' => Fertilizers::ACTIVE,
+            'category_id' => $fertilizers->category_id
+        ])->where('id','!=',$fertilizers->id)->take(6)->get();
+        return view('web.fertiizer-detail', ['fertilizers' => $fertilizers, 'categories' => $categories, 'dv_lienquan' => $dv_lienquan]);
     }
 
 

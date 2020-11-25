@@ -37,9 +37,9 @@
                 <div class="post post-row">
                     @foreach($technologies[$category->id] as $tech)
                         <div class="col-6">
-                            <a class="post-img" href="{{url('product/detail')}}"><img src="{{!empty($tech->image) ? URL::to($tech->image) : URL::to('/images/noimage.jpg')}}"/></a>
+                            <a class="post-img" href="{{url('/cong-nghe', $tech->url)}}"><img src="{{!empty($tech->image) ? URL::to($tech->image) : URL::to('/images/noimage.jpg')}}"/></a>
                             <div class="post-body">
-                                <h3 class="post-title"><a href="{{url('/san-pham', $tech->url)}}">{{$tech->name}}</a></h3>
+                                <h3 class="post-title"><a href="{{url('/cong-nghe', $tech->url)}}">{{$tech->name}}</a></h3>
                                 {{--                            <ul class="post-meta">--}}
                                 {{--                                <li><a href="author.html">John Doe</a></li>--}}
                                 {{--                                <li>20 April 2018</li>--}}

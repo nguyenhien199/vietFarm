@@ -172,31 +172,25 @@
             </div>
             <div id="new-carousel" class="owl-carousel owl-theme">
                 @foreach($product as $pro)
-                <div class="carousel-item-c">
-{{--                    <div class="card-box-b card-shadow news-box">--}}
-                    <div class="post post-row">
-                        <?php $i = 1 ?>
                     @foreach($pro as $sp)
 
-                                    <div class="col-6">
-                                        <a class="post-img" href="{{url('/san-pham', $sp['url'])}}"><img src="{{!empty($sp['image']) ? asset($sp['image']) : asset('/images/noimage.jpg')}}" alt=""></a>
-                                        <div class="post-body">
-                                            <h3 class="post-title"><a href="{{url('/san-pham', $sp['url'])}}">{{$sp['name']}}</a></h3>
-                                            {{--                            <ul class="post-meta">--}}
-                                            {{--                                <li><a href="author.html">John Doe</a></li>--}}
-                                            {{--                                <li>20 April 2018</li>--}}
-                                            {{--                            </ul>--}}
-                                            <p>{{$sp['description']}}</p>
-                                        </div>
-                                    </div>
-                            @if($i%2 == 0)
-                                <div style="clear: both"></div>
-                            @endif
-                        <?php $i++ ?>
+                        <div class="carousel-item-c">
+                            @foreach($sp as $sanpham)
+                            <div class="post post-row">
+                                <a class="post-img" href="{{url('/san-pham', $sanpham['url'])}}"><img src="{{!empty($sanpham['image']) ? asset($sanpham['image']) : asset('/images/noimage.jpg')}}" alt=""></a>
+                                <div class="post-body">
+                                    <h3 class="post-title"><a href="{{url('/san-pham', $sanpham['url'])}}">{{$sanpham['name']}}</a></h3>
+                                    {{--                            <ul class="post-meta">--}}
+                                    {{--                                <li><a href="author.html">John Doe</a></li>--}}
+                                    {{--                                <li>20 April 2018</li>--}}
+                                    {{--                            </ul>--}}
+                                    <p>{{$sanpham['description']}}</p>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+
                     @endforeach
-                    </div>
-{{--                    </div>--}}
-                </div>
                 @endforeach
             </div>
         </div>

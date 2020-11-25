@@ -40,6 +40,12 @@ class ServiceController extends Controller
             'code' => Categories::CATEGORY_DV,
             'status' => Categories::ACTIVE,
         ])->take(6)->select('id', 'name')->get();
+        foreach ($categories as $cate){
+            $cate->total = Services::where([
+                'status' => Services::ACTIVE,
+                'category_id' => $cate->id,
+            ])->count();
+        }
         $services = Services::where([
             'status' => Services::ACTIVE,
             'url' => $url

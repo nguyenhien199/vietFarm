@@ -42,18 +42,18 @@
                             <div class="wrapper">
                                 <div class="image-gallery">
                                     <aside class="thumbnails">
-                                        <a href="javascript:void(0)" class="selected thumbnail" data-big="{{$service->image}}">
-                                            <div class="thumbnail-image" style="background-image: url({{$service->image}})"></div>
+                                        <a href="javascript:void(0)" class="selected thumbnail" data-big="{{$technology->image}}">
+                                            <div class="thumbnail-image" style="background-image: url({{$technology->image}})"></div>
                                         </a>
-                                        <a href="javascript:void(0)" class="thumbnail" data-big="{{$service->image}}">
-                                            <div class="thumbnail-image" style="background-image: url({{$service->image}})"></div>
+                                        <a href="javascript:void(0)" class="thumbnail" data-big="{{$technology->image}}">
+                                            <div class="thumbnail-image" style="background-image: url({{$technology->image}})"></div>
                                         </a>
-                                        <a href="javascript:void(0)" class="thumbnail" data-big="{{$service->image}}">
-                                            <div class="thumbnail-image" style="background-image: url({{$service->image}})"></div>
+                                        <a href="javascript:void(0)" class="thumbnail" data-big="{{$technology->image}}">
+                                            <div class="thumbnail-image" style="background-image: url({{$technology->image}})"></div>
                                         </a>
                                     </aside>
 
-                                    <main class="primary" style="background-image: url({{$service->image}});"></main>
+                                    <main class="primary" style="background-image: url({{$technology->image}});"></main>
                                 </div>
 
                             </div>
@@ -115,7 +115,7 @@
                                 </div>
                             </div>
                             <div class="property-description">
-                                {!!$service->content!!}
+                                {!!$technology->content!!}
                             </div>
                         </div>
                     </div>

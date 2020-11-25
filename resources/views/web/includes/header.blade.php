@@ -19,7 +19,7 @@
 {{--                </div>--}}
                 <!-- logo -->
                 <div class="nav-logo">
-                    <a href="index.html" class="logo"><img src="{{url('./img/logo-viet-farm.png')}}" alt=""></a>
+                    <a href="/" class="logo"><img src="{{url('./img/logo-viet-farm.png')}}" alt=""></a>
                 </div>
                 <!-- /logo -->
                 <!-- /logo -->

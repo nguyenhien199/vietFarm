@@ -25,6 +25,12 @@ class TechnologyController extends Controller
             'code' => Categories::CATEGORY_CN,
             'status' => Categories::ACTIVE,
         ])->take(6)->select('id', 'name')->get();
+        foreach ($categories as $cate){
+            $cate->total = Technologies::where([
+                'status' => Technologies::ACTIVE,
+                'category_id' => $cate->id,
+            ])->count();
+        }
         $technologies = [];
         foreach ($categories as $category){
             $technologies[$category->id] = Technologies::where([
@@ -37,18 +43,18 @@ class TechnologyController extends Controller
     public function show($url)
     {
         $categories = Categories::where([
-            'code' => Categories::CATEGORY_DV,
+            'code' => Categories::CATEGORY_CN,
             'status' => Categories::ACTIVE,
         ])->take(6)->select('id', 'name')->get();
-        $services = Services::where([
-            'status' => Services::ACTIVE,
+        $technology = Technologies::where([
+            'status' => Technologies::ACTIVE,
             'url' => $url
         ])->first();
-        $dv_lienquan = Services::where([
-            'status' => Services::ACTIVE,
-            'category_id' => $services->category_id
-        ])->where('id','!=',$services->id)->take(6)->get();
-        return view('web.service-detail', ['services' => $services, 'categories' => $categories, 'dv_lienquan' => $dv_lienquan]);
+        $cn_lienquan = Technologies::where([
+            'status' => Technologies::ACTIVE,
+            'category_id' => $technology->category_id
+        ])->where('id','!=',$technology->id)->take(6)->get();
+        return view('web.techlonogy-detail', ['technology' => $technology, 'categories' => $categories, 'dv_lienquan' => $cn_lienquan]);
     }
 
 

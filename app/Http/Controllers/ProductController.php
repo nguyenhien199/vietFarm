@@ -45,6 +45,12 @@ class ProductController extends Controller
             'code' => Categories::CATEGORY_SP,
             'status' => Categories::ACTIVE,
         ])->take(6)->select('id', 'name')->get();
+        foreach ($categories as $cate){
+            $cate->total = Products::where([
+                'status' => Products::ACTIVE,
+                'category_id' => $cate->id,
+            ])->count();
+        }
         $product = Products::where([
             'status' => Products::ACTIVE,
             'url' => $url

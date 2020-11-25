@@ -129,14 +129,14 @@
     loop: true,
     margin: 15,
     responsive: {
-      0: {
+      560: {
         items: 1,
       },
       769: {
         items: 1,
       },
       992: {
-        items: 1,
+        items: 2,
       }
     }
   });

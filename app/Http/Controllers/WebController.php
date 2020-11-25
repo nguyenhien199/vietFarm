@@ -13,6 +13,9 @@ class WebController extends Controller
         $newPost = News::where('status', 1)->latest()->take(2)->get();
         $product = Products::where('status', 1)->latest()->take(8)->get()->toArray();
         $product = array_chunk($product,4);
+        foreach ($product as $k => $pro){
+            $product[$k] = array_chunk($pro,2);
+        }
         $slide = Slides::where([
             'status' => Slides::ACTIVE
         ])->latest()->take(SLIDE_SHOW)->get();

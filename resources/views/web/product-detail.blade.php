@@ -19,7 +19,7 @@
                         <div class="category-widget">
                             <ul>
                                 @foreach($categories as $cat)
-                                <li><a href="#">{{$cat->name}} <span>451</span></a></li>
+                                <li><a href="#">{{$cat->name}} <span>{{$cat->total}}</span></a></li>
                                 @endforeach
                             </ul>
                         </div>
