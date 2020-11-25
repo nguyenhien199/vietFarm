@@ -6,7 +6,7 @@
         <!-- container -->
             <!-- row -->
 
-            <div class="row">
+            <div>
                 <!-- ======= Intro Section ======= -->
                 <div class="intro intro-carousel">
                     <div id="carousel" class="owl-carousel owl-theme">
@@ -144,7 +144,7 @@
         <!-- container -->
         <div class=" block-info-3" style="background-image: url(./img/bg-home3.jpg); background-size:100%;   background-position: center;
   background-repeat: no-repeat; min-height: 270px; background-size: cover;">
-            <div class="row" style="height: 50%">
+            <div style="height: 50%">
                 <div class="col-md-offset-5 col-md-7">
                     <p>
                         VietFarm đi tiên phong về ứng dụng công nghệ cao
@@ -220,7 +220,7 @@
                         <p style="text-align: center;">VietFarm luôn trân trọng sự cổ vũ và ủng hộ của cộng đồng</p>
                         <div class="row col-md-12">
                             <div class="col-md-6">
-                                <iframe width="500" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+                                <iframe width="500" id="iframe-video" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
                             </div>
                             <div class="col-md-6">
                                 <h4>TRUYỀN THÔNG NÓI GÌ VỀ VIETFARM</h4>
