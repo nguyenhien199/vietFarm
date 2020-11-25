@@ -50,11 +50,11 @@
                 <div class="carousel-item-a">
                     <div class="post row">
                         <div class="col-md-5">
-                            <a class="post-img" href="{{url('new/new-detail',[$new->id])}}" style="margin-top: 50px"><img src="{{$new->image}}" alt=""></a>
+                            <a class="post-img" href="{{url('bai-viet',[$new->url])}}" style="margin-top: 50px"><img src="{{$new->image}}" alt=""></a>
                         </div>
                         <div class="col-md-7" style="margin-top: 10px;">
                             <h3 class="post-title">
-                                <a href="{{url('new/new-detail',[$new->id])}}">{{$new->title}}</a></h3>
+                                <a href="{{url('bai-viet',[$new->url])}}">{{$new->title}}</a></h3>
                             <p>
                                {{$new->description}}
                             </p>
