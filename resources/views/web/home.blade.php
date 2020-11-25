@@ -175,6 +175,7 @@
                 <div class="carousel-item-c">
 {{--                    <div class="card-box-b card-shadow news-box">--}}
                     <div class="post post-row">
+                        <?php $i = 1 ?>
                     @foreach($pro as $sp)
 
                                     <div class="col-6">
@@ -188,7 +189,10 @@
                                             <p>{{$sp['description']}}</p>
                                         </div>
                                     </div>
-
+                            @if($i%2 == 0)
+                                <div style="clear: both"></div>
+                            @endif
+                        <?php $i++ ?>
                     @endforeach
                     </div>
 {{--                    </div>--}}
