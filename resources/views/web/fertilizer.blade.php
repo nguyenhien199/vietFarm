@@ -9,7 +9,7 @@
         <!-- NAV -->
         <div id="nav">
             <div id="nav-top">
-                <h1>DỊCH VỤ</h1>
+                <h1>PHÂN BÓN</h1>
                 <hr style="width: 100px; text-align: center; border: 1px solid"/>
                 {{--<p>"Chọn lọc những gì tốt nhất từ thiên nhiên để chăm sóc gia đình bạn"</p>--}}
             </div>
@@ -40,10 +40,6 @@
                             <a class="post-img" href="{{url('product/detail')}}"><img src="{{!empty($fe->image) ? URL::to($fe->image) : URL::to('/images/noimage.jpg')}}"/></a>
                             <div class="post-body">
                                 <h3 class="post-title"><a href="{{url('/san-pham', $fe->url)}}">{{$fe->name}}</a></h3>
-                                {{--                            <ul class="post-meta">--}}
-                                {{--                                <li><a href="author.html">John Doe</a></li>--}}
-                                {{--                                <li>20 April 2018</li>--}}
-                                {{--                            </ul>--}}
                                 <p>{{$fe->description}}</p>
                             </div>
                         </div>

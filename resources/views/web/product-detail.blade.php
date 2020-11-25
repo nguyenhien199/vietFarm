@@ -59,50 +59,50 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="property-agent">
-                                <h4 class="title-agent">Anabella Geller</h4>
-                                <p class="color-text-a">
-                                    Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
-                                    dui. Quisque velit nisi,
-                                    pretium ut lacinia in, elementum id enim.
-                                </p>
-                                <ul class="list">
-                                    <li class="d-flex justify-content-between">
-                                        <strong>Property ID:</strong>
-                                        <span>1134</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <strong>Location:</strong>
-                                        <span>Chicago, IL 606543</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <strong>Property Type:</strong>
-                                        <span>House</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <strong>Status:</strong>
-                                        <span>Sale</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <strong>Area:</strong>
-                                        <span>340m
-                          <sup>2</sup>
-                        </span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <strong>Beds:</strong>
-                                        <span>4</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <strong>Baths:</strong>
-                                        <span>2</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <strong>Garage:</strong>
-                                        <span>1</span>
-                                    </li>
-                                </ul>
-                            </div>
+                            {{--<div class="property-agent">--}}
+                                {{--<h4 class="title-agent">Anabella Geller</h4>--}}
+                                {{--<p class="color-text-a">--}}
+                                    {{--Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet--}}
+                                    {{--dui. Quisque velit nisi,--}}
+                                    {{--pretium ut lacinia in, elementum id enim.--}}
+                                {{--</p>--}}
+                                {{--<ul class="list">--}}
+                                    {{--<li class="d-flex justify-content-between">--}}
+                                        {{--<strong>Property ID:</strong>--}}
+                                        {{--<span>1134</span>--}}
+                                    {{--</li>--}}
+                                    {{--<li class="d-flex justify-content-between">--}}
+                                        {{--<strong>Location:</strong>--}}
+                                        {{--<span>Chicago, IL 606543</span>--}}
+                                    {{--</li>--}}
+                                    {{--<li class="d-flex justify-content-between">--}}
+                                        {{--<strong>Property Type:</strong>--}}
+                                        {{--<span>House</span>--}}
+                                    {{--</li>--}}
+                                    {{--<li class="d-flex justify-content-between">--}}
+                                        {{--<strong>Status:</strong>--}}
+                                        {{--<span>Sale</span>--}}
+                                    {{--</li>--}}
+                                    {{--<li class="d-flex justify-content-between">--}}
+                                        {{--<strong>Area:</strong>--}}
+                                        {{--<span>340m--}}
+                          {{--<sup>2</sup>--}}
+                        {{--</span>--}}
+                                    {{--</li>--}}
+                                    {{--<li class="d-flex justify-content-between">--}}
+                                        {{--<strong>Beds:</strong>--}}
+                                        {{--<span>4</span>--}}
+                                    {{--</li>--}}
+                                    {{--<li class="d-flex justify-content-between">--}}
+                                        {{--<strong>Baths:</strong>--}}
+                                        {{--<span>2</span>--}}
+                                    {{--</li>--}}
+                                    {{--<li class="d-flex justify-content-between">--}}
+                                        {{--<strong>Garage:</strong>--}}
+                                        {{--<span>1</span>--}}
+                                    {{--</li>--}}
+                                {{--</ul>--}}
+                            {{--</div>--}}
                         </div>
                     </div>
                     <div class="row">

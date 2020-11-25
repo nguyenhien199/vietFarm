@@ -143,7 +143,7 @@
     <div class="section">
         <!-- container -->
         <div class=" block-info-3" style="background-image: url(./img/bg-home3.jpg); background-size:100%;   background-position: center;
-  background-repeat: no-repeat; min-height: 200px">
+  background-repeat: no-repeat; min-height: 250px; background-size: cover">
             <div class="row" style="height: 50%">
                 <div class="col-md-offset-5 col-md-7">
                     <p>
@@ -167,7 +167,7 @@
     <section class="section-news">
         <div class="container">
             <div class="row">
-                <h2 class="text-center">SẢN PHẨM</h2>
+                <h2 class="text-center" style="padding-top: 20px">SẢN PHẨM</h2>
                 <hr style="width: 100px; text-align: center; border: 1px solid"/>
             </div>
             <div id="new-carousel" class="owl-carousel owl-theme">

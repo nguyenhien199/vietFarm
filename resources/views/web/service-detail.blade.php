@@ -14,7 +14,7 @@
                     <!-- category widget -->
                     <div class="aside-widget">
                         <div class="section-title">
-                            <h2 class="title">Danh Mục sản phẩm</h2>
+                            <h2 class="title">Danh Mục Dịch Vụ</h2>
                         </div>
                         <div class="category-widget">
                             <ul>
@@ -59,50 +59,50 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="property-agent">
-                                <h4 class="title-agent">Anabella Geller</h4>
-                                <p class="color-text-a">
-                                    Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
-                                    dui. Quisque velit nisi,
-                                    pretium ut lacinia in, elementum id enim.
-                                </p>
-                                <ul class="list">
-                                    <li class="d-flex justify-content-between">
-                                        <strong>Property ID:</strong>
-                                        <span>1134</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <strong>Location:</strong>
-                                        <span>Chicago, IL 606543</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <strong>Property Type:</strong>
-                                        <span>House</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <strong>Status:</strong>
-                                        <span>Sale</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <strong>Area:</strong>
-                                        <span>340m
-                          <sup>2</sup>
-                        </span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <strong>Beds:</strong>
-                                        <span>4</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <strong>Baths:</strong>
-                                        <span>2</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <strong>Garage:</strong>
-                                        <span>1</span>
-                                    </li>
-                                </ul>
-                            </div>
+                            {{--<div class="property-agent">--}}
+                                {{--<h4 class="title-agent">Anabella Geller</h4>--}}
+                                {{--<p class="color-text-a">--}}
+                                    {{--Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet--}}
+                                    {{--dui. Quisque velit nisi,--}}
+                                    {{--pretium ut lacinia in, elementum id enim.--}}
+                                {{--</p>--}}
+                                {{--<ul class="list">--}}
+                                    {{--<li class="d-flex justify-content-between">--}}
+                                        {{--<strong>Property ID:</strong>--}}
+                                        {{--<span>1134</span>--}}
+                                    {{--</li>--}}
+                                    {{--<li class="d-flex justify-content-between">--}}
+                                        {{--<strong>Location:</strong>--}}
+                                        {{--<span>Chicago, IL 606543</span>--}}
+                                    {{--</li>--}}
+                                    {{--<li class="d-flex justify-content-between">--}}
+                                        {{--<strong>Property Type:</strong>--}}
+                                        {{--<span>House</span>--}}
+                                    {{--</li>--}}
+                                    {{--<li class="d-flex justify-content-between">--}}
+                                        {{--<strong>Status:</strong>--}}
+                                        {{--<span>Sale</span>--}}
+                                    {{--</li>--}}
+                                    {{--<li class="d-flex justify-content-between">--}}
+                                        {{--<strong>Area:</strong>--}}
+                                        {{--<span>340m--}}
+                          {{--<sup>2</sup>--}}
+                        {{--</span>--}}
+                                    {{--</li>--}}
+                                    {{--<li class="d-flex justify-content-between">--}}
+                                        {{--<strong>Beds:</strong>--}}
+                                        {{--<span>4</span>--}}
+                                    {{--</li>--}}
+                                    {{--<li class="d-flex justify-content-between">--}}
+                                        {{--<strong>Baths:</strong>--}}
+                                        {{--<span>2</span>--}}
+                                    {{--</li>--}}
+                                    {{--<li class="d-flex justify-content-between">--}}
+                                        {{--<strong>Garage:</strong>--}}
+                                        {{--<span>1</span>--}}
+                                    {{--</li>--}}
+                                {{--</ul>--}}
+                            {{--</div>--}}
                         </div>
                     </div>
                     <div class="row">
@@ -110,7 +110,7 @@
                             <div class="row">
                                 <div class="col-sm-12" style="margin-top: 30px">
                                     <div class="title-box-d">
-                                        <h3 class="title-d">Chi tiết sản phẩm</h3>
+                                        <h3 class="title-d">Chi tiết dịch vụ</h3>
                                     </div>
                                 </div>
                             </div>
@@ -134,10 +134,10 @@
                 <div class="col-md-12">
                     <div class="title-wrap d-flex justify-content-between">
                         <div class="title-box">
-                            <h2 class="title-a">Những sản phẩm liên quan</h2>
+                            <h2 class="title-a">Những dịch vụ liên quan</h2>
                         </div>
                         <div class="title-link">
-                            <a href="blog-grid.html">Tất cả sản phẩm
+                            <a href="blog-grid.html">Tất cả dịch vụ
                                 <span class="ion-ios-arrow-forward"></span>
                             </a>
                         </div>
