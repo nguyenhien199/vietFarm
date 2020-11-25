@@ -14,7 +14,7 @@
                     <!-- category widget -->
                     <div class="aside-widget">
                         <div class="section-title">
-                            <h2 class="title">Danh Mục Dịch Vụ</h2>
+                            <h2 class="title">Danh Mục Phân Bón</h2>
                         </div>
                         <div class="category-widget">
                             <ul>
@@ -110,7 +110,7 @@
                             <div class="row">
                                 <div class="col-sm-12" style="margin-top: 30px">
                                     <div class="title-box-d">
-                                        <h3 class="title-d">Chi tiết dịch vụ</h3>
+                                        <h3 class="title-d">Chi tiết phân bón</h3>
                                     </div>
                                 </div>
                             </div>
@@ -134,10 +134,10 @@
                 <div class="col-md-12">
                     <div class="title-wrap d-flex justify-content-between">
                         <div class="title-box">
-                            <h2 class="title-a">Những dịch vụ liên quan</h2>
+                            <h2 class="title-a">Những phân bón liên quan</h2>
                         </div>
                         <div class="title-link">
-                            <a href="blog-grid.html">Tất cả dịch vụ
+                            <a href="blog-grid.html">Tất cả phân bón
                                 <span class="ion-ios-arrow-forward"></span>
                             </a>
                         </div>
