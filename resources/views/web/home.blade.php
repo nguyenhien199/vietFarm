@@ -178,7 +178,7 @@
                     @foreach($pro as $sp)
 
                                     <div class="col-6">
-                                        <a class="post-img" href="{{url('/san-pham', $sp['url'])}}"><img src="{{!empty($pro->image) ? URL::to($sp->image) : URL::to('/images/noimage.jpg')}}" alt=""></a>
+                                        <a class="post-img" href="{{url('/san-pham', $sp['url'])}}"><img src="{{!empty($sp['image']) ? asset($sp['image']) : asset('/images/noimage.jpg')}}" alt=""></a>
                                         <div class="post-body">
                                             <h3 class="post-title"><a href="{{url('/san-pham', $sp['url'])}}">{{$sp['name']}}</a></h3>
                                             {{--                            <ul class="post-meta">--}}
