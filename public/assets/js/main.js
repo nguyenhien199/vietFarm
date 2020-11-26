@@ -129,15 +129,18 @@
     loop: true,
     margin: 15,
     responsive: {
-      560: {
-        items: 1,
-      },
-      769: {
-        items: 1,
-      },
-      992: {
-        items: 2,
-      }
+        0: {
+            items: 1,
+        },
+          560: {
+            items: 1,
+          },
+          769: {
+            items: 2,
+          },
+          992: {
+            items: 2,
+          }
     }
   });
     $('#new-carousel2').owlCarousel({
