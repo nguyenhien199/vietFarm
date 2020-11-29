@@ -180,10 +180,6 @@
                                 <a class="post-img" href="{{url('/san-pham', $sanpham['url'])}}"><img src="{{!empty($sanpham['image']) ? asset($sanpham['image']) : asset('/images/noimage.jpg')}}" alt=""></a>
                                 <div class="post-body">
                                     <h3 class="post-title"><a href="{{url('/san-pham', $sanpham['url'])}}">{{$sanpham['name']}}</a></h3>
-                                    {{--                            <ul class="post-meta">--}}
-                                    {{--                                <li><a href="author.html">John Doe</a></li>--}}
-                                    {{--                                <li>20 April 2018</li>--}}
-                                    {{--                            </ul>--}}
                                     <p>{{$sanpham['description']}}</p>
                                 </div>
                             </div>

@@ -1902,4 +1902,7 @@ textarea.input {
         word-break: break-word;
     }
 }
+@media (max-width: 520px)  {
+  
+}
 
