@@ -1902,7 +1902,7 @@ textarea.input {
         word-break: break-word;
     }
     .section .post .post-body {
-         padding-top: 0px;
+         padding-top: 0px !important;
     }
 }
 
