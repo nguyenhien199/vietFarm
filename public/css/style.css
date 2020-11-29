@@ -1895,5 +1895,11 @@ textarea.input {
     #iframe-video{
         width: 100%;
     }
+    .col-6{
+        width: 100%;
+    }
+    .text-description{
+        word-break: break-word;
+    }
 }
 

@@ -46,7 +46,7 @@
                         {{--                                <li><a href="author.html">John Doe</a></li>--}}
                         {{--                                <li>20 April 2018</li>--}}
                         {{--                            </ul>--}}
-                        <p>{{$pro->description}}</p>
+                        <p class="text-description">{{$pro->description}}</p>
                     </div>
                 </div>
                 @endforeach
