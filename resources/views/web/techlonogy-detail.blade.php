@@ -137,7 +137,7 @@
                             <h2 class="title-a">Những công nghệ liên quan</h2>
                         </div>
                         <div class="title-link">
-                            <a href="blog-grid.html">Tất cả công nghệ
+                            <a href="#">Tất cả công nghệ
                                 <span class="ion-ios-arrow-forward"></span>
                             </a>
                         </div>

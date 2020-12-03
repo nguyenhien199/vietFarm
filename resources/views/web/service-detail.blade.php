@@ -137,7 +137,7 @@
                             <h2 class="title-a">Những dịch vụ liên quan</h2>
                         </div>
                         <div class="title-link">
-                            <a href="blog-grid.html">Tất cả dịch vụ
+                            <a href="#">Tất cả dịch vụ
                                 <span class="ion-ios-arrow-forward"></span>
                             </a>
                         </div>

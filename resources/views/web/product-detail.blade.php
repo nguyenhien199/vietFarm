@@ -137,7 +137,7 @@
                             <h2 class="title-a">Những sản phẩm liên quan</h2>
                         </div>
                         <div class="title-link">
-                            <a href="blog-grid.html">Tất cả sản phẩm
+                            <a href="#">Tất cả sản phẩm
                                 <span class="ion-ios-arrow-forward"></span>
                             </a>
                         </div>

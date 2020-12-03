@@ -19,7 +19,7 @@
                                         <div class="row">
                                             <div class="col-lg-8">
                                                 <div class="intro-body">
-                                                    <span class="text-white">{{$sl->content}}</span>
+                                                    <span class="text-white" alt="Ảnh trang trại VietFram">{{$sl->content}}</span>
                                                     <p class="color-b">{{$sl->author}}</p>
                                                 </div>
                                             </div>
@@ -205,7 +205,7 @@
 
                     <!-- post content -->
                     <div class="section-row">
-                        <h3 class="text-center">TRUYỀN THÔNG NÓI GÌ VỀ VIETFARM</h3>
+                        <h2 class="text-center">TRUYỀN THÔNG NÓI GÌ VỀ VIETFARM</h2>
                         <hr style="width: 200px; text-align: center; border: 1px solid"/>
                         <p style="text-align: center;">VietFarm luôn trân trọng sự cổ vũ và ủng hộ của cộng đồng</p>
                         <div class="row col-md-12">

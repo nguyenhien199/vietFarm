@@ -137,7 +137,7 @@
                             <h2 class="title-a">Những phân bón liên quan</h2>
                         </div>
                         <div class="title-link">
-                            <a href="blog-grid.html">Tất cả phân bón
+                            <a href="#">Tất cả phân bón
                                 <span class="ion-ios-arrow-forward"></span>
                             </a>
                         </div>

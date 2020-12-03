@@ -39,7 +39,7 @@
             <div class="post post-row">
                 @foreach($products[$category->id] as $pro)
                 <div class="col-6">
-                    <a class="post-img" href="{{url('product/detail')}}"><img src="{{!empty($pro->image) ? URL::to($pro->image) : URL::to('/images/noimage.jpg')}}"/></a>
+                    <a class="post-img" href="{{url('/san-pham', $pro->url)}}"><img src="{{!empty($pro->image) ? URL::to($pro->image) : URL::to('/images/noimage.jpg')}}"/></a>
                     <div class="post-body">
                         <h3 class="post-title"><a href="{{url('/san-pham', $pro->url)}}">{{$pro->name}}</a></h3>
                         {{--                            <ul class="post-meta">--}}

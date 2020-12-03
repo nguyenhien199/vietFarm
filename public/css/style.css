@@ -35,7 +35,7 @@ RESPONSIVE
 /*    src: url(sansation_light.woff);*/
 /*}*/
 body {
-  font-family: 'Muli', sans-serif;
+  font-family: 'Open Sans';
   font-size: 16px;
   color: #505050;
   font-weight: 400;
@@ -43,7 +43,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans';
   color: #11151c;
   font-weight: 700;
   margin: 0px 0px 15px;
@@ -1630,11 +1630,12 @@ textarea.input {
 # Clients
 --------------------------------------------------------------*/
 .clients{
-    margin-top: 40px;
+    padding: 30px;
+    background: #ddd;
 }
 .clients .clients-wrap {
-    border-top: 1px solid #ececec;
-    border-left: 1px solid #ececec;
+    /*border-top: 1px solid #ececec;*/
+    /*border-left: 1px solid #ececec;*/
 }
 
 .clients .client-logo {
@@ -1650,10 +1651,10 @@ textarea.input {
 }
 
 .clients .client-logo img {
-    transition: all 0.3s ease-in-out;
+    /*transition: all 0.3s ease-in-out;*/
     height: 36px;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+    /*-webkit-filter: grayscale(100%);*/
+    /*filter: grayscale(100%);*/
 }
 
 .clients .client-logo:hover img {
