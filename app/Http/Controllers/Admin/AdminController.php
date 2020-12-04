@@ -26,7 +26,7 @@ class AdminController extends Controller
         $data = $requests->all();
         if($data['password'] || $data['newPassword']){
             $current_password = Auth::User()->password;
-            if($data['password'] == $current_password)
+            if(Hash::check($data['password'], $current_password))
             {
                 User::where('id', Auth::user()->id)->update([
                     'address' => $data['address'],
