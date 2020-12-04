@@ -34,6 +34,8 @@ Route::get('logout', 'Auth\LoginController@logout');
 
 Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
     Route::get('/', 'Admin\OverviewController@index')->name('overview');
+    Route::get('/setting', 'Admin\AdminController@setting')->name('setting');
+    Route::post('/setting', 'Admin\AdminController@editUser');
 
     Route::group(['middleware' => 'check_admin'],function () {
         // user
