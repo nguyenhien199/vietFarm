@@ -42,11 +42,13 @@
                 <div id="nav-aside">
                     <ul class="nav-aside-menu">
                         <li><a href="{{asset('/')}}">VIET FARM</a></li>
-                        <li><a href="{{url('/san-pham')}}">THỰC PHẨM SẠCH</a></li>
-                        <li><a href="{{url('/dich-vu')}}">DỊCH VỤ</a></li>
-                        <li><a href="{{url('/cong-nghe')}}">CHUYỂN GIAO CÔNG NGHỆ</a></li>
                         <li><a href="{{url('/phan-bon')}}">PHÂN BÓN</a></li>
-                        <li><a href="{{url('/contact')}}">LIÊN HỆ</a></li>
+                        <li><a href="{{url('/cong-nghe')}}">CÔNG NGHỆ</a></li>
+                        <li><a href="{{url('/dich-vu')}}">DỰ ÁN KHOA HỌC</a></li>
+                        <li><a href="{{url('/dich-vu')}}">CHỨNG NHẬN</a></li>
+                        <li><a href="{{url('/dich-vu')}}">GIỐNG & BVTV</a></li>
+                        <li><a href="{{url('/san-pham')}}">THỰC PHẨM SẠCH</a></li>
+                        <li><a href="{{asset('/contact')}}">LIÊN HỆ</a></li>
                     </ul>
                     <button class="nav-close nav-aside-close"><span></span></button>
                 </div>
@@ -87,10 +89,12 @@
 
                 <ul class="nav-menu">
                     <li><a href="{{asset('/')}}">VIET FARM</a></li>
-                    <li><a href="{{asset('/san-pham')}}">THỰC PHẨM SẠCH</a></li>
-                    <li><a href="{{url('/dich-vu')}}">DỊCH VỤ</a></li>
-                    <li><a href="{{url('/cong-nghe')}}">CHUYỂN GIAO CÔNG NGHỆ</a></li>
                     <li><a href="{{url('/phan-bon')}}">PHÂN BÓN</a></li>
+                    <li><a href="{{url('/cong-nghe')}}">CÔNG NGHỆ</a></li>
+                    <li><a href="{{url('/dich-vu')}}">DỰ ÁN KHOA HỌC</a></li>
+                    <li><a href="{{url('/dich-vu')}}">CHỨNG NHẬN</a></li>
+                    <li><a href="{{url('/dich-vu')}}">GIỐNG & BVTV</a></li>
+                    <li><a href="{{url('/san-pham')}}">THỰC PHẨM SẠCH</a></li>
                     <li><a href="{{asset('/contact')}}">LIÊN HỆ</a></li>
                 </ul>
                 <!-- /nav -->
