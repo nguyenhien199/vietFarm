@@ -79,6 +79,14 @@
                         <li class="{{ request()->is('admin/fertilizers/create') ? 'active' : '' }}"><a href="{{url('/admin/fertilizers/create')}}">Thêm phân bón mới</a></li>
                     </ul>
                 </li>
+                <li class="{{ request()->is('admin/*certifications*') ? 'active' : '' }}">
+                    <a href="{{url('/admin/category-certifications')}}"><i class="fa fa-twitch"></i> <span class="nav-label">Danh mục chứng nhận</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li class="{{ request()->is('admin/category-certifications') ? 'active' : '' }}"><a href="{{url('/admin/category-certifications')}}">Danh mục chứng nhận</a></li>
+                        <li class="{{ request()->is('admin/certifications') ? 'active' : '' }}"><a href="{{url('/admin/certifications')}}">Danh sách chứng nhận</a></li>
+                        <li class="{{ request()->is('admin/certifications/create') ? 'active' : '' }}"><a href="{{url('/admin/certifications/create')}}">Thêm phân thêm chứng nhận</a></li>
+                    </ul>
+                </li>
 
                 {{--<li>--}}
                     {{--<a href="#"><i class="fa fa-sliders"></i> <span class="nav-label">Giao diện</span><span class="fa arrow"></span></a>--}}

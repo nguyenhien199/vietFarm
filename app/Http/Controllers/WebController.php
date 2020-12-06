@@ -11,8 +11,8 @@ class WebController extends Controller
 {
     public function index(){
         $newPost = News::where('status', 1)->latest()->take(2)->get();
-        $product = Products::where('status', 1)->latest()->take(8)->get()->toArray();
-        $product = array_chunk($product,4);
+        $product = Products::where('status', 1)->latest()->take(12)->get()->toArray();
+        $product = array_chunk($product,6);
         foreach ($product as $k => $pro){
             $product[$k] = array_chunk($pro,2);
         }

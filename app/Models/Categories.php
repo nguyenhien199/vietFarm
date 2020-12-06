@@ -14,6 +14,8 @@ class Categories extends Model
     const CATEGORY_DV = 'DV';
     const CATEGORY_CN = 'CN';
     const CATEGORY_PB = 'PB';
+    const CATEGORY_CC = 'CC';
+    const CATEGORY_G = 'G';
     const NOTACTIVE = 0;
     const ACTIVE = 1;
     

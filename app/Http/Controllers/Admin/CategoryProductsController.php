@@ -32,6 +32,18 @@ class CategoryProductsController extends Controller
         return view('admin.categoryFertilizers.index',['categoryProducts' => $cate_products]);
     }
 
+    public function indexCertification()
+    {
+        $cate_products = Categories::where('code', Categories::CATEGORY_CC)->orderBy('id', 'DESC')->paginate(PAGINATION);
+        return view('admin.categoryCertification.index',['categoryProducts' => $cate_products]);
+    }
+
+    public function indexGiong()
+    {
+        $cate_products = Categories::where('code', Categories::CATEGORY_G)->orderBy('id', 'DESC')->paginate(PAGINATION);
+        return view('admin.categoryGiong.index',['categoryProducts' => $cate_products]);
+    }
+
     public function create(CategoryRequests $request)
     {
         $data = $request->all();

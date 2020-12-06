@@ -246,32 +246,32 @@
 
     <!--SECTION -->
     <section id="clients" class="clients">
-        <div class="container aos-init aos-animate doitac" data-aos="fade-up">
+        <div class="container aos-init aos-animate" data-aos="fade-up">
 
             <h2 class="text-center">ĐỐI TÁC CỦA VIETFARM</h2>
             <hr style="width: 100px; text-align: center; border: 1px solid">
 
             <div class="row no-gutters clients-wrap clearfix aos-init aos-animate" data-aos="fade-up">
 
-                <div class="col-lg-3 col-md-3">
+                <div class="col-lg-3 col-md-4 col-6">
                     <div class="client-logo">
                         <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-3">
+                <div class="col-lg-3 col-md-4 col-6">
                     <div class="client-logo">
                         <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-3">
+                <div class="col-lg-3 col-md-4 col-6">
                     <div class="client-logo">
                         <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-3">
+                <div class="col-lg-3 col-md-4 col-6">
                     <div class="client-logo">
                         <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
                     </div>

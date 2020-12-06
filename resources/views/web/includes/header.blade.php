@@ -14,10 +14,10 @@
                 <!-- /social -->
 
                 <!-- logo -->
-{{--                <div class="nav-logo">--}}
-{{--                    <a href="index.html" class="logo"><img src="./img/logo.png" alt=""></a>--}}
-{{--                </div>--}}
-                <!-- logo -->
+            {{--                <div class="nav-logo">--}}
+            {{--                    <a href="index.html" class="logo"><img src="./img/logo.png" alt=""></a>--}}
+            {{--                </div>--}}
+            <!-- logo -->
                 <div class="nav-logo">
                     <a href="/" class="logo"><img src="{{url('./img/logo-viet-farm.png')}}" alt=""></a>
                 </div>
@@ -27,15 +27,15 @@
                 <!-- search & aside toggle -->
                 <div class="nav-btns">
                     <button class="aside-btn"><i class="fa fa-bars"></i></button>
-{{--                    <button class="search-btn"><i class="fa fa-search"></i></button>--}}
-{{--                    <div id="nav-search">--}}
-{{--                        <form>--}}
-{{--                            <input class="input" name="search" placeholder="Enter your search...">--}}
-{{--                        </form>--}}
-{{--                        <button class="nav-close search-close">--}}
-{{--                            <span></span>--}}
-{{--                        </button>--}}
-{{--                    </div>--}}
+                    {{--                    <button class="search-btn"><i class="fa fa-search"></i></button>--}}
+                    {{--                    <div id="nav-search">--}}
+                    {{--                        <form>--}}
+                    {{--                            <input class="input" name="search" placeholder="Enter your search...">--}}
+                    {{--                        </form>--}}
+                    {{--                        <button class="nav-close search-close">--}}
+                    {{--                            <span></span>--}}
+                    {{--                        </button>--}}
+                    {{--                    </div>--}}
                 </div>
                 <!-- /search & aside toggle -->
                 <!-- Aside Nav -->
@@ -55,32 +55,32 @@
         </div>
         <!-- /Top Nav -->
         <!-- Top Nav -->
-{{--        <div id="nav-top">--}}
-{{--            <div class="container">--}}
-{{--                <!-- social -->--}}
-{{--                <div class="pull-left">--}}
-{{--                    <ul class="nav-menu">--}}
-{{--                        <li><a href="#">VIET FARM</a></li>--}}
-{{--                        <li><a href="#">THỰC PHẨM SẠCH</a></li>--}}
-{{--                        <li><a href="#">DỊCH VỤ</a></li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--                <!-- /social -->--}}
+    {{--        <div id="nav-top">--}}
+    {{--            <div class="container">--}}
+    {{--                <!-- social -->--}}
+    {{--                <div class="pull-left">--}}
+    {{--                    <ul class="nav-menu">--}}
+    {{--                        <li><a href="#">VIET FARM</a></li>--}}
+    {{--                        <li><a href="#">THỰC PHẨM SẠCH</a></li>--}}
+    {{--                        <li><a href="#">DỊCH VỤ</a></li>--}}
+    {{--                    </ul>--}}
+    {{--                </div>--}}
+    {{--                <!-- /social -->--}}
 
 
 
-{{--                <!-- search & aside toggle -->--}}
-{{--                <div class="pull-right">--}}
-{{--                    <ul class="nav-menu">--}}
-{{--                        <li><a href="#">CHUYỂN GIAO CÔNG NGHỆ</a></li>--}}
-{{--                        <li><a href="#">PHÂN BÓN</a></li>--}}
-{{--                        <li><a href="#">LIÊN HỆ</a></li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--                <!-- /search & aside toggle -->--}}
-{{--            </div>--}}
-{{--        </div>--}}
-        <!-- /Top Nav -->
+    {{--                <!-- search & aside toggle -->--}}
+    {{--                <div class="pull-right">--}}
+    {{--                    <ul class="nav-menu">--}}
+    {{--                        <li><a href="#">CHUYỂN GIAO CÔNG NGHỆ</a></li>--}}
+    {{--                        <li><a href="#">PHÂN BÓN</a></li>--}}
+    {{--                        <li><a href="#">LIÊN HỆ</a></li>--}}
+    {{--                    </ul>--}}
+    {{--                </div>--}}
+    {{--                <!-- /search & aside toggle -->--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+    <!-- /Top Nav -->
         <div id="nav-bottom">
             <div class="container">
                 <!-- nav -->

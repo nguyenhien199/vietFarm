@@ -87,6 +87,13 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
     Route::post('/fertilizers/create', 'Admin\FertilizersController@create');
     Route::get('/fertilizers/edit/{id}', 'Admin\FertilizersController@edit');
     Route::get('/fertilizers/delete/{id}', 'Admin\FertilizersController@destroy');
+    // Chứng nhận
+    Route::get('/certifications', 'Admin\CertificationsController@index')->name('certifications');
+    Route::get('/certifications/create', 'Admin\CertificationsController@showGet');
+    Route::post('/certifications/create', 'Admin\CertificationsController@create');
+    Route::get('/certifications/edit/{id}', 'Admin\CertificationsController@edit');
+    Route::get('/certifications/delete/{id}', 'Admin\CertificationsController@destroy');
+
 
     //slide
     Route::get('/slides', 'Admin\SlidesController@index')->name('slides');
