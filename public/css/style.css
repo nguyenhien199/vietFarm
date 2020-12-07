@@ -1391,6 +1391,21 @@ textarea.input {
   background-color: #178430;
 }
 
+.center
+{
+  text-align: center;
+}
+
+.hr
+{
+  background-color: #696969;
+  border: 1px #696969;
+  border-color: #696969;
+  height: 2px;
+  align-content: center;
+  width: 90px;
+}
+
 #footer {
   color: #fff;
 }
