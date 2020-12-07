@@ -113,9 +113,35 @@ function change_file(event) {
     $(event).parents('.file-control').find('.form-control').val(filename);
 }
 
+function change_files(event){
+    var element = $('.file-choose')
+    if ($(event).val() == undefined || $(event).val() == '')
+    {
+        return false;
+    }
+    var files = $('#file-image')[0].files;
+    for (var i = 0; i < files.length; i++)
+    {
+        console.log(111);
+        element.append(`<div class="d-flex file-info">
+            <input type="text" value="${files[i].name}" placeholder="No file selected" readonly="readonly" class="form-control">
+             <i class="fa fa-trash remove-file" onclick="removeImages(this)">
+                <input type="hidden" name="remove_image" class="removeFile" value="0"/>
+            </i>
+            </div>
+        `)
+    }
+}
+
 function removeImage(event) {
     $(event).parents('.file-control').find('.form-control').val('');
     $(event).find('.removeFile').val(1);
+}
+
+function removeImages(event) {
+    $(event).parents('.file-info').find('.form-control').val('');
+    $(event).find('.removeFile').val(1);
+    $(event).parents('.file-info').css({'display': 'none'})
 }
 
 if ($('#editor').length == 1)

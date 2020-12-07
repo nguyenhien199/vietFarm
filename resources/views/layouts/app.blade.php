@@ -79,6 +79,14 @@
                         <li class="{{ request()->is('admin/fertilizers/create') ? 'active' : '' }}"><a href="{{url('/admin/fertilizers/create')}}">Thêm phân bón mới</a></li>
                     </ul>
                 </li>
+                <li class="{{ request()->is('admin/*type-trees*') ? 'active' : '' }}">
+                    <a href="{{url('/admin/category-type-trees')}}"><i class="fa fa-twitch"></i> <span class="nav-label">Danh mục giống cây</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li class="{{ request()->is('admin/category-type-trees') ? 'active' : '' }}"><a href="{{url('/admin/category-type-trees')}}">Danh mục giống cây</a></li>
+                        <li class="{{ request()->is('admin/type-trees') ? 'active' : '' }}"><a href="{{url('/admin/type-trees')}}">Danh sách giống cây</a></li>
+                        <li class="{{ request()->is('admin/type-trees/create') ? 'active' : '' }}"><a href="{{url('/admin/type-trees/create')}}">Thêm giống cây mới</a></li>
+                    </ul>
+                </li>
                 <li class="{{ request()->is('admin/*certifications*') ? 'active' : '' }}">
                     <a href="{{url('/admin/category-certifications')}}"><i class="fa fa-twitch"></i> <span class="nav-label">Danh mục chứng nhận</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">

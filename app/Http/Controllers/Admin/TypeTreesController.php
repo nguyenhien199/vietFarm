@@ -2,44 +2,51 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CertificationsRequest;
+use App\Http\Requests\NewsRequest;
+use App\Http\Requests\ProductsRequest;
 use App\Models\Categories;
-use App\Models\Certifications;
+use App\Models\News;
+use App\Models\Products;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Session;
 use Auth;
 
-class CertificationsController extends Controller
+class TypeTreesController extends Controller
 {
     public function index()
     {
-        $certifications = Certifications::orderBy('id', 'DESC')->paginate(PAGINATION);
-        return view('admin.certifications.index',['certifications' => $certifications]);
+        $typeTrees = Products::orderBy('id', 'DESC')->paginate(PAGINATION);
+        return view('admin.typeTrees.index',['typeTrees' => $typeTrees]);
     }
 
     public function showGet()
     {
-        return view('admin.certifications.create');
+        $categories = Categories::where([
+            'status' => Categories::ACTIVE,
+            'code' => Categories::CATEGORY_GC
+        ])->select('id', 'name')->get();
+        return view('admin.typeTrees.create', ['categories' => $categories]);
     }
 
-    public function create(CertificationsRequest $request)
+    public function create(ProductsRequest $request)
     {
         $data = $request->all();
         if(empty($data['id'])){
-            $certifications = $request->except('_token');
+            $product = $request->except('_token');
             try{
-                $certifications['created_by'] = Auth::user()->id;
-                $certifications['updated_by'] = Auth::user()->id;
-                $certifications['image'] = '';
-                $create = Certifications::create($certifications);
+                $product['created_by'] = Auth::user()->id;
+                $product['updated_by'] = Auth::user()->id;
+                $create = Products::create($product);
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
-                    $files->storeAs('/public/images/certifications/' . $create->id, $file_name);
-                    Certifications::findOrFail($create->id)->update(['image' => '/storage/images/certifications/' . $create->id . '/' . $file_name]);
+                    $files->storeAs('/public/images/products/' . $create->id, $file_name);
+                    Products::findOrFail($create->id)->update(['image' => '/storage/images/products/' . $create->id . '/' . $file_name]);
                 }
-                Session::flash('message', 'Thêm chứng nhận thành công!');
+                Session::flash('message', 'Thêm sản phẩm thành công!');
                 Session::flash('alert-class', 'alert-success');
-                return redirect()->route('certifications');
+                return redirect()->route('products');
             }catch (\Exception $error){
                 Session::flash('message', 'Đã xảy ra lỗi! Xin vui lòng thử lại');
                 Session::flash('alert-class', 'alert-danger');
@@ -52,16 +59,16 @@ class CertificationsController extends Controller
                 if($data['remove_image'] == 1){
                     $data['image'] = '';
                 }
-                Certifications::findOrFail($data['id'])->update($data);
+                Products::findOrFail($data['id'])->update($data);
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
-                    $files->storeAs('/public/images/certifications/' . $data['id'], $file_name);
-                    Certifications::findOrFail($data['id'])->update(['image' => '/storage/images/certifications/' . $data['id'] . '/' . $file_name]);
+                    $files->storeAs('/public/images/products/' . $data['id'], $file_name);
+                    Products::findOrFail($data['id'])->update(['image' => '/storage/images/products/' . $data['id'] . '/' . $file_name]);
                 }
-                Session::flash('message', 'Sửa chứng nhận thành công!');
+                Session::flash('message', 'Sửa sản phẩm thành công!');
                 Session::flash('alert-class', 'alert-success');
-                return redirect()->route('certifications');
+                return redirect()->route('products');
             }catch (\Exception $error){
                 Session::flash('message', 'Đã xảy ra lỗi! Xin vui lòng thử lại');
                 Session::flash('alert-class', 'alert-danger');
@@ -74,26 +81,26 @@ class CertificationsController extends Controller
     {
         $categories = Categories::where([
             'status' => Categories::ACTIVE,
-            'code' => Categories::CATEGORY_CC
+            'code' => Categories::CATEGORY_SP
         ])->select('id', 'name')->get();
-        $certifications = Certifications::where('id', $id)->firstOrFail();
-        return view('admin.certifications.create', ['data' => $certifications, 'categories' => $categories]);
+        $product = Products::where('id', $id)->firstOrFail();
+        return view('admin.products.create', ['data' => $product, 'categories' => $categories]);
     }
 
     public function destroy($id)
     {
         try{
-            $delete = Certifications::where([
-                'status' => Certifications::NOTACTIVE,
+            $delete = Products::where([
+                'status' => Products::NOTACTIVE,
                 'id' => $id
             ])->delete();
             if($delete){
-                Session::flash('message', 'Xóa chứng nhận thành công!');
+                Session::flash('message', 'Xóa sản phẩm thành công!');
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->back();
             }
             else{
-                Session::flash('message', 'Không thể xóa chứng nhận này khi còn hoạt động!');
+                Session::flash('message', 'Đã sẩy ra lỗi xin vui lòng thử lại!');
                 Session::flash('alert-class', 'alert-danger');
                 return redirect()->back();
             }

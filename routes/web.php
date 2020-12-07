@@ -66,6 +66,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
     Route::get('/category-services', 'Admin\CategoryProductsController@indexService');
     Route::get('/category-technologies', 'Admin\CategoryProductsController@indexTechnology');
     Route::get('/category-fertilizers', 'Admin\CategoryProductsController@indexFertilizer');
+    Route::get('/category-type-trees', 'Admin\CategoryProductsController@indexTypeTrees');
 
     // service
     Route::get('/services', 'Admin\ServicesController@index')->name('services');
@@ -94,6 +95,12 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function(){
     Route::get('/certifications/edit/{id}', 'Admin\CertificationsController@edit');
     Route::get('/certifications/delete/{id}', 'Admin\CertificationsController@destroy');
 
+    // Chứng nhận
+    Route::get('/type-trees', 'Admin\TypeTreesController@index')->name('typeTrees');
+    Route::get('/type-trees/create', 'Admin\TypeTreesController@showGet');
+    Route::post('/type-trees/create', 'Admin\TypeTreesController@create');
+    Route::get('/type-trees/edit/{id}', 'Admin\TypeTreesController@edit');
+    Route::get('/type-trees/delete/{id}', 'Admin\TypeTreesController@destroy');
 
     //slide
     Route::get('/slides', 'Admin\SlidesController@index')->name('slides');

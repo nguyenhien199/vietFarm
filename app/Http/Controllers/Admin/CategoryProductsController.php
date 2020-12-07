@@ -13,19 +13,19 @@ class CategoryProductsController extends Controller
         $cate_products = Categories::where('code', Categories::CATEGORY_SP)->orderBy('id', 'DESC')->paginate(PAGINATION);
         return view('admin.categoryProducts.index',['categoryProducts' => $cate_products]);
     }
-    
+
     public function indexService()
     {
         $cate_products = Categories::where('code', Categories::CATEGORY_DV)->orderBy('id', 'DESC')->paginate(PAGINATION);
         return view('admin.categoryServices.index',['categoryProducts' => $cate_products]);
     }
-    
+
     public function indexTechnology()
     {
         $cate_products = Categories::where('code', Categories::CATEGORY_CN)->orderBy('id', 'DESC')->paginate(PAGINATION);
         return view('admin.categoryTechnologies.index',['categoryProducts' => $cate_products]);
     }
-    
+
     public function indexFertilizer()
     {
         $cate_products = Categories::where('code', Categories::CATEGORY_PB)->orderBy('id', 'DESC')->paginate(PAGINATION);
@@ -73,7 +73,7 @@ class CategoryProductsController extends Controller
             }
         }
     }
-    
+
     public function destroy($id)
     {
         try{
@@ -94,5 +94,10 @@ class CategoryProductsController extends Controller
             Session::flash('alert-class', 'alert-danger');
             return redirect()->back();
         }
+    }
+
+    public function indexTypeTrees(){
+        $cate_products = Categories::where('code', Categories::CATEGORY_GC)->orderBy('updated_at', 'DESC')->paginate(PAGINATION);
+        return view('admin.categoryTypeTrees.index',['categoryProducts' => $cate_products]);
     }
 }
