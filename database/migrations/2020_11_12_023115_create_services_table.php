@@ -18,6 +18,7 @@ class CreateServicesTable extends Migration
             $table->unsignedBigInteger('category_id');
             $table->string('name');
             $table->string('url')->unique();
+            $table->string('url_video')->nullable();
             $table->string('image')->nullable();
             $table->text('description');
             $table->text('content');

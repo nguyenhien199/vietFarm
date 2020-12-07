@@ -209,29 +209,27 @@
                         <hr style="width: 200px; text-align: center; border: 1px solid"/>
                         <p style="text-align: center;">VietFarm luôn trân trọng sự cổ vũ và ủng hộ của cộng đồng</p>
                         <div class="row col-md-12">
+                            <?php $k = 1 ?>
+                            @foreach($services as $service)
+                            @if($k == 1)
                             <div class="col-md-6">
-                                <iframe width="500" id="iframe-video" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+                                <iframe width="500" id="iframe-video" height="315" src="{{$service->url_video}}"></iframe>
                             </div>
                             <div class="col-md-6">
-                                <h4>TRUYỀN THÔNG NÓI GÌ VỀ VIETFARM</h4>
+                                <h4>{{$service->name}}</h4>
                                 <p>
-                                    VietFarm luôn trân trọng sự cổ vũ và ủng hộ của cộng đồng,VietFarm luôn trân trọng sự cổ vũ và ủng hộ của cộng đồng, VietFarm luôn trân trọng sự cổ vũ và ủng hộ của cộng đồng, VietFarm luôn trân trọng sự cổ vũ và ủng hộ của cộng đồng, VietFarm luôn trân trọng sự cổ vũ và ủng hộ của cộng đồng, VietFarm luôn trân trọng sự cổ vũ và ủng hộ của cộng đồng
+                                    {{$service->description}}
                                 </p>
                             </div>
-                        </div>
-                        <div class="row col-md-12">
+                            <div class="clearfix"></div>
+                            @else
                             <div class="col-md-4">
-                                <img src="./img/post-13.jpg" alt="" style="width: 100%">
-                                <p>Truyền thông nói gì về VietFarm</p>
+                                <img src="{{$service->image}}" alt="" style="width: 100%">
+                                <p>{{$service->name}}</p>
                             </div>
-                            <div class="col-md-4">
-                                <img src="./img/post-13.jpg" alt="" style="width: 100%">
-                                <p>Truyền thông nói gì về VietFarm</p>
-                            </div>
-                            <div class="col-md-4">
-                                <img src="./img/post-13.jpg" alt="" style="width: 100%">
-                                <p>Truyền thông nói gì về VietFarm</p>
-                            </div>
+                            @endif
+                            <?php $k++; ?>
+                            @endforeach
                         </div>
 
                 </div>

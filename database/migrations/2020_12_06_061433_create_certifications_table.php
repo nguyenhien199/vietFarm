@@ -15,20 +15,16 @@ class CreateCertificationsTable extends Migration
     {
         Schema::create('certifications', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('category_id');
             $table->string('name');
             $table->string('url')->unique();
             $table->string('image')->nullable();
             $table->text('description');
             $table->text('content');
             $table->boolean('status');
-            $table->softDeletes();
             $table->timestamps();
             $table->integer('created_by')->nullable(false);
             $table->integer('updated_by')->nullable(false);
 
-            // constraint
-            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

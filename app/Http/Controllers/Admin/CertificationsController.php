@@ -38,12 +38,12 @@ class CertificationsController extends Controller
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
-                    $files->storeAs('/public/images/fertilizers/' . $create->id, $file_name);
-                    Certifications::findOrFail($create->id)->update(['image' => '/storage/images/fertilizers/' . $create->id . '/' . $file_name]);
+                    $files->storeAs('/public/images/certifications/' . $create->id, $file_name);
+                    Certifications::findOrFail($create->id)->update(['image' => '/storage/images/certifications/' . $create->id . '/' . $file_name]);
                 }
                 Session::flash('message', 'Thêm chứng nhận thành công!');
                 Session::flash('alert-class', 'alert-success');
-                return redirect()->route('fertilizers');
+                return redirect()->route('certifications');
             }catch (\Exception $error){
                 Session::flash('message', 'Đã xảy ra lỗi! Xin vui lòng thử lại');
                 Session::flash('alert-class', 'alert-danger');
@@ -65,7 +65,7 @@ class CertificationsController extends Controller
                 }
                 Session::flash('message', 'Sửa chứng nhận thành công!');
                 Session::flash('alert-class', 'alert-success');
-                return redirect()->route('fertilizers');
+                return redirect()->route('certifications');
             }catch (\Exception $error){
                 Session::flash('message', 'Đã xảy ra lỗi! Xin vui lòng thử lại');
                 Session::flash('alert-class', 'alert-danger');
@@ -81,7 +81,7 @@ class CertificationsController extends Controller
             'code' => Categories::CATEGORY_CC
         ])->select('id', 'name')->get();
         $certifications = Certifications::where('id', $id)->firstOrFail();
-        return view('admin.fertilizers.create', ['data' => $certifications, 'categories' => $categories]);
+        return view('admin.certifications.create', ['data' => $certifications, 'categories' => $categories]);
     }
 
     public function destroy($id)

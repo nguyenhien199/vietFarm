@@ -22,8 +22,7 @@ class CertificationsRequest extends FormRequest
         if(!isset($this->id)){
             return [
                 'name'        => 'required',
-                'category_id' => 'required',
-                'url'          => 'required|unique:fertilizers',
+                'url'          => 'required|unique:certifications',
                 'image'        => 'max:2048|mimes:jpg,jpeg,bmp,png',
                 'description'  => 'required|max:'. MAX_DESCRIPTION,
                 'content'      => 'required',
@@ -32,10 +31,9 @@ class CertificationsRequest extends FormRequest
         }else
             return [
                 'name'        => 'required',
-                'category_id' => 'required',
                 'url'          => [
                     'required',
-                    Rule::unique('fertilizers', 'url')->ignore($this->id),
+                    Rule::unique('certifications', 'url')->ignore($this->id),
                 ],
                 'image'        => 'max:2048|mimes:jpg,jpeg,bmp,png',
                 'description'  => 'required|max:'. MAX_DESCRIPTION,

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use App\Models\Products;
+use App\Models\Services;
 use App\Models\Slides;
 use Illuminate\Http\Request;
 
@@ -12,6 +13,7 @@ class WebController extends Controller
     public function index(){
         $newPost = News::where('status', 1)->latest()->take(2)->get();
         $product = Products::where('status', 1)->latest()->take(12)->get()->toArray();
+        $services = Services::where('status', 1)->latest('updated_at')->take(4)->get();
         $product = array_chunk($product,6);
         foreach ($product as $k => $pro){
             $product[$k] = array_chunk($pro,2);
@@ -23,7 +25,8 @@ class WebController extends Controller
             [
                 'newPost' => $newPost,
                 'product' => $product,
-                'slide' => $slide
+                'slide' => $slide,
+                'services' => $services
             ]);
     }
     public function getDetailNew($url)

@@ -13,19 +13,20 @@ class Services extends Model
     use SoftDeletes;
     const ACTIVE = 1;
     const NOTACTIVE = 0;
-    
+
     protected $fillable = [
         'name',
         'category_id',
         'url',
         'image',
+        'url_video',
         'description',
         'content',
         'status',
         'created_by',
         'updated_by'
     ];
-    
+
     public function category()
     {
         return $this->BelongsTo(Categories::class);
