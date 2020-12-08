@@ -3,15 +3,15 @@
 @section('content')
     <div class="">
         <div class="d-flex justify-content-end header-page">
-            <h2>Thêm mới công nghệ</h2>
+            <h2>Thêm giống cây mới</h2>
         </div>
         <div class="content">
-            <form action="{{url('/admin/technologies/create')}}" method="POST" enctype="Multipart/form-data">
+            <form action="{{url('/admin/type-trees/create')}}" method="POST" enctype="Multipart/form-data">
                 @csrf
                 <input type="hidden" name="id" value="{{$data->id ?? ''}}">
                 <div class="row d-flex align-center">
                     <div class="col-sm-2">
-                        <label class="form-label-group">Tên sản phẩm (*)</label>
+                        <label class="form-label-group">Tên giống cây (*)</label>
                     </div>
                     <div class="col-sm-10 inter-content">
                         <input type="text" name="name" class="form-input form-control" value="{{ old('name',  $data->name ?? '') }}" />
@@ -62,12 +62,13 @@
                         <div class="file-control">
                             <label class="input-group-btn">
                                 <span class="form-btn">File selection
-                                    <input id="file-image" onchange="change_files(this);" type="file" multiple name="image[]" style="display: none;">
+                                    <input onchange="change_file(this);" type="file" name="image" style="display: none;">
                                 </span>
                             </label>
-                            <div class="file-choose">
-
-                            </div>
+                            <input type="text" value="{{ $data->image ?? '' }}" placeholder="No file selected" readonly="readonly" class="form-control">
+                            <i class="fa fa-trash remove-file" onclick="removeImage(this)">
+                                <input type="hidden" name="remove_image" class="removeFile" value="{{ !empty($data->image) ? 0 : 1 }}"/>
+                            </i>
                         </div>
                         <div class="d-none fill-data" id="fill-title"></div>
                         <div class="errorTxt message-login title"></div>
@@ -75,6 +76,23 @@
                             <span class="error message-login">{{ $errors->first('image') }}</span>
                         @endif
                     </div>
+{{--                    <div class="col-sm-10 inter-content">--}}
+{{--                        <div class="file-control">--}}
+{{--                            <label class="input-group-btn">--}}
+{{--                                <span class="form-btn">File selection--}}
+{{--                                    <input id="file-image" onchange="change_files(this);" type="file" multiple name="image[]" style="display: none;">--}}
+{{--                                </span>--}}
+{{--                            </label>--}}
+{{--                            <div class="file-choose">--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="d-none fill-data" id="fill-title"></div>--}}
+{{--                        <div class="errorTxt message-login title"></div>--}}
+{{--                        @if($errors->has('image'))--}}
+{{--                            <span class="error message-login">{{ $errors->first('image') }}</span>--}}
+{{--                        @endif--}}
+{{--                    </div>--}}
                 </div>
                 <div class="row d-flex mt-5">
                     <div class="col-sm-2">
