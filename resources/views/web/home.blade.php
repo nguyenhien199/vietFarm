@@ -251,25 +251,25 @@
 
             <div class="row no-gutters clients-wrap clearfix aos-init aos-animate" data-aos="fade-up">
 
-                <div class="col-lg-3 col-md-4 col-6">
+                <div class="col-lg-3 col-md-3">
                     <div class="client-logo">
                         <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-6">
+                <div class="col-lg-3 col-md-3">
                     <div class="client-logo">
                         <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-6">
+                <div class="col-lg-3 col-md-3">
                     <div class="client-logo">
                         <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-4 col-6">
+                <div class="col-lg-3 col-md-3">
                     <div class="client-logo">
                         <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
                     </div>
