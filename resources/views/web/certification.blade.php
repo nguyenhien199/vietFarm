@@ -13,46 +13,66 @@
                 <hr style="width: 100px; text-align: center; border: 1px solid"/>
                 {{--<p>"Chọn lọc những gì tốt nhất từ thiên nhiên để chăm sóc gia đình bạn"</p>--}}
             </div>
-            <div id="nav-bottom">
-                <div class="container">
-                    <!-- nav -->
-                    <ul class="nav-menu">
-                        @foreach($categories as $category)
-                            <li><a data-toggle="tab" href="#{{$category->name}}_{{$category->id}}" href="">{{$category->name}}</a></li>
-                        @endforeach
-                    </ul>
-                    <!-- /nav -->
-                </div>
-            </div>
+            {{--<div id="nav-bottom">--}}
+                {{--<div class="container">--}}
+                    {{--<!-- nav -->--}}
+                  {{----}}
+                    {{--<!-- /nav -->--}}
+                {{--</div>--}}
+            {{--</div>--}}
         </div>
         <!-- /NAV -->
     </header>
     <!--SECTION -->
     <!-- ======= Latest News Section ======= -->
-    <section class="section section-news section-t8 tab-content">
-        <?php $i=1; ?>
-        @foreach($categories as $category)
-            <div class="container tab-pane fade @if($i==1) in active @endif" id="{{$category->name}}_{{$category->id}}">
-                {{--                    <div class="card-box-b card-shadow news-box">--}}
-                <div class="post post-row">
-                    @foreach($technologies[$category->id] as $tech)
-                        <div class="col-6">
-                            <a class="post-img" href="{{url('/cong-nghe', $tech->url)}}"><img src="{{!empty($tech->image) ? URL::to($tech->image) : URL::to('/images/noimage.jpg')}}"/></a>
-                            <div class="post-body">
-                                <h3 class="post-title"><a href="{{url('/cong-nghe', $tech->url)}}">{{$tech->name}}</a></h3>
-                                {{--                            <ul class="post-meta">--}}
-                                {{--                                <li><a href="author.html">John Doe</a></li>--}}
-                                {{--                                <li>20 April 2018</li>--}}
-                                {{--                            </ul>--}}
-                                <p>{{$tech->description}}</p>
-                            </div>
+    <!--SECTION -->
+    <section id="clients" class="clients">
+        <div class="container aos-init aos-animate" data-aos="fade-up">
+            <div class="row no-gutters clients-wrap clearfix aos-init aos-animate" data-aos="fade-up">
+
+               <div class="row">
+                   <div class="col-lg-4 col-md-4">
+                       <div class="cn-logo">
+                           <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
+                       </div>
+                   </div>
+
+                   <div class="col-lg-4 col-md-4">
+                       <div class="cn-logo">
+                           <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
+                       </div>
+                   </div>
+
+                   <div class="col-lg-4 col-md-4">
+                       <div class="cn-logo">
+                           <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
+                       </div>
+                   </div>
+               </div>
+                <div class="row" style="padding-top: 20px;">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="cn-logo">
+                            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
                         </div>
-                    @endforeach
+                    </div>
+
+                    <div class="col-lg-4 col-md-4">
+                        <div class="cn-logo">
+                            <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4">
+                        <div class="cn-logo">
+                            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <?php $i++; ?>
-        @endforeach
+
+        </div>
     </section>
+    <!-- /SECTION -->
     <!-- End Latest News Section -->
     <!-- /SECTION -->
 
