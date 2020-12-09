@@ -46,7 +46,7 @@ class TypeTreesController extends Controller
                 }
                 Session::flash('message', 'Thêm sản phẩm thành công!');
                 Session::flash('alert-class', 'alert-success');
-                return redirect()->route('products');
+                return redirect()->route('typeTrees');
             }catch (\Exception $error){
                 Session::flash('message', 'Đã xảy ra lỗi! Xin vui lòng thử lại');
                 Session::flash('alert-class', 'alert-danger');
@@ -68,7 +68,7 @@ class TypeTreesController extends Controller
                 }
                 Session::flash('message', 'Sửa sản phẩm thành công!');
                 Session::flash('alert-class', 'alert-success');
-                return redirect()->route('products');
+                return redirect()->route('typeTrees');
             }catch (\Exception $error){
                 Session::flash('message', 'Đã xảy ra lỗi! Xin vui lòng thử lại');
                 Session::flash('alert-class', 'alert-danger');
@@ -81,10 +81,10 @@ class TypeTreesController extends Controller
     {
         $categories = Categories::where([
             'status' => Categories::ACTIVE,
-            'code' => Categories::CATEGORY_SP
+            'code' => Categories::CATEGORY_GC
         ])->select('id', 'name')->get();
         $product = Products::where('id', $id)->firstOrFail();
-        return view('admin.products.create', ['data' => $product, 'categories' => $categories]);
+        return view('admin.typeTrees.create', ['data' => $product, 'categories' => $categories]);
     }
 
     public function destroy($id)
