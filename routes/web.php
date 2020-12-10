@@ -26,7 +26,9 @@ Route::get('/phan-bon', 'FertilizerController@index');
 Route::get('/phan-bon/{url}', 'FertilizerController@show');
 
 Route::get('/contact', 'HomeController@contact');
+Route::get('/chung-nhan', 'HomeController@chungnhan');
 Route::get('/bai-viet/{url}', 'WebController@getDetailNew');
+
 
 Auth::routes(['register' => false]);
 Route::get('logout', 'Auth\LoginController@logout');

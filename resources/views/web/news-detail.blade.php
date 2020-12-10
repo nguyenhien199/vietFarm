@@ -19,9 +19,22 @@
 
                     <!-- post content -->
                     <div class="section-row">
-                        <h3>{{$new->title}}</h3>
-                        <span>{{$new->created_at}} , Tác Giả: {{$new->user->name}}</span>
-                        <p >{!! $new->content !!}</p>
+                        <h2 class="center">{{$new->title}}</h2>
+                        <hr class="hr">
+                        <div class="center"><span class="center">{{$new->created_at}} , Tác Giả: {{$new->user->name}}</span>
+                            <p class="center">{!! $new->content !!}</p>
+                            <div class="section-row">
+                                <div class="post-tags">
+                                    <ul>
+                                        <li>TAGS:</li>
+                                        <li><a href="#">Social</a></li>
+                                        <li><a href="#">Lifestyle</a></li>
+                                        <li><a href="#">Fashion</a></li>
+                                        <li><a href="#">Health</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                         {{--<figure class="pull-right">--}}
                             {{--<img src="{{$new->image}}" alt="">--}}
                         {{--</figure>--}}
@@ -33,17 +46,6 @@
                     <!-- /post content -->
 
                     <!-- post tags -->
-                    <div class="section-row">
-                        <div class="post-tags">
-                            <ul>
-                                <li>TAGS:</li>
-                                <li><a href="#">Social</a></li>
-                                <li><a href="#">Lifestyle</a></li>
-                                <li><a href="#">Fashion</a></li>
-                                <li><a href="#">Health</a></li>
-                            </ul>
-                        </div>
-                </div>
             </div>
             <!-- /row -->
         </div>

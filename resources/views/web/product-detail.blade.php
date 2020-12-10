@@ -26,39 +26,40 @@
                     </div>
                     <!-- /category widget -->
                     <!-- galery widget -->
-                    <div class="aside-widget">
-                        <div class="section-title">
-                            <h2 class="title">Chứng Nhận</h2>
-                        </div>
-                        <div class="galery-widget">
-                            <img src="{{asset('./img/galery-1.jpg')}}" alt="" style="width: 250px">
-                        </div>
-                    </div>
+                    {{--<div class="aside-widget">--}}
+                        {{--<div class="section-title">--}}
+                            {{--<h2 class="title">Chứng Nhận</h2>--}}
+                        {{--</div>--}}
+                        {{--<div class="galery-widget">--}}
+                            {{--<img src="{{asset('./img/galery-1.jpg')}}" alt="" style="width: 250px">--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                     <!-- /galery widget -->
                 </div>
                 <div class="col-md-9">
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             <div class="wrapper">
+                                <h2 style="text-align: left"> {{$product->name}}</h2>
                                 <div class="image-gallery">
-                                    <aside class="thumbnails">
-                                        <a href="javascript:void(0)" class="selected thumbnail" data-big="{{$product->image}}">
-                                            <div class="thumbnail-image" style="background-image: url({{$product->image}})"></div>
-                                        </a>
-                                        <a href="javascript:void(0)" class="thumbnail" data-big="{{$product->image}}">
-                                            <div class="thumbnail-image" style="background-image: url({{$product->image}})"></div>
-                                        </a>
-                                        <a href="javascript:void(0)" class="thumbnail" data-big="{{$product->image}}">
-                                            <div class="thumbnail-image" style="background-image: url({{$product->image}})"></div>
-                                        </a>
-                                    </aside>
+                                    {{--<aside class="thumbnails">--}}
+                                        {{--<a href="javascript:void(0)" class="selected thumbnail" data-big="{{$product->image}}">--}}
+                                            {{--<div class="thumbnail-image" style="background-image: url({{$product->image}})"></div>--}}
+                                        {{--</a>--}}
+                                        {{--<a href="javascript:void(0)" class="thumbnail" data-big="{{$product->image}}">--}}
+                                            {{--<div class="thumbnail-image" style="background-image: url({{$product->image}})"></div>--}}
+                                        {{--</a>--}}
+                                        {{--<a href="javascript:void(0)" class="thumbnail" data-big="{{$product->image}}">--}}
+                                            {{--<div class="thumbnail-image" style="background-image: url({{$product->image}})"></div>--}}
+                                        {{--</a>--}}
+                                    {{--</aside>--}}
 
                                     <main class="primary" style="background-image: url({{$product->image}});"></main>
                                 </div>
 
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        {{--<div class="col-md-4">--}}
                             {{--<div class="property-agent">--}}
                                 {{--<h4 class="title-agent">Anabella Geller</h4>--}}
                                 {{--<p class="color-text-a">--}}
@@ -103,7 +104,7 @@
                                     {{--</li>--}}
                                 {{--</ul>--}}
                             {{--</div>--}}
-                        </div>
+                        {{--</div>--}}
                     </div>
                     <div class="row">
                         <div class="col-md-12">

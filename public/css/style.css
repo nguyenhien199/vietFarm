@@ -48,10 +48,40 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   margin: 0px 0px 15px;
 }
+.post-img>img
+{
+  width: 150px;
+  height: 150px;
+}
+.image-gallery
+{
+  width: 100%;
+}
+.clients .cn-logo
+{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  overflow: hidden;
+  background: #fff;
+  height: 180px;
+}
+#pro-detail-carousel.owl-carousel .owl-item img
+{
+  height: 150px;
+}
+.clients .cn-logo img
+{
+  height: 40px;
+}
 
 h1 {
   font-size: 32.437px;
 }
+
 
 h2 {
   font-size: 25.629px;
@@ -1389,6 +1419,21 @@ textarea.input {
   padding-top: 80px;
   padding-bottom: 40px;
   background-color: #178430;
+}
+
+.center
+{
+  text-align: center;
+}
+
+.hr
+{
+  background-color: #696969;
+  border: 1px #696969;
+  border-color: #696969;
+  height: 2px;
+  align-content: center;
+  width: 90px;
 }
 
 #footer {

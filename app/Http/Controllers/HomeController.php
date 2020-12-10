@@ -29,6 +29,11 @@ class HomeController extends Controller
     {
         return view('web.contact');
     }
+
+    public function chungnhan()
+    {
+        return view('web.certification');
+    }
     public function getNewDetail()
     {
         return view('web.news-detail');
