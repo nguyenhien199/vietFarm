@@ -249,33 +249,34 @@
             <h2 class="text-center">ĐỐI TÁC CỦA VIETFARM</h2>
             <hr style="width: 100px; text-align: center; border: 1px solid">
 
-            <div class="row no-gutters clients-wrap clearfix aos-init aos-animate" data-aos="fade-up">
-
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="client-logo">
-                        <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="client-logo">
-                        <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="client-logo">
-                        <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-6">
-                    <div class="client-logo">
-                        <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
-                    </div>
-                </div>
+            <div id="owl-demo" class=" owl-theme">
+                <div class="item"><img src="assets/img/clients/client-1.png" alt="Owl Image"></div>
+                <div class="item"><img src="assets/img/clients/client-3.png" alt="Owl Image"></div>
+                <div class="item"><img src="assets/img/clients/client-4.png" alt="Owl Image"></div>
+                <div class="item"><img src="assets/img/clients/client-2.png" alt="Owl Image"></div>
+                <div class="item"><img src="assets/img/clients/client-5.png" alt="Owl Image"></div>
+                <div class="item"><img src="assets/img/clients/client-6.png" alt="Owl Image"></div>
             </div>
 
+            <style>
+                #owl-demo .item{
+                    margin: 3px;
+                }
+                #owl-demo .item img{
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                }
+                #owl-demo .owl-stage-outer{
+                    overflow: hidden;
+                }
+                #owl-demo .owl-item{
+                    float: left;
+                }
+                #owl-demo .owl-nav,#owl-demo .owl-dots{
+                    display: none;
+                }
+            </style>
         </div>
     </section>
     <!-- /SECTION -->

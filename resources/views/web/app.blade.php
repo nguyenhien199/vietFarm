@@ -80,7 +80,30 @@
         $('.primary').empty().append($img.hide().fadeIn('slow'));
     });
 </script>
+<script>
+    $(document).ready(function() {
 
+        $("#owl-demo").owlCarousel({
+            autoPlay: 3000, //Set AutoPlay to 3 seconds
+            items : 4,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                560: {
+                    items: 1,
+                },
+                769: {
+                    items: 2,
+                },
+                992: {
+                    items: 4,
+                }
+            }
+        });
+
+    });
+</script>
 </body>
 
 </html>
