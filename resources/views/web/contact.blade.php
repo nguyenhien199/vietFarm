@@ -16,6 +16,13 @@
                 </div>
             </div>
             <div class="container">
+                <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=76%20Ph%C3%B9ng%20Khoan%2C%20Thanh%20Xu%C3%A2n%2C%20H%C3%A0%20N%E1%BB%99i%2C%20Vi%E1%BB%87t%20Nam&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+
+                </iframe>
+                <a href="https://embedgooglemap.net/mapv2/"></a>
+                <style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style>
+            </div>
+            <div class="container">
                 <!-- SECTION -->
                 <div class="section">
                     <!-- container -->
