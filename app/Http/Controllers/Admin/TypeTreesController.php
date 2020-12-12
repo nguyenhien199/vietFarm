@@ -6,9 +6,10 @@ use App\Http\Requests\NewsRequest;
 use App\Http\Requests\ProductsRequest;
 use App\Models\Categories;
 use App\Models\News;
-use App\Models\Products;
+use App\Models\Typetrees;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\TypetreesRequest;
 use Session;
 use Auth;
 
@@ -16,7 +17,7 @@ class TypeTreesController extends Controller
 {
     public function index()
     {
-        $typeTrees = Products::orderBy('id', 'DESC')->paginate(PAGINATION);
+        $typeTrees = Typetrees::orderBy('id', 'DESC')->paginate(PAGINATION);
         return view('admin.typeTrees.index',['typeTrees' => $typeTrees]);
     }
 
@@ -29,22 +30,22 @@ class TypeTreesController extends Controller
         return view('admin.typeTrees.create', ['categories' => $categories]);
     }
 
-    public function create(ProductsRequest $request)
+    public function create(TypetreesRequest $request)
     {
         $data = $request->all();
         if(empty($data['id'])){
-            $product = $request->except('_token');
+            $typeTrees = $request->except('_token');
             try{
-                $product['created_by'] = Auth::user()->id;
-                $product['updated_by'] = Auth::user()->id;
-                $create = Products::create($product);
+                $typeTrees['created_by'] = Auth::user()->id;
+                $typeTrees['updated_by'] = Auth::user()->id;
+                $create = Typetrees::create($typeTrees);
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
-                    $files->storeAs('/public/images/products/' . $create->id, $file_name);
-                    Products::findOrFail($create->id)->update(['image' => '/storage/images/products/' . $create->id . '/' . $file_name]);
+                    $files->storeAs('/public/images/typetrees/' . $create->id, $file_name);
+                    Typetrees::findOrFail($create->id)->update(['image' => '/storage/images/typetrees/' . $create->id . '/' . $file_name]);
                 }
-                Session::flash('message', 'Thêm sản phẩm thành công!');
+                Session::flash('message', 'Thêm giống thành công!');
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->route('typeTrees');
             }catch (\Exception $error){
@@ -59,14 +60,14 @@ class TypeTreesController extends Controller
                 if($data['remove_image'] == 1){
                     $data['image'] = '';
                 }
-                Products::findOrFail($data['id'])->update($data);
+                Typetrees::findOrFail($data['id'])->update($data);
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
-                    $files->storeAs('/public/images/products/' . $data['id'], $file_name);
-                    Products::findOrFail($data['id'])->update(['image' => '/storage/images/products/' . $data['id'] . '/' . $file_name]);
+                    $files->storeAs('/public/images/typetrees/' . $data['id'], $file_name);
+                    Typetrees::findOrFail($data['id'])->update(['image' => '/storage/images/typetrees/' . $data['id'] . '/' . $file_name]);
                 }
-                Session::flash('message', 'Sửa sản phẩm thành công!');
+                Session::flash('message', 'Sửa giống thành công!');
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->route('typeTrees');
             }catch (\Exception $error){
@@ -83,19 +84,19 @@ class TypeTreesController extends Controller
             'status' => Categories::ACTIVE,
             'code' => Categories::CATEGORY_GC
         ])->select('id', 'name')->get();
-        $product = Products::where('id', $id)->firstOrFail();
-        return view('admin.typeTrees.create', ['data' => $product, 'categories' => $categories]);
+        $typeTrees = Typetrees::where('id', $id)->firstOrFail();
+        return view('admin.typeTrees.create', ['data' => $typeTrees, 'categories' => $categories]);
     }
 
     public function destroy($id)
     {
         try{
-            $delete = Products::where([
-                'status' => Products::NOTACTIVE,
+            $delete = Typetrees::where([
+                'status' => Typetrees::NOTACTIVE,
                 'id' => $id
             ])->delete();
             if($delete){
-                Session::flash('message', 'Xóa sản phẩm thành công!');
+                Session::flash('message', 'Xóa giống thành công!');
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->back();
             }

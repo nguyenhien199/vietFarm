@@ -6,12 +6,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Giong extends Model
+class Typetrees extends Model
 {
     use SoftDeletes;
     const ACTIVE = 1;
     const NOTACTIVE = 0;
-    
+    protected $table = 'type_trees';
+
     protected $fillable = [
         'name',
         'category_id',

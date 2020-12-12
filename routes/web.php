@@ -24,6 +24,8 @@ Route::get('/cong-nghe', 'TechnologyController@index');
 Route::get('/cong-nghe/{url}', 'TechnologyController@show');
 Route::get('/phan-bon', 'FertilizerController@index');
 Route::get('/phan-bon/{url}', 'FertilizerController@show');
+Route::get('/giong-va-bao-ve-thuc-vat', 'TypeTreesController@index');
+Route::get('/giong-va-bao-ve-thuc-vat/{url}', 'TypeTreesController@show');
 
 Route::get('/contact', 'HomeController@contact');
 Route::get('/chung-nhan', 'HomeController@chungnhan');

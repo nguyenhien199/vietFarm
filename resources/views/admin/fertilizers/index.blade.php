@@ -82,7 +82,7 @@
                             </div>
                         </div>
                         <div class="float-right">
-                            <button class="btn btn-success" type="submit">Save</button>
+                            <button class="btn btn-success" type="submit">Lưu</button>
                             <button class="btn btn-white" type="reset">Reset</button>
                         </div>
                     </form>

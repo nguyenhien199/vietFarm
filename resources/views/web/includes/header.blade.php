@@ -46,7 +46,7 @@
                         <li><a href="{{url('/cong-nghe')}}">CÔNG NGHỆ</a></li>
                         <li><a href="{{url('/dich-vu')}}">DỰ ÁN KHOA HỌC</a></li>
                         <li><a href="{{url('/chung-nhan')}}">CHỨNG NHẬN</a></li>
-                        <li><a href="{{url('/dich-vu')}}">GIỐNG & BVTV</a></li>
+                        <li><a href="{{url('/giong-va-bao-ve-thuc-vat')}}">GIỐNG & BVTV</a></li>
                         <li><a href="{{url('/san-pham')}}">THỰC PHẨM SẠCH</a></li>
                         <li><a href="{{asset('/contact')}}">LIÊN HỆ</a></li>
                     </ul>
@@ -93,7 +93,7 @@
                     <li><a href="{{url('/cong-nghe')}}">CÔNG NGHỆ</a></li>
                     <li><a href="{{url('/dich-vu')}}">DỰ ÁN KHOA HỌC</a></li>
                     <li><a href="{{url('/chung-nhan')}}">CHỨNG NHẬN</a></li>
-                    <li><a href="{{url('/dich-vu')}}">GIỐNG & BVTV</a></li>
+                    <li><a href="{{url('/giong-va-bao-ve-thuc-vat')}}">GIỐNG & BVTV</a></li>
                     <li><a href="{{url('/san-pham')}}">THỰC PHẨM SẠCH</a></li>
                     <li><a href="{{asset('/contact')}}">LIÊN HỆ</a></li>
                 </ul>

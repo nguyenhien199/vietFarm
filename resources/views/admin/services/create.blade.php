@@ -143,7 +143,7 @@
                 </div>
                 <div class="row row-submit">
                     <div class="col-12">
-                        <button type="submit">Save</button>
+                        <button type="submit">Lưu</button>
                     </div>
                 </div>
             </form>

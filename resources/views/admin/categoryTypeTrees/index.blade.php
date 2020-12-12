@@ -56,7 +56,7 @@
                         <input type="hidden" name="id" value="" />
                         <input type="hidden" name="code" value="GC" />
                         <div class="form-group">
-                            <label class="">Tên danh mục công nghệ (*)</label>
+                            <label class="">Tên danh mục giống (*)</label>
                             <input title="text" value="" class="form-control" name="name" />
                             <span class="invalid-feedback mt-5 error_name message-login"></span>
                         </div>
@@ -74,7 +74,7 @@
                             <span class="invalid-feedback mt-5 error_status message-login"></span>
                         </div>
                         <div class="float-right">
-                            <button id="newCategoryProuct" class="btn btn-success" type="submit">Save</button>
+                            <button id="newCategoryProuct" class="btn btn-success" type="submit">Lưu</button>
                         </div>
                     </form>
                 </div>

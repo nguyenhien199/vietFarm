@@ -74,7 +74,7 @@
                             <span class="invalid-feedback mt-5 error_status message-login"></span>
                         </div>
                         <div class="float-right">
-                            <button id="newCategoryProuct" class="btn btn-success" type="submit">Save</button>
+                            <button id="newCategoryProuct" class="btn btn-success" type="submit">Lưu</button>
                         </div>
                     </form>
                 </div>

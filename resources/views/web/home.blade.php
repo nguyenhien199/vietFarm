@@ -9,6 +9,18 @@
             <div>
                 <!-- ======= Intro Section ======= -->
                 <div class="intro intro-carousel">
+                    <script>
+                        $(document).ready(function() {
+                            $(".owl-stage").owlCarousel({
+                                loop: true,
+                                autoplay: true,
+                                autoplayTimeout: 1520,
+                                smartSpeed: 1500,
+                                animateIn: 'linear',
+                                animateOut: 'linear'
+                            });
+                        });
+                    </script>
                     <div id="carousel" class="owl-carousel owl-theme">
                         @foreach($slide as $sl)
                         <div class="carousel-item-a intro-item bg-image" style="background-image: url({{asset($sl->image)}})">
@@ -252,9 +264,10 @@
             <div id="owl-demo" class=" owl-theme">
                 <div class="item"><img src="assets/img/clients/client-1.png" alt="Owl Image"></div>
                 <div class="item"><img src="assets/img/clients/client-3.png" alt="Owl Image"></div>
-                <div class="item"><img src="assets/img/clients/client-4.png" alt="Owl Image"></div>
+                {{--<div class="item"><img src="assets/img/clients/client-4.png" alt="Owl Image"></div>--}}
                 <div class="item"><img src="assets/img/clients/client-2.png" alt="Owl Image"></div>
                 <div class="item"><img src="assets/img/clients/client-5.png" alt="Owl Image"></div>
+                <div class="item"><img src="assets/img/clients/client-6.png" alt="Owl Image"></div>
                 <div class="item"><img src="assets/img/clients/client-6.png" alt="Owl Image"></div>
             </div>
 
@@ -264,7 +277,7 @@
                 }
                 #owl-demo .item img{
                     display: block;
-                    width: 100%;
+                    width: 80%;
                     height: auto;
                 }
                 #owl-demo .owl-stage-outer{
