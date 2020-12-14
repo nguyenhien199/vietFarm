@@ -19,7 +19,7 @@
                     <ul class="nav-menu">
                         <?php $j=1; ?>
                         @foreach($categories as $category)
-                            <li class="@if($j==1) active @endif"><a data-toggle="tab" href="#{{$category->name}}_{{$category->id}}" href="">{{$category->name}}</a></li>
+                            <li class="@if($j==1) active @endif"><a data-toggle="tab" href="#dich_vu_{{$category->id}}" href="">{{$category->name}}</a></li>
                             <?php $j++; ?>
                         @endforeach
                     </ul>
@@ -34,7 +34,7 @@
     <section class="section section-news section-t8 tab-content">
         <?php $i=1; ?>
         @foreach($categories as $category)
-            <div class="container tab-pane fade @if($i==1) in active @endif" id="{{$category->name}}_{{$category->id}}">
+            <div class="container tab-pane fade @if($i==1) in active @endif" id="dich_vu_{{$category->id}}">
                 {{--                    <div class="card-box-b card-shadow news-box">--}}
                 <div class="post post-row">
                     @foreach($services[$category->id] as $service)
