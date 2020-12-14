@@ -2101,4 +2101,8 @@ body img {
     #clients{
         padding: 30px 0;
     }
+    .post {
+         margin-bottom: 0px;
+         margin-top: 0px;
+    }
 }
