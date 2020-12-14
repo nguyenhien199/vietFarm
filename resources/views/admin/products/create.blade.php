@@ -106,19 +106,19 @@
                     </div>
                 </div>
                 <div class="row d-flex mt-5">
-                    <div class="col-sm-2"><label class="form-label">Status (*)</label></div>
+                    <div class="col-sm-2"><label class="form-label">Trạng Thái (*)</label></div>
                     <div class="col-sm-10 inter-content">
                         <ul class="form-radio clearfix access-authorization">
                             <li>
                                 <div class="custom-control custom-radio custom-control-inline">
                                     <input type="radio" id="radio0" name="status" class="custom-control-input" value="0" checked {{ isset($data->status) && $data->status == 0 ? 'checked' : '' }}>
-                                    <label for="radio0" class="custom-control-label">Disable</label>
+                                    <label for="radio0" class="custom-control-label">Không hoạt động</label>
                                 </div>
                             </li>
                             <li>
                                 <div class="custom-control custom-radio custom-control-inline">
                                     <input type="radio" id="radio1" name="status" class="custom-control-input" value="1" {{ isset($data->status) && $data->status == 1 ? 'checked' : '' }}>
-                                    <label for="radio1" class="custom-control-label">Enable</label>
+                                    <label for="radio1" class="custom-control-label">Hoạt Động</label>
                                 </div>
                             </li>
                         </ul>

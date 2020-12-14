@@ -182,23 +182,18 @@
                 <h2 class="text-center" style="padding-top: 40px">SẢN PHẨM</h2>
                 <hr style="width: 100px; text-align: center; border: 1px solid"/>
             </div>
-            <div id="new-carousel" class="owl-carousel owl-theme">
+            <div class="row">
                 @foreach($product as $pro)
-                    @foreach($pro as $sp)
-
-                        <div class="carousel-item-c">
-                            @foreach($sp as $sanpham)
-                            <div class="post post-row">
-                                <a class="post-img" href="{{url('/san-pham', $sanpham['url'])}}"><img src="{{!empty($sanpham['image']) ? asset($sanpham['image']) : asset('/images/noimage.jpg')}}" alt=""></a>
-                                <div class="post-body">
-                                    <h3 class="post-title"><a href="{{url('/san-pham', $sanpham['url'])}}">{{$sanpham['name']}}</a></h3>
-                                    <p>{{$sanpham['description']}}</p>
-                                </div>
-                            </div>
-                            @endforeach
+                    <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 colums-products">
+                        <div class="img-products">
+                            <a href="{{url('/san-pham', $pro->url)}}">
+                                <img width="260" height="260" src="{{asset($pro->image)}}" class="attachment-product-thumbnails size-product-thumbnails wp-post-image" alt="{{$pro->name}}" title="Nha đam">
+                            </a>
                         </div>
-
-                    @endforeach
+                        <div class="info-products">
+                            <a class="name-products" href="{{url('/san-pham', $pro->url)}}" title="">{{$pro->name}}</a>
+                        </div>
+                    </div>
                 @endforeach
             </div>
         </div>

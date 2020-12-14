@@ -13,12 +13,9 @@ class WebController extends Controller
 {
     public function index(){
         $newPost = News::where('status', 1)->latest()->take(2)->get();
-        $product = Products::where('status', 1)->latest()->take(12)->get()->toArray();
+        $product = Products::where('status', 1)->latest()->take(6)->get();
         $services = Services::where('status', 1)->latest('updated_at')->take(4)->get();
-        $product = array_chunk($product,6);
-        foreach ($product as $k => $pro){
-            $product[$k] = array_chunk($pro,2);
-        }
+
         $certifications = Certifications::where('status', 1)->latest()->take(6)->get();
         $slide = Slides::where([
             'status' => Slides::ACTIVE
