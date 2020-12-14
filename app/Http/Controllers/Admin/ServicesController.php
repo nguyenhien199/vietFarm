@@ -6,6 +6,7 @@ use App\Http\Requests\ServicesRequest;
 use App\Models\Categories;
 use App\Models\Products;
 use App\Models\Services;
+use Illuminate\Support\Facades\Storage;
 use Session;
 use Auth;
 
@@ -60,6 +61,8 @@ class ServicesController extends Controller
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
+                    Storage::deleteDirectory('/public/images/services/' . $data['id']);
+
                     $files->storeAs('/public/images/services/' . $data['id'], $file_name);
                     Services::findOrFail($data['id'])->update(['image' => '/storage/images/services/' . $data['id'] . '/' . $file_name]);
                 }
@@ -92,6 +95,7 @@ class ServicesController extends Controller
                 'id' => $id
             ])->delete();
             if($delete){
+                Storage::deleteDirectory('/public/images/services/' . $id);
                 Session::flash('message', 'Xóa dịch vụ thành công!');
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->back();

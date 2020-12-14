@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\SlidesRequests;
 use App\Models\Slides;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Session;
 use Auth;
 
@@ -15,11 +16,11 @@ class SlidesController extends Controller
         $slides = Slides::orderBy('id', 'DESC')->paginate(PAGINATION);;
         return view('admin.slides.index',['slides' => $slides]);
     }
-    
+
     public function showGet(){
         return view('admin.slides.create');
     }
-    
+
     public function create(SlidesRequests $request)
     {
         $data = $request->all();
@@ -51,6 +52,7 @@ class SlidesController extends Controller
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
+                    Storage::deleteDirectory('/public/images/slides/' . $data['id']);
                     $files->storeAs('/public/images/slides/' . $data['id'], $file_name);
                     Slides::findOrFail($data['id'])->update(['image' => '/storage/images/slides/' . $data['id'] . '/' . $file_name]);
                 }
@@ -64,12 +66,12 @@ class SlidesController extends Controller
             }
         }
     }
-    
+
     public function edit($id){
         $slide = Slides::where('id', $id)->firstOrFail();
         return view('admin.slides.create', ['data' => $slide]);
     }
-    
+
     public function destroy($id)
     {
         try{
@@ -78,6 +80,7 @@ class SlidesController extends Controller
                 'id' => $id
             ])->delete();
             if($delete){
+                Storage::deleteDirectory('/public/images/slides/' . $id);
                 Session::flash('message', 'Xóa dịch vụ thành công!');
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->back();

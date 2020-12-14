@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CertificationsRequest;
 use App\Models\Categories;
 use App\Models\Certifications;
+use Illuminate\Support\Facades\Storage;
 use Session;
 use Auth;
 
@@ -56,6 +57,7 @@ class CertificationsController extends Controller
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
+                    Storage::deleteDirectory('/public/images/certifications/' . $data['id']);
                     $files->storeAs('/public/images/certifications/' . $data['id'], $file_name);
                     Certifications::findOrFail($data['id'])->update(['image' => '/storage/images/certifications/' . $data['id'] . '/' . $file_name]);
                 }
@@ -88,6 +90,7 @@ class CertificationsController extends Controller
                 'id' => $id
             ])->delete();
             if($delete){
+                Storage::deleteDirectory('/public/images/certifications/' . $id);
                 Session::flash('message', 'Xóa chứng nhận thành công!');
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->back();

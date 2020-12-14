@@ -6,6 +6,7 @@ use App\Http\Requests\TechnologiesRequest;
 use App\Models\Categories;
 use App\Models\Fertilizers;
 use App\Models\Technologies;
+use Illuminate\Support\Facades\Storage;
 use Session;
 use Auth;
 
@@ -61,6 +62,7 @@ class TechnologiesController extends Controller
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
+                    Storage::deleteDirectory('/public/images/technologies/' . $data['id']);
                     $files->storeAs('/public/images/technologies/' . $data['id'], $file_name);
                     Technologies::findOrFail($data['id'])->update(['image' => '/storage/images/technologies/' . $data['id'] . '/' . $file_name]);
                 }
@@ -93,6 +95,7 @@ class TechnologiesController extends Controller
                 'id' => $id
             ])->delete();
             if($delete){
+                Storage::deleteDirectory('/public/images/technologies/' . $id);
                 Session::flash('message', 'Xóa dịch vụ thành công!');
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->back();

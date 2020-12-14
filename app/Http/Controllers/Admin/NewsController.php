@@ -7,6 +7,7 @@ use App\Models\News;
 use App\Models\Products;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Session;
 use Auth;
 
@@ -21,7 +22,7 @@ class NewsController extends Controller
     public function showCreate(){
         return view('admin.new.create');
     }
-    
+
     public function create(NewsRequest $request)
     {
         $data = $request->except('_token');
@@ -35,6 +36,7 @@ class NewsController extends Controller
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
+                    Storage::deleteDirectory('/public/images/news/' . $data['id']);
                     $files->storeAs('/public/images/news/' . $request->id, $file_name);
                     News::findOrFail($request->id)->update(['image' => '/storage/images/news/' . $request->id . '/' . $file_name]);
                 }
@@ -73,7 +75,7 @@ class NewsController extends Controller
         $data = News::findOrFail($id);
         return view('admin.new.create', ['data' => $data]);
     }
-    
+
     public function destroy($id){
         try{
             $delete = News::where([
@@ -81,6 +83,7 @@ class NewsController extends Controller
                 'status' => News::NOTACTIVE
             ])->delete();
             if($delete){
+                Storage::deleteDirectory('/public/images/news/' . $id);
                 Session::flash('message', 'Xóa bài viết thành công!');
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->back();

@@ -6,6 +6,7 @@ use App\Http\Requests\FertilizersRequest;
 use App\Http\Requests\TechnologiesRequest;
 use App\Models\Categories;
 use App\Models\Fertilizers;
+use Illuminate\Support\Facades\Storage;
 use Session;
 use Auth;
 
@@ -61,6 +62,7 @@ class FertilizersController extends Controller
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
+                    Storage::deleteDirectory('/public/images/fertilizers/' . $data['id']);
                     $files->storeAs('/public/images/fertilizers/' . $data['id'], $file_name);
                     Fertilizers::findOrFail($data['id'])->update(['image' => '/storage/images/fertilizers/' . $data['id'] . '/' . $file_name]);
                 }
@@ -93,6 +95,7 @@ class FertilizersController extends Controller
                 'id' => $id
             ])->delete();
             if($delete){
+                Storage::deleteDirectory('/public/images/fertilizers/' . $id);
                 Session::flash('message', 'Xóa phân bón thành công!');
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->back();

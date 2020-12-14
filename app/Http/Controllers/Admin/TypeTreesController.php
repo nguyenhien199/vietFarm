@@ -10,6 +10,7 @@ use App\Models\Typetrees;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\TypetreesRequest;
+use Illuminate\Support\Facades\Storage;
 use Session;
 use Auth;
 
@@ -64,6 +65,8 @@ class TypeTreesController extends Controller
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
+                    Storage::deleteDirectory('/public/images/typetrees/' . $data['id']);
+
                     $files->storeAs('/public/images/typetrees/' . $data['id'], $file_name);
                     Typetrees::findOrFail($data['id'])->update(['image' => '/storage/images/typetrees/' . $data['id'] . '/' . $file_name]);
                 }
@@ -96,6 +99,7 @@ class TypeTreesController extends Controller
                 'id' => $id
             ])->delete();
             if($delete){
+                Storage::deleteDirectory('/public/images/typetrees/' . $id);
                 Session::flash('message', 'Xóa giống thành công!');
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->back();

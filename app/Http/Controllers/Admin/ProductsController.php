@@ -9,6 +9,7 @@ use App\Models\News;
 use App\Models\Products;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Session;
 use Auth;
 
@@ -19,7 +20,7 @@ class ProductsController extends Controller
         $products = Products::orderBy('id', 'DESC')->paginate(PAGINATION);
         return view('admin.products.index',['products' => $products]);
     }
-    
+
     public function showGet()
     {
         $categories = Categories::where([
@@ -28,7 +29,7 @@ class ProductsController extends Controller
         ])->select('id', 'name')->get();
         return view('admin.products.create', ['categories' => $categories]);
     }
-    
+
     public function create(ProductsRequest $request)
     {
         $data = $request->all();
@@ -63,6 +64,7 @@ class ProductsController extends Controller
                 $files = $request->file('image');
                 if(!empty($files) && $data['remove_image'] == 0){
                     $file_name = $files->getClientOriginalName();
+                    Storage::deleteDirectory('/public/images/products/' . $data['id']);
                     $files->storeAs('/public/images/products/' . $data['id'], $file_name);
                     Products::findOrFail($data['id'])->update(['image' => '/storage/images/products/' . $data['id'] . '/' . $file_name]);
                 }
@@ -76,7 +78,7 @@ class ProductsController extends Controller
             }
         }
     }
-    
+
     public function edit($id)
     {
         $categories = Categories::where([
@@ -86,7 +88,7 @@ class ProductsController extends Controller
         $product = Products::where('id', $id)->firstOrFail();
         return view('admin.products.create', ['data' => $product, 'categories' => $categories]);
     }
-    
+
     public function destroy($id)
     {
         try{
@@ -95,6 +97,7 @@ class ProductsController extends Controller
                 'id' => $id
             ])->delete();
             if($delete){
+                Storage::deleteDirectory('/public/images/products/' . $id);
                 Session::flash('message', 'Xóa sản phẩm thành công!');
                 Session::flash('alert-class', 'alert-success');
                 return redirect()->back();
