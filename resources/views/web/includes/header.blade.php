@@ -42,7 +42,7 @@
                 <div id="nav-aside">
                     <ul class="nav-aside-menu">
                         <li><a href="{{asset('/')}}">VIET FARM</a></li>
-                        <li class="{{ request()->is('phan-bon') ? 'active' : '' }}" ><a href="{{url('/phan-bon')}}><a href="{{url('/phan-bon')}}">PHÂN BÓN</a></li>
+                        <li class="{{ request()->is('phan-bon') ? 'active' : '' }}" ><a href="{{url('/phan-bon')}}">PHÂN BÓN</a></li>
                         <li class="{{ request()->is('cong-nghe') ? 'active' : '' }}"><a href="{{url('/cong-nghe')}}">CÔNG NGHỆ</a></li>
                         <li class="{{ request()->is('dich-vu') ? 'active' : '' }}"><a href="{{url('/dich-vu')}}">DỰ ÁN KHOA HỌC</a></li>
                         <li class="{{ request()->is('chung-nhan') ? 'active' : '' }}"><a href="{{url('/chung-nhan')}}">CHỨNG NHẬN</a></li>
