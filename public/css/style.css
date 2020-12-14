@@ -2064,3 +2064,10 @@ body img {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
+#section-products {
+    background-repeat: no-repeat;
+    background-size: inherit;
+    background-attachment: inherit;
+    background-position: center bottom;
+    background-image: url(../img/bg-products.jpg);
+}

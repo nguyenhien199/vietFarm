@@ -176,7 +176,7 @@
 
     <!--SECTION -->
     <!-- ======= Latest News Section ======= -->
-    <section class="section-news">
+    <section class="section-news" id="section-products">
         <div class="container">
             <div class="row">
                 <h2 class="text-center" style="padding-top: 40px">SẢN PHẨM</h2>
