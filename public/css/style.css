@@ -1323,7 +1323,7 @@ textarea.input {
 }
 
 .footer-widget .newsletter-widget:after {
-  color: #323335;
+  color: #dedede;
 }
 
 /*----------------------------*\
@@ -1420,9 +1420,8 @@ textarea.input {
 
 #footer {
   margin-top: 40px;
-  padding-top: 80px;
-  padding-bottom: 40px;
   background-color: #178430;
+background-blend-mode: multiply;
 }
 
 .center
@@ -1473,8 +1472,7 @@ textarea.input {
 }
 
 .footer-bottom {
-  margin-top: 30px;
-  padding-top: 30px;
+  line-height: 30px;
   border-top: 1px solid #323335;
 }
 
@@ -2071,4 +2069,12 @@ body img {
     background-attachment: inherit;
     background-position: center bottom;
     background-image: url(../img/bg-products.jpg);
+}
+.footer-sidebar {
+    background-repeat: no-repeat;
+    background-size: inherit;
+    background-attachment: inherit;
+    background-position: center bottom;
+    background: url(../img/bgfooter.jpg) no-repeat #178430b0;
+    padding: 0;
 }

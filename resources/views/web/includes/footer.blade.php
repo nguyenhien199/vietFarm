@@ -10,9 +10,9 @@
         </a>
     </div>
 </div>
-<footer id="footer">
+<footer id="footer" class="footer-sidebar ">
     <!-- container -->
-    <div class="container">
+    <div class="container" style="padding: 20px 0">
         <!-- row -->
         <div class="row">
             <div class="col-md-2" style="border-right: 3px solid #fff">
