@@ -3,7 +3,7 @@
 @section('content')
     <div class="">
         <div class="d-flex justify-content-end header-page">
-            <h2>Thêm dịch vụ mới</h2>
+            <h2>Thêm slide mới</h2>
         </div>
         <div class="content">
             <form action="{{url('/admin/slides/create')}}" method="POST" enctype="Multipart/form-data">
@@ -72,13 +72,13 @@
                             <li>
                                 <div class="custom-control custom-radio custom-control-inline">
                                     <input type="radio" id="radio0" name="status" class="custom-control-input" value="0" checked {{ isset($data->status) && $data->status == 0 ? 'checked' : '' }}>
-                                    <label for="radio0" class="custom-control-label">Disable</label>
+                                    <label for="radio0" class="custom-control-label">Không hoạt động</label>
                                 </div>
                             </li>
                             <li>
                                 <div class="custom-control custom-radio custom-control-inline">
                                     <input type="radio" id="radio1" name="status" class="custom-control-input" value="1" {{ isset($data->status) && $data->status == 1 ? 'checked' : '' }}>
-                                    <label for="radio1" class="custom-control-label">Enable</label>
+                                    <label for="radio1" class="custom-control-label">Hoạt động</label>
                                 </div>
                             </li>
                         </ul>

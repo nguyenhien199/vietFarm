@@ -75,8 +75,8 @@
                         <div class="form-group">
                             <label class="">status (*)</label>
                             <div class="radio">
-                                <label><input type="radio" id="radio_1" value="0" name="status">Disable</label>
-                                <label class="ml-5"><input type="radio" id="radio_2" value="1" name="status">Enable</label>
+                                <label><input type="radio" id="radio_1" value="0" name="status">Không hoạt động</label>
+                                <label class="ml-5"><input type="radio" id="radio_2" value="1" name="status">Hoạt động</label>
                             </div>
                         </div>
                         <div class="float-right">

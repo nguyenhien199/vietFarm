@@ -3,7 +3,7 @@
 @section('content')
     <div class="">
         <div class="d-flex justify-content-end header-page">
-            <h2>Danh sách sản phẩm</h2>
+            <h2>Danh sách các công nghệ</h2>
             <div>
                 <a href="{{url('/admin/technologies/create')}}"><button class="btn btn-primary"> + Add News</button></a>
             </div>

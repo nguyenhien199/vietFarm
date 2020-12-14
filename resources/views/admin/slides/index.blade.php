@@ -3,7 +3,7 @@
 @section('content')
     <div class="">
         <div class="d-flex justify-content-end header-page">
-            <h2>Danh sách dịch vụ</h2>
+            <h2>Danh sách slides</h2>
             <div>
                 <a href="{{url('/admin/slides/create')}}"><button class="btn btn-primary"> + Thêm slide mới</button></a>
             </div>
