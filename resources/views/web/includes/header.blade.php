@@ -25,7 +25,7 @@
                 <!-- /logo -->
 
                 <!-- search & aside toggle -->
-                <div class="nav-btns">
+                <div class="nav-btns hidden-lg">
                     <button class="aside-btn"><i class="fa fa-bars"></i></button>
                     {{--                    <button class="search-btn"><i class="fa fa-search"></i></button>--}}
                     {{--                    <div id="nav-search">--}}
@@ -42,13 +42,13 @@
                 <div id="nav-aside">
                     <ul class="nav-aside-menu">
                         <li><a href="{{asset('/')}}">VIET FARM</a></li>
-                        <li><a href="{{url('/phan-bon')}}">PHÂN BÓN</a></li>
-                        <li><a href="{{url('/cong-nghe')}}">CÔNG NGHỆ</a></li>
-                        <li><a href="{{url('/dich-vu')}}">DỰ ÁN KHOA HỌC</a></li>
-                        <li><a href="{{url('/chung-nhan')}}">CHỨNG NHẬN</a></li>
-                        <li><a href="{{url('/giong-va-bao-ve-thuc-vat')}}">GIỐNG & BVTV</a></li>
-                        <li><a href="{{url('/san-pham')}}">THỰC PHẨM SẠCH</a></li>
-                        <li><a href="{{asset('/contact')}}">LIÊN HỆ</a></li>
+                        <li class="{{ request()->is('phan-bon') ? 'active' : '' }}" ><a href="{{url('/phan-bon')}}><a href="{{url('/phan-bon')}}">PHÂN BÓN</a></li>
+                        <li class="{{ request()->is('cong-nghe') ? 'active' : '' }}"><a href="{{url('/cong-nghe')}}">CÔNG NGHỆ</a></li>
+                        <li class="{{ request()->is('dich-vu') ? 'active' : '' }}"><a href="{{url('/dich-vu')}}">DỰ ÁN KHOA HỌC</a></li>
+                        <li class="{{ request()->is('chung-nhan') ? 'active' : '' }}"><a href="{{url('/chung-nhan')}}">CHỨNG NHẬN</a></li>
+                        <li class="{{ request()->is('giong-va-bao-ve-thuc-vat') ? 'active' : '' }}"><a href="{{url('/giong-va-bao-ve-thuc-vat')}}">GIỐNG & BVTV</a></li>
+                        <li class="{{ request()->is('san-pham') ? 'active' : '' }}"><a href="{{url('/san-pham')}}">THỰC PHẨM SẠCH</a></li>
+                        <li class="{{ request()->is('lien-he') ? 'active' : '' }}"><a href="{{asset('/lien-he')}}">LIÊN HỆ</a></li>
                     </ul>
                     <button class="nav-close nav-aside-close"><span></span></button>
                 </div>
@@ -89,13 +89,13 @@
 
                 <ul class="nav-menu">
                     <li><a href="{{asset('/')}}">VIET FARM</a></li>
-                    <li><a href="{{url('/phan-bon')}}">PHÂN BÓN</a></li>
-                    <li><a href="{{url('/cong-nghe')}}">CÔNG NGHỆ</a></li>
-                    <li><a href="{{url('/dich-vu')}}">DỰ ÁN KHOA HỌC</a></li>
-                    <li><a href="{{url('/chung-nhan')}}">CHỨNG NHẬN</a></li>
-                    <li><a href="{{url('/giong-va-bao-ve-thuc-vat')}}">GIỐNG & BVTV</a></li>
-                    <li><a href="{{url('/san-pham')}}">THỰC PHẨM SẠCH</a></li>
-                    <li><a href="{{asset('/contact')}}">LIÊN HỆ</a></li>
+                    <li class="{{ request()->is('phan-bon') ? 'active' : '' }}" ><a href="{{url('/phan-bon')}}><a href="{{url('/phan-bon')}}">PHÂN BÓN</a></li>
+                    <li class="{{ request()->is('cong-nghe') ? 'active' : '' }}"><a href="{{url('/cong-nghe')}}">CÔNG NGHỆ</a></li>
+                    <li class="{{ request()->is('dich-vu') ? 'active' : '' }}"><a href="{{url('/dich-vu')}}">DỰ ÁN KHOA HỌC</a></li>
+                    <li class="{{ request()->is('chung-nhan') ? 'active' : '' }}"><a href="{{url('/chung-nhan')}}">CHỨNG NHẬN</a></li>
+                    <li class="{{ request()->is('giong-va-bao-ve-thuc-vat') ? 'active' : '' }}"><a href="{{url('/giong-va-bao-ve-thuc-vat')}}">GIỐNG & BVTV</a></li>
+                    <li class="{{ request()->is('san-pham') ? 'active' : '' }}"><a href="{{url('/san-pham')}}">THỰC PHẨM SẠCH</a></li>
+                    <li class="{{ request()->is('lien-he') ? 'active' : '' }}"><a href="{{asset('/lien-he')}}">LIÊN HỆ</a></li>
                 </ul>
                 <!-- /nav -->
             </div>

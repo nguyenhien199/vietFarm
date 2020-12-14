@@ -120,7 +120,7 @@ a:hover, a:focus {
     text-decoration: none;
     outline: none;
 }
-.nav-menu a:hover, .nav-menu a:focus {
+.nav-menu a:hover, .nav-menu a:focus, li.active a {
     color: #f7d627;
     text-decoration: none;
     outline: none;
@@ -2076,4 +2076,17 @@ body img {
     background-position: center bottom;
     background: url(../img/bgfooter.jpg) no-repeat #2f3e33db;
     padding: 0;
+}
+@media(max-width:568px){
+    .img-products {
+        height: auto;
+        width: 100%;
+    }
+    .section_certification {
+        padding: 0px !important;
+    }
+    .img-quality {
+        height: 120px;
+        background-size: cover;
+    }
 }

@@ -184,7 +184,7 @@
             </div>
             <div class="row">
                 @foreach($product as $pro)
-                    <div class="col-xs-4 col-sm-6 col-md-4 col-lg-4 colums-products">
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4 colums-products">
                         <div class="img-products">
                             <a href="{{url('/san-pham', $pro->url)}}">
                                 <img width="260" height="260" src="{{asset($pro->image)}}" class="attachment-product-thumbnails size-product-thumbnails wp-post-image" alt="{{$pro->name}}" title="Nha đam">
@@ -204,35 +204,22 @@
     <div class="section section_certification">
         <!-- container -->
         <div class="container">
-            <!-- row -->
-            <div class="">
-                <div class="row col-md-12">
-                    <!-- post share -->
-                    <!-- /post share -->
-
-                    <!-- post content -->
-                    <div class="section-row">
-                        <h2 class="text-center">TIÊU CHUẨN CHẤT LƯỢNG</h2>
-                        <hr style="width: 200px; text-align: center; border: 1px solid"/>
-                        <div class="row col-md-12">
-                            @foreach($certifications as $certification)
-                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 colums-quality">
-                                    <div class="img-quality">
-                                        <a href="{{$certification->url}}">
-                                            <img width="307" height="179" src="{{$certification->image}}" class="attachment-large size-large wp-post-image" alt="ĐÀ LẠT – KẾT TINH KÌ DIỆU TỪ ĐẤT LÀNH" title="ĐÀ LẠT – KẾT TINH KÌ DIỆU TỪ ĐẤT LÀNH" srcset="https://vietfarm.com.vn/wp-content/uploads/2019/05/ICON-08.png 307w, https://vietfarm.com.vn/wp-content/uploads/2019/05/ICON-08-300x175.png 300w, https://vietfarm.com.vn/wp-content/uploads/2019/05/ICON-08-260x152.png 260w" sizes="(max-width: 307px) 100vw, 307px">				            </a>
-                                        <div class="info-quality">
-                                            <a class="name-quality" href="{{url('/chung-nhan', $certification->url)}}">{{$certification->name}}</a>
-                                            <p class="excerpt-quality">&nbsp; {{$certification->description}}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
+            <h2 class="text-center">TIÊU CHUẨN CHẤT LƯỢNG</h2>
+            <hr style="width: 200px; text-align: center; border: 1px solid"/>
+            <div class="row">
+                @foreach($certifications as $certification)
+                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 colums-quality">
+                        <div class="img-quality">
+                            <a href="{{$certification->url}}">
+                                <img width="307" height="179" src="{{$certification->image}}" class="attachment-large size-large wp-post-image" alt="ĐÀ LẠT – KẾT TINH KÌ DIỆU TỪ ĐẤT LÀNH" title="ĐÀ LẠT – KẾT TINH KÌ DIỆU TỪ ĐẤT LÀNH" srcset="https://vietfarm.com.vn/wp-content/uploads/2019/05/ICON-08.png 307w, https://vietfarm.com.vn/wp-content/uploads/2019/05/ICON-08-300x175.png 300w, https://vietfarm.com.vn/wp-content/uploads/2019/05/ICON-08-260x152.png 260w" sizes="(max-width: 307px) 100vw, 307px">				            </a>
+                            <div class="info-quality">
+                                <a class="name-quality" href="{{url('/chung-nhan', $certification->url)}}">{{$certification->name}}</a>
+                                <p class="excerpt-quality">&nbsp; {{$certification->description}}</p>
+                            </div>
                         </div>
-
                     </div>
-                </div>
+                @endforeach
             </div>
-            <!-- /row -->
         </div>
         <!-- /container -->
     </div>
