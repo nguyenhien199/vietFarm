@@ -33,7 +33,8 @@ class HomeController extends Controller
 
     public function chungnhan()
     {
-        return view('web.certification');
+        $certifications = Certifications::where('status', 1)->latest()->take(6)->get();
+        return view('web.certification', compact('certifications'));
     }
     public function getNewDetail()
     {

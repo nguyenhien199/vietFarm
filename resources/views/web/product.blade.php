@@ -26,6 +26,7 @@
                     <!-- /nav -->
                 </div>
             </div>
+
         </div>
         <!-- /NAV -->
     </header>
@@ -51,8 +52,9 @@
                 </div>
                 @endforeach
             </div>
+            @include('pagination.default', ['paginator' => $products[$category->id]])
         </div>
-                <?php $i++; ?>
+        <?php $i++; ?>
         @endforeach
     </section>
     <!-- End Latest News Section -->

@@ -76,7 +76,7 @@ class CertificationsController extends Controller
     {
         $categories = Categories::where([
             'status' => Categories::ACTIVE,
-            'code' => Categories::CATEGORY_CC
+            'code' => Categories::CATEGORY_CN
         ])->select('id', 'name')->get();
         $certifications = Certifications::where('id', $id)->firstOrFail();
         return view('admin.certifications.create', ['data' => $certifications, 'categories' => $categories]);
