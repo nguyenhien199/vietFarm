@@ -34,7 +34,7 @@ class ProductController extends Controller
             $products[$category->id] = Products::where([
                 'category_id' => $category->id,
                 'status' => Products::ACTIVE,
-            ])->latest()->take(8)->get();
+            ])->latest()->take(4)->get();
         }
         return view('web.product' , ['products' => $products, 'categories' => $categories]);
     }

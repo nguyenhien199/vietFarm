@@ -17,8 +17,10 @@
                 <div class="container">
                     <!-- nav -->
                     <ul class="nav-menu">
+                        <?php $j=1; ?>
                         @foreach($categories as $category)
-                            <li><a data-toggle="tab" href="#{{$category->name}}_{{$category->id}}" href="">{{$category->name}}</a></li>
+                            <li class="@if($j==1) active @endif"><a data-toggle="tab"  href="#giong_cay_{{$category->id}}" href="">{{$category->name}}</a></li>
+                                <?php $j++; ?>
                         @endforeach
                     </ul>
                     <!-- /nav -->
@@ -32,7 +34,7 @@
     <section class="section section-news section-t8 tab-content">
         <?php $i=1; ?>
         @foreach($categories as $category)
-            <div class="container tab-pane fade @if($i==1) in active @endif" id="{{$category->name}}_{{$category->id}}">
+            <div class="container tab-pane fade @if($i==1) in active @endif" id="giong_cay_{{$category->id}}">
                 {{--                    <div class="card-box-b card-shadow news-box">--}}
                 <div class="post post-row">
                     @foreach($typetrees[$category->id] as $service)
