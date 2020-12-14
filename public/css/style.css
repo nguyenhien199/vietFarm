@@ -1955,4 +1955,64 @@ textarea.input {
          padding-top: 0px !important;
     }
 }
-
+.section_certification {
+    background-repeat: no-repeat;
+    background-size: inherit;
+    background-attachment: inherit;
+    background-position: center bottom;
+    background-image: url(../img/bg-section.jpg);
+}
+.img-quality {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 177px;
+    background: url(../img/bgimg.png) center bottom no-repeat;
+    background-size: 100%;
+}
+.img-quality > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(253, 207, 85, 0.8);
+}
+.img-quality img {
+    margin: 0 auto;
+    padding: 30px;
+    max-height: 100%;
+    display: block;
+    max-width: 100%;
+    width: auto;
+}
+.img-quality .info-quality {
+    background: rgba(17, 139, 68, 0.8);
+    height: 100%;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    position: absolute;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    text-align: center;
+    padding: 15% 5%;
+}
+.img-quality .info-quality .name-quality {
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    font-family: Tahoma;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.img-quality .info-quality .excerpt-quality {
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    font-family: Tahoma;
+}
+.img-quality:hover .info-quality {
+    top: 0;
+}

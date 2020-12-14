@@ -29,6 +29,7 @@ Route::get('/giong-va-bao-ve-thuc-vat/{url}', 'TypeTreesController@show');
 
 Route::get('/contact', 'HomeController@contact');
 Route::get('/chung-nhan', 'HomeController@chungnhan');
+Route::get('/chung-nhan/{url}', 'HomeController@certifivationDetail');
 Route::get('/bai-viet/{url}', 'WebController@getDetailNew');
 
 

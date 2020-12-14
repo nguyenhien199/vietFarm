@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Certifications;
 use App\Models\News;
 use App\Models\Products;
 use App\Models\Services;
@@ -18,6 +19,7 @@ class WebController extends Controller
         foreach ($product as $k => $pro){
             $product[$k] = array_chunk($pro,2);
         }
+        $certifications = Certifications::where('status', 1)->latest()->take(6)->get();
         $slide = Slides::where([
             'status' => Slides::ACTIVE
         ])->latest()->take(SLIDE_SHOW)->get();
@@ -26,7 +28,8 @@ class WebController extends Controller
                 'newPost' => $newPost,
                 'product' => $product,
                 'slide' => $slide,
-                'services' => $services
+                'services' => $services,
+                'certifications' => $certifications
             ]);
     }
     public function getDetailNew($url)
