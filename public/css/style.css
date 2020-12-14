@@ -1956,6 +1956,7 @@ textarea.input {
     }
 }
 .section_certification {
+    padding: 30px;
     background-repeat: no-repeat;
     background-size: inherit;
     background-attachment: inherit;
