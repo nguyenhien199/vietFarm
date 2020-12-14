@@ -2090,4 +2090,15 @@ body img {
         height: 120px;
         background-size: cover;
     }
+    .footer-sidebar{
+        text-align: center;
+        padding: 20px;
+        background: #0b9446;
+    }
+    .footer-widget .newsletter-widget:after {
+        display: none;
+    }
+    #clients{
+        padding: 30px 0;
+    }
 }

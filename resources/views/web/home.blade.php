@@ -293,12 +293,13 @@
 
             <style>
                 #owl-demo .item{
-                    margin: 3px;
+                    margin: 3px auto;
                 }
                 #owl-demo .item img{
                     display: block;
                     width: 80%;
                     height: auto;
+                    margin: auto;
                 }
                 #owl-demo .owl-stage-outer{
                     overflow: hidden;
