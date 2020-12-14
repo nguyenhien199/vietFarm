@@ -2079,8 +2079,9 @@ body img {
 }
 @media(max-width:568px){
     .img-products {
-        height: auto;
-        width: 100%;
+        width: 125px;
+        height: 125px;
+        overflow: hidden;
     }
     .section_certification {
         padding: 0px !important;
