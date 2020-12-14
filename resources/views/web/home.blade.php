@@ -62,7 +62,7 @@
                     <div class="carousel-item-a">
                         <div class="post row">
                             <div class="col-md-5">
-                                <a class="post-img" href="{{url('bai-viet',[$new->url])}}" style="margin-top: 50px"><img src="{{$new->image}}" alt=""></a>
+                                <a class="post-img post-new" href="{{url('bai-viet',[$new->url])}}" style="margin-top: 15px"><img src="{{$new->image}}" alt=""></a>
                             </div>
                             <div class="col-md-7" style="margin-top: 10px;">
                                 <h3 class="post-title">
