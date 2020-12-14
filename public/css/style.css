@@ -53,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 150px;
   height: 150px;
 }
-.post-new >img
+.carousel-item-a .post .post-new>img
 {
   background-size: cover;
   height: 300px!important;
