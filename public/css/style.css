@@ -1420,7 +1420,6 @@ textarea.input {
 
 #footer {
   margin-top: 40px;
-  background-color: #178430;
 background-blend-mode: multiply;
 }
 
@@ -2075,6 +2074,6 @@ body img {
     background-size: inherit;
     background-attachment: inherit;
     background-position: center bottom;
-    background: url(../img/bgfooter.jpg) no-repeat #178430b0;
+    background: url(../img/bgfooter.jpg) no-repeat #2f3e33db;
     padding: 0;
 }
