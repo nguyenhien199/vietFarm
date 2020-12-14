@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- SECTION -->
-    <div class="section">
+    <div class="section" style="padding-top:0 ">
         <!-- container -->
             <!-- row -->
 
@@ -14,7 +14,7 @@
                             $(".owl-stage").owlCarousel({
                                 loop: true,
                                 autoplay: true,
-                                autoplayTimeout: 1520,
+                                autoplayTimeout: 5000,
                                 smartSpeed: 1500,
                                 animateIn: 'linear',
                                 animateOut: 'linear'
