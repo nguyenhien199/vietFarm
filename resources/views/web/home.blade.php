@@ -300,7 +300,8 @@
                 <div class="item"><img src="assets/img/clients/client-2.png" alt="Owl Image"></div>
                 <div class="item"><img src="assets/img/clients/client-5.png" alt="Owl Image"></div>
                 <div class="item"><img src="assets/img/clients/client-6.png" alt="Owl Image"></div>
-                <div class="item"><img src="assets/img/clients/client-6.png" alt="Owl Image"></div>
+                <div class="item"><img src="assets/img/clients/client-7.png" alt="Owl Image"></div>
+                <div class="item"><img src="assets/img/clients/client-8.png" alt="Owl Image"></div>
             </div>
 
             <style>
