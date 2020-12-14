@@ -51,13 +51,13 @@ h1, h2, h3, h4, h5, h6 {
 .post-img>img
 {
   width: 150px;
-  height: 150px;
+  height: 300px;
 }
-.owl-carousel .owl-item img
-{
-  background-size: cover;
-  height: 300px!important;
-}
+/*.owl-carousel .owl-item img*/
+/*{*/
+  /*background-size: cover;*/
+  /*height: 300px!important;*/
+/*}*/
 .image-gallery
 {
   width: 100%;
