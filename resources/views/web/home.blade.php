@@ -308,17 +308,17 @@
                         <img style="height: 151px;background-size: auto;" src="https://www.bigc.vn/img/logo.png?v=1" alt="Owl Image">
                     </a>
                 </div>
-                <div class="item">
-                    <a href="http://www.japfavietnam.com/">
-                        <img src="http://www.japfavietnam.com/images/logo.png" alt="Owl Image">
-                    </a>
-                </div>
-                <div class="item"> <a href="https://www.pvcfc.com.vn/" ><img src="https://www.pvcfc.com.vn/Data/Sites/1/media/logo/logopvcfc.png" alt="Owl Image"></a></div>
-                <div class="item">
-                    <a href="https://www.hcmuaf.edu.vn/">
-                        <img src="https://www.hcmuaf.edu.vn/images/banner_nlu.jpg" alt="Owl Image">
-                    </a>
-                </div>
+                {{--<div class="item">--}}
+                    {{--<a href="http://www.japfavietnam.com/">--}}
+                        {{--<img src="http://www.japfavietnam.com/images/logo.png" alt="Owl Image">--}}
+                    {{--</a>--}}
+                {{--</div>--}}
+                {{--<div class="item"> <a href="https://www.pvcfc.com.vn/" ><img src="https://www.pvcfc.com.vn/Data/Sites/1/media/logo/logopvcfc.png" alt="Owl Image"></a></div>--}}
+                {{--<div class="item">--}}
+                    {{--<a href="https://www.hcmuaf.edu.vn/">--}}
+                        {{--<img src="https://www.hcmuaf.edu.vn/images/banner_nlu.jpg" alt="Owl Image">--}}
+                    {{--</a>--}}
+                {{--</div>--}}
             </div>
 
             <style>
