@@ -62,7 +62,7 @@
                     <div class="carousel-item-a">
                         <div class="post row">
                             <div class="col-md-5">
-                                <a class="post-img" href="{{url('bai-viet',[$new->url])}}" style="margin-top: 50px"><img src="{{$new->image}}" alt=""></a>
+                                <a class="post-img post-new" href="{{url('bai-viet',[$new->url])}}" style="margin-top: 15px"><img src="{{$new->image}}" alt=""></a>
                             </div>
                             <div class="col-md-7" style="margin-top: 10px;">
                                 <h3 class="post-title">
@@ -105,12 +105,10 @@
                     <div class="info-2 pull-right">
                         <img class="pull-right" style="height: 50px;" src="{{asset('img/icon-info-2.jpg')}}">
                         <div class="text-right" style="clear: both">
-                            <h4>Thực phẩm Organic</h4>
+                            <h4>Thi công nhà hàng</h4>
                             <p>
-                                Luông mang trong mình tự hào với những thực
-                                phẩm organic có chất lượng vượt trội khác biệt
-                                hẳn so với những dòng sản phẩm cùng loại trên thị
-                                trường
+                                VietFarm cung cấp hàng trăm phương thức kinh doanh
+                                nhà hàng đang phát triển và thành công rực rỡ.
                             </p>
                         </div>
                     </div>
@@ -121,12 +119,10 @@
                     <div class="info-3">
                         <img style="height: 50px;" src="{{asset('img/icon-info-3.jpg')}}">
                         <div  style="clear: both">
-                            <h4>Thực phẩm Organic</h4>
+                            <h4>Chuyển giao công nghệ</h4>
                             <p>
-                                Luông mang trong mình tự hào với những thực
-                                phẩm organic có chất lượng vượt trội khác biệt
-                                hẳn so với những dòng sản phẩm cùng loại trên thị
-                                trường
+                                VietFarm cung cấp tự hàng cung cấp những công
+                                nghệ phát triển nhất áp dụng vào cây trồng.
                             </p>
                         </div>
                     </div>
@@ -135,12 +131,12 @@
                     <div class="info-4 pull-right">
                         <img class="pull-right" style="height: 50px;" src="{{asset('img/icon-info-4.jpg')}}">
                         <div class="text-right" style="clear: both">
-                            <h4>Thực phẩm Organic</h4>
+                            <h4>Phân bón hữu cơ sinh học</h4>
                             <p>
-                                Luông mang trong mình tự hào với những thực
-                                phẩm organic có chất lượng vượt trội khác biệt
-                                hẳn so với những dòng sản phẩm cùng loại trên thị
-                                trường
+                                Phân bón hữu cơ VietFarm nhãn hiệu Lộc Việt
+                                dùng để cải tạo đất bạc màu, đất nghèo dinh
+                                dưỡng, làm cho đất dễ hoán đổi cây trồng, giảm
+                                việc sử dụng phân bón hóa học.
                             </p>
                         </div>
                     </div>
