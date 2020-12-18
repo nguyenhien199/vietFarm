@@ -179,6 +179,13 @@ blockquote.blockquote {
   border: 2px solid #e8eaed;
 }
 
+@media (max-width: 768px) {
+  .aside-widget
+  {
+    display: none;
+  }
+}
+
 blockquote.blockquote:before {
   content: "\f10d";
   font-family: fontAwesome;
