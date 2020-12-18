@@ -27,6 +27,7 @@
     <!-- ======= Latest News Section ======= -->
     <!--SECTION -->
     <section id="clients" class="clients">
+
         <div class="container aos-init aos-animate" data-aos="fade-up">
            <div class="row">
                @foreach($certifications as $certi)

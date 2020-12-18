@@ -24,5 +24,6 @@ class Categories extends Model
         'code',
         'description',
         'status',
+        'url'
     ];
 }

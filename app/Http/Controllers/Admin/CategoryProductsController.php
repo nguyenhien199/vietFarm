@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Admin;
 
+use App\Helper\Common;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryRequests;
 use App\Models\Categories;
@@ -50,8 +51,9 @@ class CategoryProductsController extends Controller
         if(!isset($data['id'])){
             try{
                 $category = $request->except('_token');
+                $category['url'] = Common::removeVietnameseTones($category['name']);
                 Categories::create($category);
-                Session::flash('message', 'Thêm danh mục sản phẩm thành công!');
+                Session::flash('message', 'Thêm danh mục thành công!');
                 Session::flash('alert-class', 'alert-success');
                 return response()->json(['status' => '200']);
             }catch (\Exception $error){
@@ -62,8 +64,9 @@ class CategoryProductsController extends Controller
         }else{
             try{
                 $dataEdit =  $request->except('_token', 'id');
+                $category['url'] = Common::removeVietnameseTones($dataEdit['name']);
                 Categories::where('id', $data['id'])->update($dataEdit);
-                Session::flash('message', 'Xửa danh mục sản phẩm thành công!');
+                Session::flash('message', 'Xửa danh mục thành công!');
                 Session::flash('alert-class', 'alert-success');
                 return response()->json(['status' => '200']);
             }catch (\Exception $error){
