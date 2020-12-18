@@ -307,7 +307,7 @@ a:hover {
 }
 
 .title-a {
-  font-size: 2.6rem;
+  /*font-size: 2.6rem;*/
   font-weight: 600;
 }
 
@@ -335,7 +335,7 @@ a:hover {
 
 .title-box-d .title-d {
   font-weight: 600;
-  font-size: 2rem;
+  /*font-size: 2rem;*/
 }
 
 .title-box-d .title-d:after {
