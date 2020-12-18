@@ -40,7 +40,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="wrapper">
-                                <h2 style="text-align: left"> {{$product->name}}</h2>
+                                <h1 style="text-align: left"> {{$product->name}}</h1>
                                 <div class="image-gallery">
                                     {{--<aside class="thumbnails">--}}
                                         {{--<a href="javascript:void(0)" class="selected thumbnail" data-big="{{$product->image}}">--}}

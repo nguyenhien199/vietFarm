@@ -40,7 +40,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="wrapper">
-                                <h2 style="text-align: left">{{$fertilizers->name}}</h2>
+                                <h1 style="text-align: left">{{$fertilizers->name}}</h1>
                                 <div class="image-gallery">
                                     {{--<aside class="thumbnails">--}}
                                         {{--<a href="javascript:void(0)" class="selected thumbnail" data-big="{{$fertilizers->image}}">--}}
@@ -111,7 +111,7 @@
                             <div class="row">
                                 <div class="col-sm-12" style="margin-top: 30px">
                                     <div class="title-box-d">
-                                        <h3 class="title-d">Chi tiết phân bón</h3>
+                                        <h2 class="title-d">Chi tiết phân bón</h2>
                                     </div>
                                 </div>
                             </div>
@@ -135,7 +135,7 @@
                 <div class="col-md-12">
                     <div class="title-wrap d-flex justify-content-between">
                         <div class="title-box">
-                            <h2 class="title-a">Những phân bón liên quan</h2>
+                            <h4 class="title-a">Những phân bón liên quan</h4>
                         </div>
                         <div class="title-link">
                             <a href="#">Tất cả phân bón
