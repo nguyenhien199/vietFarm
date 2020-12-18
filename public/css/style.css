@@ -87,6 +87,11 @@ h1, h2, h3, h4, h5, h6 {
   width: 80%;
 }
 
+.section_certification .colums-quality
+{
+  margin-bottom: 10px;
+}
+
 h1 {
   font-size: 32.437px;
 }
@@ -149,6 +154,10 @@ ul, ol {
   margin: 0;
   padding: 0;
   list-style: none
+}
+.new-item > img
+{
+  height: 300px!important;
 }
 
 ul.list-style, ol.list-style {
