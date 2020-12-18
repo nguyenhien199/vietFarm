@@ -2042,6 +2042,7 @@ background-blend-mode: multiply;
     transition-property: box-shadow, transform;
     max-height: 100%;
     max-width: 100%;
+    height: 180px;
 }
 
 body img {
