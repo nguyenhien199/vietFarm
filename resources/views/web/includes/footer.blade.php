@@ -18,7 +18,7 @@
             <div class="col-md-2 hidden-xs" style="border-right: 3px solid #fff">
                 <a href="/" class="logo pull-right"><img width="150" src="{{asset('./img/logo-viet-farm-footer.jpg')}}" alt="logo việt farm"></a>
             </div>
-            <div class="col-md-4" style="border-right: 3px solid #fff">
+            <div class="col-md-3" style="border-right: 3px solid #fff">
                 <div class="footer-widget">
                 <h3 class="footer-title">LIÊN HỆ</h3>
                 <p><i class="fa fa-home"></i>&emsp; 76 Phùng Khoan, Thanh Xuân, Hà Nội</p>
@@ -26,7 +26,7 @@
                 <p><i class="fa fa-envelope"></i>&emsp; bacdaibang@gmail.com</p>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="footer-widget">
                     <h3 class="footer-title">HỖ TRỢ KHÁCH HÀNG</h3>
                     <div class="newsletter-widget">
