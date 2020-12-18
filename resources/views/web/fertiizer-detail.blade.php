@@ -155,7 +155,7 @@
                         <div class="card-overlay">
                             <div class="card-header-b">
                                 <div class="card-category-b">
-                                    <a href="#" class="category-b">House</a>
+                                    <a href="#" class="category-b"></a>
                                 </div>
                                 <div class="card-title-b">
                                     <h2 class="title-2">
