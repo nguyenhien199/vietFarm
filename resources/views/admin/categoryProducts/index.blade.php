@@ -3,7 +3,7 @@
 @section('content')
     <div class="">
         <div class="d-flex justify-content-end header-page">
-                <h2>Danh mục dịch vụ</h2>
+                <h2>Danh mục Sản phẩm</h2>
             <div>
                 <button class="btn btn-primary" onclick="newCategory()"> + Thêm danh mục</button>
             </div>
