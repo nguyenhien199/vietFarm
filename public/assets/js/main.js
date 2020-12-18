@@ -201,5 +201,16 @@
             }
         })
     })
-
+    if ($(window).scrollTop() > 220) {
+        $('.lh-wrapper').addClass('fixed-top');
+    } else {
+        $('.lh-wrapper').removeClass('fixed-top');
+    }
+    $(window).bind('scroll', function () {
+        if ($(window).scrollTop() > 220) {
+            $('.lh-wrapper').addClass('fixed-top');
+        } else {
+            $('.lh-wrapper').removeClass('fixed-top');
+        }
+    });
 })(jQuery);

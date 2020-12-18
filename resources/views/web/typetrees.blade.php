@@ -39,7 +39,7 @@
                 <div class="post post-row">
                     @foreach($typetrees[$category->id] as $service)
                         <div class="col-6">
-                            <a class="post-img" href="{{url('/giong-va-bao-ve-thuc-vat', $service->url)}}"><img src="{{!empty($service->image) ? URL::to($service->image) : URL::to('/images/noimage.jpg')}}"/></a>
+                            <a class="post-img" href="{{url('/giong-va-bao-ve-thuc-vat', $service->url)}}"><img alt="{{$service->name}}" src="{{!empty($service->image) ? URL::to($service->image) : URL::to('/images/noimage.jpg')}}"/></a>
                             <div class="post-body">
                                 <h3 class="post-title"><a href="{{url('/giong-va-bao-ve-thuc-vat', $service->url)}}">{{$service->name}}</a></h3>
                                 {{--                            <ul class="post-meta">--}}

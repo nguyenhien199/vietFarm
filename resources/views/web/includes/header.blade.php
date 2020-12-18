@@ -84,7 +84,7 @@
     {{--        </div>--}}
     <!-- /Top Nav -->
         <div id="nav-bottom">
-            <div class="container">
+            <div class="container lh-wrapper">
                 <!-- nav -->
 
                 <ul class="nav-menu">

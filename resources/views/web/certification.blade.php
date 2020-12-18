@@ -33,7 +33,7 @@
                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 colums-quality">
                    <div class="img-quality">
                        <a href="#">
-                          <img src="{{asset($certi->image)}}" class="img-fluid" alt="">
+                          <img src="{{asset($certi->image)}}" class="img-fluid" alt="{{$certi->name}}">
                        </a>
                        <div class="info-quality">
                            <a class="name-quality" href="{{url('chung-nhan', $certi->url)}}">{{$certi->name}}</a>

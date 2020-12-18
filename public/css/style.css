@@ -1630,7 +1630,7 @@ background-blend-mode: multiply;
 .block-info-2{
     position: relative;
 }
-.block-info-2 h4{
+.block-info-2 h3{
     color: #a72125;
     padding-top: 20px;
 }
@@ -1681,7 +1681,6 @@ background-blend-mode: multiply;
 --------------------------------------------------------------*/
 .clients{
     padding: 30px;
-    background: #ddd;
 }
 .clients .clients-wrap {
     /*border-top: 1px solid #ececec;*/

@@ -150,7 +150,7 @@
                 <div class="carousel-item-c">
                     <div class="card-box-b card-shadow news-box">
                         <div class="img-box-b">
-                            <img src="{{asset($lq->image)}}" alt="" class="img-b img-fluid">
+                            <img src="{{asset($lq->image)}}" alt="{{$lq->name}}" class="img-b img-fluid">
                         </div>
                         <div class="card-overlay">
                             <div class="card-header-b">

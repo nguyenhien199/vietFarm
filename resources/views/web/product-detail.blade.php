@@ -111,7 +111,7 @@
                             <div class="row">
                                 <div class="col-sm-12" style="margin-top: 30px">
                                     <div class="title-box-d">
-                                        <h3 class="title-d">Chi tiết sản phẩm</h3>
+                                        <h2 class="title-d">Chi tiết sản phẩm</h2>
                                     </div>
                                 </div>
                             </div>
@@ -135,7 +135,7 @@
                 <div class="col-md-12">
                     <div class="title-wrap d-flex justify-content-between">
                         <div class="title-box">
-                            <h2 class="title-a">Những sản phẩm liên quan</h2>
+                            <h4 class="title-a">Những sản phẩm liên quan</h4>
                         </div>
                         <div class="title-link">
                             <a href="#">Tất cả sản phẩm
@@ -150,7 +150,7 @@
                 <div class="carousel-item-c">
                     <div class="card-box-b card-shadow news-box">
                         <div class="img-box-b">
-                            <img src="{{!empty($lq->image) ? URL::to($lq->image) : URL::to('/images/noimage.jpg')}}" alt="" class="img-b img-fluid">
+                            <img src="{{!empty($lq->image) ? URL::to($lq->image) : URL::to('/images/noimage.jpg')}}" alt="{{$lq->name}}" class="img-b img-fluid">
                         </div>
                         <div class="card-overlay">
                             <div class="card-header-b">
