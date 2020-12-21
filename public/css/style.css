@@ -48,6 +48,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   margin: 0px 0px 15px;
 }
+
+p{
+  font-size: 20px;
+}
 .post-img>img
 {
   width: 150px;
@@ -111,9 +115,6 @@ h4 {
 
 h5 {}
 
-p {
-  margin: 0px 0px 20px;
-}
 
 a {
   color: #178430;
@@ -824,7 +825,7 @@ textarea.input {
 }
 
 .post .post-title {
-  font-size: 18px;
+  font-size: 26px;
 }
 
 .post .post-title.title-sm {
@@ -1476,7 +1477,7 @@ background-blend-mode: multiply;
 
 .footer-widget .footer-title {
   color: #fff;
-  font-size: 14px;
+  font-size: 20px;
   text-transform: uppercase;
 }
 
@@ -1492,6 +1493,7 @@ background-blend-mode: multiply;
 
 .footer-bottom {
   line-height: 30px;
+  font-size: 25px;
   border-top: 1px solid #323335;
 }
 
@@ -1649,6 +1651,7 @@ background-blend-mode: multiply;
 .block-info-2 h3{
     color: #a72125;
     padding-top: 20px;
+    font-size: 25px;
 }
 .block-info-2 img{
     margin-top: 20px;
@@ -1667,7 +1670,7 @@ background-blend-mode: multiply;
     margin: 0 auto;
     line-height: 31px;
     text-align: center;
-
+  text-transform: uppercase;
 }
 #footer h4{
     color: #fff;

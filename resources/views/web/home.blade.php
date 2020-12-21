@@ -69,7 +69,7 @@
                             <div class="col-md-7" style="margin-top: 10px;">
                                 <h3 class="post-title">
                                     <a href="{{url('bai-viet',[$new->url])}}">{{$new->title}}</a></h3>
-                                <p>
+                                <p style="font-size: 21px;">
                                     {{$new->description}}
                                 </p>
                                 <a class="btn btn-info btn-x-ch-tit" href="{{url('bai-viet',[$new->url])}}">XEM CHI TIẾT</a>

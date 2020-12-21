@@ -24,9 +24,9 @@
                                     </div>
                                     <p>VietFarm cung cấp tự hàng cung cấp những công nghệ phát triển nhất áp dụng vào cây trồng.</p>
                                     <ul class="contact">
-                                        <li><i class="fa fa-phone"></i> 202-555-0194</li>
-                                        <li><i class="fa fa-envelope"></i> <a href="#">callie@email.com</a></li>
-                                        <li><i class="fa fa-map-marker"></i> 123 6th St.Melbourne, FL 32904</li>
+                                        <li><i class="fa fa-phone"></i> 094 6354138</li>
+                                        <li><i class="fa fa-envelope"></i> <a href="#">nguyenanhbac@gmail.com</a></li>
+                                        <li><i class="fa fa-map-marker"></i> Liền kề 03, lô 8, ngõ 67 Phùng Khoang, Trung Văn, Nam Từ Liêm, Hà Nội</li>
                                     </ul>
                                 </div>
                             </div>

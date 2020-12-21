@@ -1,7 +1,7 @@
 <div class="call-now-button ui-draggable ui-draggable-handle bounceInLeft" id="draggable">
     <div>
         <a href="tel:0913548911">
-            <p class="call-text"> 0913.548.911 </p>
+            <p class="call-text"> 094 6354138 </p>
         </a>
         <a href="tel:0913548911" id="quickcallbutton" '="" title="Call Now">
         <div class="quick-alo-ph-circle active"></div>
@@ -21,9 +21,9 @@
             <div class="col-md-3" style="border-right: 3px solid #fff">
                 <div class="footer-widget">
                 <h3 class="footer-title">LIÊN HỆ</h3>
-                <p><i class="fa fa-home"></i>&emsp; 76 Phùng Khoan, Thanh Xuân, Hà Nội</p>
-                <p><i class="fa fa-phone"></i>&emsp; 0913 548 911</p>
-                <p><i class="fa fa-envelope"></i>&emsp; bacdaibang@gmail.com</p>
+                <p><i class="fa fa-home"></i>&emsp;Liền kề 03, lô 8, ngõ 67 Phùng Khoang, Trung Văn, Nam Từ Liêm, Hà Nội</p>
+                <p><i class="fa fa-phone"></i>&emsp; 094 6354138</p>
+                <p><i class="fa fa-envelope"></i>&emsp; nguyenanhbac@gmail.com</p>
                 </div>
             </div>
             <div class="col-md-4">
