@@ -61,12 +61,12 @@
                 @foreach($newPost as $new)
                     <div class="carousel-item-a">
                         <div class="post row">
-                            <div class="col-md-5">
+                            <div class="col-md-7">
                                 <a class="post-img post-new new-item" href="{{url('bai-viet',[$new->url])}}" style="margin-top: 15px">
                                     <img src="{{$new->image}}" alt="{{$new->title}}">
                                 </a>
                             </div>
-                            <div class="col-md-7" style="margin-top: 10px;">
+                            <div class="col-md-5" style="margin-top: 10px;">
                                 <h3 class="post-title">
                                     <a href="{{url('bai-viet',[$new->url])}}">{{$new->title}}</a></h3>
                                 <p style="font-size: 21px;">
