@@ -317,7 +317,7 @@
                 </div>
                 <div class="item">
                     <a href="#">
-                        <img src="{{asset('img/dt2.jpg')}}" alt="Owl Image">
+                        <img src="{{asset('img/dt2.png')}}" alt="Owl Image">
                     </a>
                 </div>
                 <div class="item">
@@ -327,12 +327,12 @@
                 </div>
                 <div class="item">
                     <a href="#">
-                        <img src="{{asset('img/dt4.jpg')}}" alt="Owl Image">
+                        <img src="{{asset('img/dt4.png')}}" alt="Owl Image">
                     </a>
                 </div>
                 <div class="item">
                     <a href="#">
-                        <img src="{{asset('img/dt5.jpg')}}" alt="Owl Image">
+                        <img src="{{asset('public/asset/img/dt5.png')}}" alt="Owl Image">
                     </a>
                 </div>
             </div>
