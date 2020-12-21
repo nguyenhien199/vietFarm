@@ -312,27 +312,27 @@
                 </div>
                 <div class="item">
                     <a href="#">
-                        <img src="{{asset('img/logodt/dt1.jpg')}}" alt="Owl Image">
+                        <img src="{{asset('img/dt1.jpg')}}" alt="Owl Image">
                     </a>
                 </div>
                 <div class="item">
                     <a href="#">
-                        <img src="{{asset('img/logodt/dt2.jpg')}}" alt="Owl Image">
+                        <img src="{{asset('img/dt2.jpg')}}" alt="Owl Image">
                     </a>
                 </div>
                 <div class="item">
                     <a href="#">
-                        <img src="{{asset('img/logodt/dt3.jpg')}}" alt="Owl Image">
+                        <img src="{{asset('img/dt3.jpg')}}" alt="Owl Image">
                     </a>
                 </div>
                 <div class="item">
                     <a href="#">
-                        <img src="{{asset('img/logodt/dt4.jpg')}}" alt="Owl Image">
+                        <img src="{{asset('img/dt4.jpg')}}" alt="Owl Image">
                     </a>
                 </div>
                 <div class="item">
                     <a href="#">
-                        <img src="{{asset('img/logodt/dt5.jpg')}}" alt="Owl Image">
+                        <img src="{{asset('img/dt5.jpg')}}" alt="Owl Image">
                     </a>
                 </div>
             </div>
