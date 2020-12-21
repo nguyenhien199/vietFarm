@@ -102,7 +102,7 @@ h1 {
 
 
 h2 {
-  font-size: 25.629px;
+  font-size: 30px;
 }
 
 h3 {
@@ -2080,6 +2080,7 @@ body img {
     display: block;
     text-align: center;
     text-transform: uppercase;
+  font-weight: bold;
 }
 .img-products:hover img {
     -webkit-transform: scale(1.1);
