@@ -153,7 +153,7 @@
     <div class="section" style="padding-top: 20px; padding-bottom: 20px">
         <!-- container -->
         <div class=" block-info-3" style="background-image: url(./img/bg-home3.jpg); background-size:100%;   background-position: center;
-  background-repeat: no-repeat; min-height: 270px; background-size: cover;">
+  background-repeat: no-repeat; min-height: 400px; background-size: cover;">
             <div style="height: 50%">
                 <div class="col-md-offset-5 col-md-7">
                     <p>
