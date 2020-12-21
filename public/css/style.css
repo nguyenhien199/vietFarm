@@ -158,7 +158,7 @@ ul, ol {
 }
 .new-item > img
 {
-  height: 300px!important;
+  /*height: 300px!important;*/
 }
 
 ul.list-style, ol.list-style {
