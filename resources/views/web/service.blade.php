@@ -39,7 +39,7 @@
                 <div class="post post-row">
                     @foreach($services[$category->id] as $service)
                         <div class="col-6">
-                            <a class="post-img" href="{{url('dich-vu', $service->url)}}"><img src="{{!empty($service->image) ? URL::to($service->image) : URL::to('/images/noimage.jpg')}}"/></a>
+                            <a class="post-img" href="{{url('dich-vu', $service->url)}}"><img alt="{{$service->name}}" src="{{!empty($service->image) ? URL::to($service->image) : URL::to('/images/noimage.jpg')}}"/></a>
                             <div class="post-body">
                                 <h3 class="post-title"><a href="{{url('/dich-vu', $service->url)}}">{{$service->name}}</a></h3>
                                 {{--                            <ul class="post-meta">--}}

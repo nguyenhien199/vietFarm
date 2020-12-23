@@ -61,13 +61,15 @@
                 @foreach($newPost as $new)
                     <div class="carousel-item-a">
                         <div class="post row">
-                            <div class="col-md-5">
-                                <a class="post-img post-new" href="{{url('bai-viet',[$new->url])}}" style="margin-top: 15px"><img src="{{$new->image}}" alt=""></a>
+                            <div class="col-md-7">
+                                <a class="post-img post-new new-item" href="{{url('bai-viet',[$new->url])}}" style="margin-top: 15px">
+                                    <img src="{{$new->image}}" alt="{{$new->title}}">
+                                </a>
                             </div>
-                            <div class="col-md-7" style="margin-top: 10px;">
+                            <div class="col-md-5" style="margin-top: 10px;">
                                 <h3 class="post-title">
                                     <a href="{{url('bai-viet',[$new->url])}}">{{$new->title}}</a></h3>
-                                <p>
+                                <p style="font-size: 21px;">
                                     {{$new->description}}
                                 </p>
                                 <a class="btn btn-info btn-x-ch-tit" href="{{url('bai-viet',[$new->url])}}">XEM CHI TIẾT</a>
@@ -91,7 +93,7 @@
                     <div class="info-1">
                         <img style="height: 50px;" src="{{asset('img/icon-info-1.jpg')}}">
                         <div style="clear: both">
-                            <h4>Thực phẩm Organic</h4>
+                            <h3>Thực phẩm Organic</h3>
                             <p>
                                 Luông mang trong mình tự hào với những thực
                                 phẩm organic có chất lượng vượt trội khác biệt
@@ -105,7 +107,7 @@
                     <div class="info-2 pull-right">
                         <img class="pull-right" style="height: 50px;" src="{{asset('img/icon-info-2.jpg')}}">
                         <div class="text-right" style="clear: both">
-                            <h4>Thi công nhà hàng</h4>
+                            <h3>Thi công nhà hàng</h3>
                             <p>
                                 VietFarm cung cấp hàng trăm phương thức kinh doanh
                                 nhà hàng đang phát triển và thành công rực rỡ.
@@ -119,7 +121,7 @@
                     <div class="info-3">
                         <img style="height: 50px;" src="{{asset('img/icon-info-3.jpg')}}">
                         <div  style="clear: both">
-                            <h4>Chuyển giao công nghệ</h4>
+                            <h3>Chuyển giao công nghệ</h3>
                             <p>
                                 VietFarm cung cấp tự hàng cung cấp những công
                                 nghệ phát triển nhất áp dụng vào cây trồng.
@@ -131,7 +133,7 @@
                     <div class="info-4 pull-right">
                         <img class="pull-right" style="height: 50px;" src="{{asset('img/icon-info-4.jpg')}}">
                         <div class="text-right" style="clear: both">
-                            <h4>Phân bón hữu cơ sinh học</h4>
+                            <h3>Phân bón hữu cơ sinh học</h3>
                             <p>
                                 Phân bón hữu cơ VietFarm nhãn hiệu Lộc Việt
                                 dùng để cải tạo đất bạc màu, đất nghèo dinh
@@ -151,7 +153,7 @@
     <div class="section" style="padding-top: 20px; padding-bottom: 20px">
         <!-- container -->
         <div class=" block-info-3" style="background-image: url(./img/bg-home3.jpg); background-size:100%;   background-position: center;
-  background-repeat: no-repeat; min-height: 270px; background-size: cover;">
+  background-repeat: no-repeat; min-height: 400px; background-size: cover;">
             <div style="height: 50%">
                 <div class="col-md-offset-5 col-md-7">
                     <p>
@@ -183,7 +185,7 @@
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4 colums-products">
                         <div class="img-products">
                             <a href="{{url('/san-pham', $pro->url)}}">
-                                <img width="260" height="260" src="{{asset($pro->image)}}" class="attachment-product-thumbnails size-product-thumbnails wp-post-image" alt="{{$pro->name}}" title="Nha đam">
+                                <img width="260" height="260" src="{{asset($pro->image)}}" class="attachment-product-thumbnails size-product-thumbnails wp-post-image" alt="{{$pro->name}}" title="{{$pro->name}}">
                             </a>
                         </div>
                         <div class="info-products">
@@ -208,7 +210,7 @@
                         <div class="img-quality">
                             <a href="{{$certification->url}}">
                                 <img width="307" height="179" src="{{$certification->image}}" class="attachment-large size-large wp-post-image"
-                                     alt="ĐÀ LẠT – KẾT TINH KÌ DIỆU TỪ ĐẤT LÀNH"
+                                     alt="{{$certification->name}}"
                                      title="ĐÀ LẠT – KẾT TINH KÌ DIỆU TỪ ĐẤT LÀNH"
                                      sizes="(max-width: 307px) 100vw, 307px">
                             </a>
@@ -247,7 +249,7 @@
                                         <iframe width="500" id="iframe-video" height="315" src="{{$service->url_video}}"></iframe>
                                     </div>
                                     <div class="col-md-6">
-                                        <h4>{{$service->name}}</h4>
+                                        <h3>{{$service->name}}</h3>
                                         <p>
                                             {{$service->description}}
                                         </p>
@@ -255,7 +257,7 @@
                                     <div class="clearfix"></div>
                                 @else
                                     <div class="col-md-4">
-                                        <img src="{{$service->image}}" alt="" style="width: 100%">
+                                        <img src="{{$service->image}}" alt="{{$service->name}}" style="width: 100%">
                                         <p>{{$service->name}}</p>
                                     </div>
                                 @endif
@@ -308,17 +310,31 @@
                         <img style="height: 151px;background-size: auto;" src="https://www.bigc.vn/img/logo.png?v=1" alt="Owl Image">
                     </a>
                 </div>
-                {{--<div class="item">--}}
-                    {{--<a href="http://www.japfavietnam.com/">--}}
-                        {{--<img src="http://www.japfavietnam.com/images/logo.png" alt="Owl Image">--}}
-                    {{--</a>--}}
-                {{--</div>--}}
-                {{--<div class="item"> <a href="https://www.pvcfc.com.vn/" ><img src="https://www.pvcfc.com.vn/Data/Sites/1/media/logo/logopvcfc.png" alt="Owl Image"></a></div>--}}
-                {{--<div class="item">--}}
-                    {{--<a href="https://www.hcmuaf.edu.vn/">--}}
-                        {{--<img src="https://www.hcmuaf.edu.vn/images/banner_nlu.jpg" alt="Owl Image">--}}
-                    {{--</a>--}}
-                {{--</div>--}}
+                <div class="item">
+                    <a href="#">
+                        <img src="{{asset('assets/img/dt1.jpg')}}" alt="Owl Image">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <img src="{{asset('assets/img/dt2.png')}}" alt="Owl Image">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <img src="{{asset('assets/img/dt3.jpg')}}" alt="Owl Image">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <img src="{{asset('assets/img/dt4.png')}}" alt="Owl Image">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <img src="{{asset('assets/img/dt5.png')}}" alt="Owl Image">
+                    </a>
+                </div>
             </div>
 
             <style>
@@ -327,7 +343,7 @@
                 }
                 #owl-demo .item img{
                     display: block;
-                    width: 80%;
+                    width: 60%;
                     height: auto;
                     margin: auto;
                     background-size: cover;

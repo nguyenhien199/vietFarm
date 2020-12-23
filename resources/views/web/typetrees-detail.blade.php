@@ -40,78 +40,20 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="wrapper">
-                                <h2 style="text-align: left">{{$typetrees->name}}</h2>
+                                <h1 style="text-align: left">{{$typetrees->name}}</h1>
                                 <div class="image-gallery">
-                                    {{--<aside class="thumbnails">--}}
-                                        {{--<a href="javascript:void(0)" class="selected thumbnail" data-big="{{$service->image}}">--}}
-                                            {{--<div class=$typetrees"thumbnail-image" style="background-image: url({{$service->image}})"></div>--}}
-                                        {{--</a>--}}
-                                        {{--<a href="javascript:void(0)" class="thumbnail" data-big="{{$service->image}}">--}}
-                                            {{--<div class="thumbnail-image" style="background-image: url({{$service->image}})"></div>--}}
-                                        {{--</a>--}}
-                                        {{--<a href="javascript:void(0)" class="thumbnail" data-big="{{$service->image}}">--}}
-                                            {{--<div class="thumbnail-image" style="background-image: url({{$service->image}})"></div>--}}
-                                        {{--</a>--}}
-                                    {{--</aside>--}}
-
                                     <main class="primary" style="background-image: url({{$typetrees->image}});"></main>
                                 </div>
 
                             </div>
                         </div>
-                        {{--<div class="col-md-4">--}}
-                            {{--<div class="property-agent">--}}
-                                {{--<h4 class="title-agent">Anabella Geller</h4>--}}
-                                {{--<p class="color-text-a">--}}
-                                    {{--Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet--}}
-                                    {{--dui. Quisque velit nisi,--}}
-                                    {{--pretium ut lacinia in, elementum id enim.--}}
-                                {{--</p>--}}
-                                {{--<ul class="list">--}}
-                                    {{--<li class="d-flex justify-content-between">--}}
-                                        {{--<strong>Property ID:</strong>--}}
-                                        {{--<span>1134</span>--}}
-                                    {{--</li>--}}
-                                    {{--<li class="d-flex justify-content-between">--}}
-                                        {{--<strong>Location:</strong>--}}
-                                        {{--<span>Chicago, IL 606543</span>--}}
-                                    {{--</li>--}}
-                                    {{--<li class="d-flex justify-content-between">--}}
-                                        {{--<strong>Property Type:</strong>--}}
-                                        {{--<span>House</span>--}}
-                                    {{--</li>--}}
-                                    {{--<li class="d-flex justify-content-between">--}}
-                                        {{--<strong>Status:</strong>--}}
-                                        {{--<span>Sale</span>--}}
-                                    {{--</li>--}}
-                                    {{--<li class="d-flex justify-content-between">--}}
-                                        {{--<strong>Area:</strong>--}}
-                                        {{--<span>340m--}}
-                          {{--<sup>2</sup>--}}
-                        {{--</span>--}}
-                                    {{--</li>--}}
-                                    {{--<li class="d-flex justify-content-between">--}}
-                                        {{--<strong>Beds:</strong>--}}
-                                        {{--<span>4</span>--}}
-                                    {{--</li>--}}
-                                    {{--<li class="d-flex justify-content-between">--}}
-                                        {{--<strong>Baths:</strong>--}}
-                                        {{--<span>2</span>--}}
-                                    {{--</li>--}}
-                                    {{--<li class="d-flex justify-content-between">--}}
-                                        {{--<strong>Garage:</strong>--}}
-                                        {{--<span>1</span>--}}
-                                    {{--</li>--}}
-                                {{--</ul>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
                     </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-sm-12" style="margin-top: 30px">
                                     <div class="title-box-d">
-                                        <h3 class="title-d">Chi tiết Giống & BVTV</h3>
+                                        <h2 class="title-d">Chi tiết Giống & BVTV</h2>
                                     </div>
                                 </div>
                             </div>
@@ -135,7 +77,7 @@
                 <div class="col-md-12">
                     <div class="title-wrap d-flex justify-content-between">
                         <div class="title-box">
-                            <h2 class="title-a">Những Giống & BVTV liên quan</h2>
+                            <h4 class="title-a">Những Giống & BVTV liên quan</h4>
                         </div>
                         <div class="title-link">
                             <a href="#">Tất cả Giống & BVTV
@@ -150,12 +92,12 @@
                 <div class="carousel-item-c">
                     <div class="card-box-b card-shadow news-box">
                         <div class="img-box-b">
-                            <img src="{{asset($lq->image)}}" alt="" class="img-b img-fluid">
+                            <img src="{{asset($lq->image)}}" alt="{{$lq->name}}" class="img-b img-fluid">
                         </div>
                         <div class="card-overlay">
                             <div class="card-header-b">
                                 <div class="card-category-b">
-                                    <a href="#" class="category-b">House</a>
+                                    <a href="#" class="category-b"></a>
                                 </div>
                                 <div class="card-title-b">
                                     <h2 class="title-2">

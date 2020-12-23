@@ -21,7 +21,8 @@
                     <div class="section-row">
                         <h2 class="center">{{$new->title}}</h2>
                         <hr class="hr">
-                        <div class="center"><span class="center">{{$new->created_at}} , Tác Giả: {{$new->user->name}}</span>
+                        <div>
+                            <span class="center">{{$new->created_at}} , Tác Giả: {{$new->user->name}}</span>
                             <p class="center">{!! $new->content !!}</p>
                             <div class="section-row">
                                 <div class="post-tags">

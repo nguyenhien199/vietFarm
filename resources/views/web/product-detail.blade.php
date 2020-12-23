@@ -40,7 +40,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="wrapper">
-                                <h2 style="text-align: left"> {{$product->name}}</h2>
+                                <h1 style="text-align: left"> {{$product->name}}</h1>
                                 <div class="image-gallery">
                                     {{--<aside class="thumbnails">--}}
                                         {{--<a href="javascript:void(0)" class="selected thumbnail" data-big="{{$product->image}}">--}}
@@ -111,7 +111,7 @@
                             <div class="row">
                                 <div class="col-sm-12" style="margin-top: 30px">
                                     <div class="title-box-d">
-                                        <h3 class="title-d">Chi tiết sản phẩm</h3>
+                                        <h2 class="title-d">Chi tiết sản phẩm</h2>
                                     </div>
                                 </div>
                             </div>
@@ -135,7 +135,7 @@
                 <div class="col-md-12">
                     <div class="title-wrap d-flex justify-content-between">
                         <div class="title-box">
-                            <h2 class="title-a">Những sản phẩm liên quan</h2>
+                            <h4 class="title-a">Những sản phẩm liên quan</h4>
                         </div>
                         <div class="title-link">
                             <a href="#">Tất cả sản phẩm
@@ -150,12 +150,12 @@
                 <div class="carousel-item-c">
                     <div class="card-box-b card-shadow news-box">
                         <div class="img-box-b">
-                            <img src="{{!empty($lq->image) ? URL::to($lq->image) : URL::to('/images/noimage.jpg')}}" alt="" class="img-b img-fluid">
+                            <img src="{{!empty($lq->image) ? URL::to($lq->image) : URL::to('/images/noimage.jpg')}}" alt="{{$lq->name}}" class="img-b img-fluid">
                         </div>
                         <div class="card-overlay">
                             <div class="card-header-b">
                                 <div class="card-category-b">
-                                    <a href="#" class="category-b">House</a>
+                                    <a href="#" class="category-b"></a>
                                 </div>
                                 <div class="card-title-b">
                                     <h2 class="title-2">

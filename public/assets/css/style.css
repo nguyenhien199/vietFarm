@@ -258,6 +258,7 @@ a:hover {
 /*------/ Space Padding /------*/
 .section-t8 {
   padding-top: 8rem;
+    padding-bottom: 30px;
 }
 
 @media (max-width: 767px) {
@@ -306,12 +307,12 @@ a:hover {
 }
 
 .title-a {
-  font-size: 2.6rem;
+  /*font-size: 2.6rem;*/
   font-weight: 600;
 }
 
 .title-link {
-  font-size: 1.2rem;
+  /*font-size: 1.2rem;*/
   font-weight: 300;
   padding-top: 1.2rem;
 }
@@ -334,7 +335,7 @@ a:hover {
 
 .title-box-d .title-d {
   font-weight: 600;
-  font-size: 2rem;
+  /*font-size: 2rem;*/
 }
 
 .title-box-d .title-d:after {
@@ -2159,4 +2160,33 @@ footer .copyright-footer {
 
 footer .credits {
   font-size: 14px;
+}
+.lh-wrapper{
+    max-width: initial;
+    z-index: 999;
+}
+.lh-wrapper.fixed-top{
+
+    width: 100%;
+    box-shadow: 1px 2px 10px #0000007d;
+    background-color: #178430;
+    padding: 0;
+    position: fixed !important;
+    top: 0 !important;
+    visibility: visible !important;
+    animation: stuckMoveDown .6s;
+}
+.lh-wrapper.fixed-top li a{
+    color: #fff;
+}
+@keyframes stuckMoveDown {
+
+
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }

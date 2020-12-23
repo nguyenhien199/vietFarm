@@ -48,6 +48,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   margin: 0px 0px 15px;
 }
+
+p{
+  font-size: 20px;
+}
 .post-img>img
 {
   width: 150px;
@@ -87,13 +91,18 @@ h1, h2, h3, h4, h5, h6 {
   width: 80%;
 }
 
+.section_certification .colums-quality
+{
+  margin-bottom: 10px;
+}
+
 h1 {
   font-size: 32.437px;
 }
 
 
 h2 {
-  font-size: 25.629px;
+  font-size: 30px;
 }
 
 h3 {
@@ -106,9 +115,6 @@ h4 {
 
 h5 {}
 
-p {
-  margin: 0px 0px 20px;
-}
 
 a {
   color: #178430;
@@ -150,6 +156,10 @@ ul, ol {
   padding: 0;
   list-style: none
 }
+.new-item > img
+{
+  /*height: 300px!important;*/
+}
 
 ul.list-style, ol.list-style {
   padding-left: 15px;
@@ -168,6 +178,13 @@ blockquote.blockquote {
   padding: 30px;
   margin: 0px 0px 20px;
   border: 2px solid #e8eaed;
+}
+
+@media (max-width: 768px) {
+  .aside-widget
+  {
+    display: none;
+  }
 }
 
 blockquote.blockquote:before {
@@ -808,7 +825,7 @@ textarea.input {
 }
 
 .post .post-title {
-  font-size: 18px;
+  font-size: 26px;
 }
 
 .post .post-title.title-sm {
@@ -1460,7 +1477,7 @@ background-blend-mode: multiply;
 
 .footer-widget .footer-title {
   color: #fff;
-  font-size: 14px;
+  font-size: 20px;
   text-transform: uppercase;
 }
 
@@ -1476,6 +1493,7 @@ background-blend-mode: multiply;
 
 .footer-bottom {
   line-height: 30px;
+  font-size: 25px;
   border-top: 1px solid #323335;
 }
 
@@ -1630,9 +1648,10 @@ background-blend-mode: multiply;
 .block-info-2{
     position: relative;
 }
-.block-info-2 h4{
+.block-info-2 h3{
     color: #a72125;
     padding-top: 20px;
+    font-size: 25px;
 }
 .block-info-2 img{
     margin-top: 20px;
@@ -1651,7 +1670,7 @@ background-blend-mode: multiply;
     margin: 0 auto;
     line-height: 31px;
     text-align: center;
-
+  text-transform: uppercase;
 }
 #footer h4{
     color: #fff;
@@ -1681,7 +1700,6 @@ background-blend-mode: multiply;
 --------------------------------------------------------------*/
 .clients{
     padding: 30px;
-    background: #ddd;
 }
 .clients .clients-wrap {
     /*border-top: 1px solid #ececec;*/
@@ -2043,6 +2061,7 @@ background-blend-mode: multiply;
     transition-property: box-shadow, transform;
     max-height: 100%;
     max-width: 100%;
+    height: 180px;
 }
 
 body img {
@@ -2061,6 +2080,7 @@ body img {
     display: block;
     text-align: center;
     text-transform: uppercase;
+  font-weight: bold;
 }
 .img-products:hover img {
     -webkit-transform: scale(1.1);
