@@ -28,18 +28,33 @@ class ProductController extends Controller
         $categories = Categories::where([
             'code' => Categories::CATEGORY_SP,
             'status' => Categories::ACTIVE,
-        ])->take(6)->select('id', 'name')->get();
-        $products = [];
-        foreach ($categories as $category){
-            $products[$category->id] = Products::where([
-                'category_id' => $category->id,
-                'status' => Products::ACTIVE,
-            ])->latest()->paginate(SIZE_NUMBER);
-        }
+        ])->take(6)->get();
+        $products = Products::where([
+            'category_id' => $categories[0]->id,
+            'status' => Products::ACTIVE,
+        ])->latest()->paginate(SIZE_NUMBER);
         return view('web.product' , ['products' => $products, 'categories' => $categories]);
     }
 
-    public function show($url)
+    public function showProducts($category_url)
+    {
+        $categories = Categories::where([
+            'code' => Categories::CATEGORY_SP,
+            'status' => Categories::ACTIVE,
+        ])->take(6)->get();
+        $category_id = Categories::where([
+            'code' => Categories::CATEGORY_SP,
+            'status' => Categories::ACTIVE,
+            'url' => $category_url,
+        ])->first();
+        $products = Products::where([
+            'category_id' => $category_id->id,
+            'status' => Products::ACTIVE,
+        ])->latest()->paginate(SIZE_NUMBER);
+        return view('web.product' , ['products' => $products, 'categories' => $categories]);
+    }
+
+    public function show($category_url, $url)
     {
         $categories = Categories::where([
             'code' => Categories::CATEGORY_SP,
@@ -59,6 +74,6 @@ class ProductController extends Controller
             'status' => Products::ACTIVE,
             'category_id' => $product->category_id
         ])->where('id','!=',$product->id)->take(6)->get();
-        return view('web.product-detail', ['product' => $product, 'categories' => $categories, 'sp_lienquan' => $sp_lienquan]);
+        return view('web.product-detail', ['product' => $product, 'categories' => $categories, 'sp_lienquan' => $sp_lienquan, 'category_url' => $category_url]);
     }
 }

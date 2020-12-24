@@ -1,7 +1,7 @@
 @extends('web.app')
 
 @section('free-style')
-    <link type="text/css" rel="stylesheet" href="css/pro-style.css"/>
+    <link type="text/css" rel="stylesheet" href="{{asset('css/pro-style.css')}}"/>
 @endsection
 
 @section('content')
@@ -19,7 +19,7 @@
                     <ul class="nav-menu">
                         <?php $j=1; ?>
                         @foreach($categories as $category)
-                        <li class="@if($j==1) active @endif"><a data-toggle="tab" href="#san_pham_{{$category->id}}" href="">{{$category->name}}</a></li>
+                        <li class="{{ request()->is('san-pham/' . $category->url) ? 'active' : '' }}"><a href="{{url('/san-pham/'.$category->url)}}" href="">{{$category->name}}</a></li>
                         <?php $j++; ?>
                         @endforeach
                     </ul>
@@ -33,18 +33,16 @@
     <!--SECTION -->
     <!-- ======= Latest News Section ======= -->
     <section class="section section-news section-t8 tab-content">
-        <?php $i=1; ?>
-        @foreach($categories as $category)
-        <div class="container tab-pane fade @if($i==1) in active @endif" id="san_pham_{{$category->id}}">
+        <div class="container">
             {{--                    <div class="card-box-b card-shadow news-box">--}}
             <div class="post post-row">
-                @foreach($products[$category->id] as $pro)
+                @foreach($products as $pro)
                 <div class="col-6">
                     <a class="post-img" href="{{url('/san-pham', $pro->url)}}">
                         <img alt="{{$pro->name}}" src="{{!empty($pro->image) ? URL::to($pro->image) : URL::to('/images/noimage.jpg')}}"/>
                     </a>
                     <div class="post-body">
-                        <h3 class="post-title"><a href="{{url('/san-pham', $pro->url)}}">{{$pro->name}}</a></h3>
+                        <h3 class="post-title"><a href="{{url('/san-pham/'. $category->url, $pro->url)}}">{{$pro->name}}</a></h3>
                         {{--                            <ul class="post-meta">--}}
                         {{--                                <li><a href="author.html">John Doe</a></li>--}}
                         {{--                                <li>20 April 2018</li>--}}
@@ -54,10 +52,8 @@
                 </div>
                 @endforeach
             </div>
-            @include('pagination.default', ['paginator' => $products[$category->id]])
+            @include('pagination.default', ['paginator' => $products])
         </div>
-        <?php $i++; ?>
-        @endforeach
     </section>
     <!-- End Latest News Section -->
     <!-- /SECTION -->

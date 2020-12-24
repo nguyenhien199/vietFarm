@@ -191,16 +191,6 @@
     }
   });
 
-    $('.pagination_custom a').on('click', function (event){
-        event.preventDefault()
-        let url = $(this).attr('href')
-        $.ajax({
-            url: url,
-            success: function (data){
-                console.log(data)
-            }
-        })
-    })
     if ($(window).scrollTop() > 220) {
         $('.lh-wrapper').addClass('fixed-top');
     } else {

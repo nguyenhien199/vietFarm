@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'WebController@index');
 
 Route::get('/san-pham', 'ProductController@index');
-Route::get('/san-pham/{url}', 'ProductController@show');
+Route::get('/san-pham/{category_url}', 'ProductController@showProducts');
+Route::get('/san-pham/{category_url}/{url}', 'ProductController@show');
 Route::get('/product/detail/{id}', 'ProductController@getDetail');
 Route::get('/dich-vu', 'ServiceController@index');
 Route::get('/dich-vu/{url}', 'ServiceController@show');
