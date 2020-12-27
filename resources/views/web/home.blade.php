@@ -300,12 +300,12 @@
                 </div>
                 <div class="item">
                     <a href="#">
-                        <img src="{{asset('assets/img/loVOP.jpg')}}" alt="Owl Image">
+                        <img src="{{asset('assets/img/logodt/loVOP.jpg')}}" alt="Owl Image">
                     </a>
                 </div>
                 <div class="item">
                     <a href="#">
-                        <img src="{{asset('assets/img/logoGIB.jpg')}}" alt="Owl Image">
+                        <img src="{{asset('assets/img/logodt/logoGIB.jpg')}}" alt="Owl Image">
                     </a>
                 </div>
                 <div class="item">
