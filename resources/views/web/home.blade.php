@@ -284,43 +284,6 @@
 
             <div id="owl-demo" class=" owl-theme">
                 <div class="item">
-                    <a href="http://ameii.vn/">
-                        <img src="http://ameii.vn/data/banner/usl1553652990.png" alt="Owl Image">
-                    </a>
-                </div>
-
-                <div class="item">
-                    <a href="https://www.mard.gov.vn/Pages/default.aspx">
-                        <img src="https://www.mard.gov.vn/PublishingImages/Footer/bnn-logo.png" alt="Owl Image">
-                    </a>
-                </div>
-
-                <div class="item">
-                    <a href="http://gib.com.vn/">
-                        <img src="http://gib.com.vn/uploads/worigin/2017/05/25/Logo_gib-up_web592646c7b6156_850c2ef14d9158404479e263aab36f23.png" alt="Owl Image">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="https://nmri.org.vn/">
-                        <img src="https://nmri.org.vn/uploads/logo_2.png" alt="Owl Image">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="https://www.bigc.vn/">
-                        <img style="height: 151px;background-size: auto;" src="https://www.bigc.vn/img/logo.png?v=1" alt="Owl Image">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <img src="{{asset('assets/img/dt1.jpg')}}" alt="Owl Image">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <img src="{{asset('assets/img/dt2.png')}}" alt="Owl Image">
-                    </a>
-                </div>
-                <div class="item">
                     <a href="#">
                         <img src="{{asset('assets/img/dt3.jpg')}}" alt="Owl Image">
                     </a>
@@ -333,6 +296,46 @@
                 <div class="item">
                     <a href="#">
                         <img src="{{asset('assets/img/dt5.png')}}" alt="Owl Image">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <img src="{{asset('assets/img/loVOP.jpg')}}" alt="Owl Image">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <img src="{{asset('assets/img/logoGIB.jpg')}}" alt="Owl Image">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="http://ameii.vn/">
+                        <img src="http://ameii.vn/data/banner/usl1553652990.png" alt="Owl Image">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="https://www.bigc.vn/">
+                        <img style="height: 151px;background-size: auto;" src="https://www.bigc.vn/img/logo.png?v=1" alt="Owl Image">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <img src="{{asset('assets/img/dt2.png')}}" alt="Owl Image">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="https://www.mard.gov.vn/Pages/default.aspx">
+                        <img src="https://www.mard.gov.vn/PublishingImages/Footer/bnn-logo.png" alt="Owl Image">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <img src="{{asset('assets/img/dt1.jpg')}}" alt="Owl Image">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="https://nmri.org.vn/">
+                        <img src="https://nmri.org.vn/uploads/logo_2.png" alt="Owl Image">
                     </a>
                 </div>
             </div>
