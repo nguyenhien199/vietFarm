@@ -107,7 +107,7 @@
                     <div class="info-2 pull-right">
                         <img class="pull-right" style="height: 50px;" src="{{asset('img/icon-info-2.jpg')}}">
                         <div class="text-right" style="clear: both">
-                            <h3>Thi công nhà hàng</h3>
+                            <h3>Thi công nhà màng</h3>
                             <p>
                                 VietFarm cung cấp hàng trăm phương thức kinh doanh
                                 nhà hàng đang phát triển và thành công rực rỡ.
