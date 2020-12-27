@@ -2,10 +2,45 @@
 
 @section('free-style')
     <link type="text/css" rel="stylesheet" href="css/pro-style.css"/>
+    <style>
+        .content{
+            position: relative;
+            overflow: hidden;
+        }
+        .img_bgr{
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.3;
+            z-index: 1;
+        }
+        .phanbon
+        {
+            z-index: 2;
+            position: relative;
+        }
+        .phanbon #nav-top h1 {
+            color: #494949;
+        }
+        .phanbon #nav {
+            border-bottom: none;
+        }
+        .phanbon #nav-bottom {
+            border-top: 1px solid #646464;
+            border-bottom: 1px solid #646464;
+        }
+        .phanbon .nav-menu>li>a {
+            color: #494949;
+        }
+        .nav-menu li.active a {
+            color: #fff !important;
+        }
+    </style>
 @endsection
 
 @section('content')
-  <div class="phanbon" style="height:500px; background-image: url({{asset('assets/img/phanbon/phanbon.jpg')}})">
+    <img class="img_bgr" src="{{asset('assets/img/phanbon/phanbon.jpg')}}" />
+  <div class="phanbon">
       <header id="header">
           <!-- NAV -->
           <div id="nav">
