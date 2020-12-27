@@ -25,16 +25,16 @@
                         </div>
                     </div>
                     <!-- /category widget -->
-                    <!-- galery widget -->
-                    <div class="aside-widget">
-                        <div class="section-title">
-                            <h2 class="title">Chứng Nhận</h2>
-                        </div>
-                        <div class="galery-widget">
-                            <img src="{{asset('./img/galery-1.jpg')}}" alt="" style="width: 250px">
-                        </div>
-                    </div>
-                    <!-- /galery widget -->
+                    {{--<!-- galery widget -->--}}
+                    {{--<div class="aside-widget">--}}
+                        {{--<div class="section-title">--}}
+                            {{--<h2 class="title">Chứng Nhận</h2>--}}
+                        {{--</div>--}}
+                        {{--<div class="galery-widget">--}}
+                            {{--<img src="{{asset('./img/galery-1.jpg')}}" alt="" style="width: 250px">--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<!-- /galery widget -->--}}
                 </div>
                 <div class="col-md-9">
                     <div class="row">
