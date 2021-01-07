@@ -13,6 +13,7 @@
         .phanbon #nav-top{
             margin-top: 0;
               background: url("{{asset('assets/img/phanbon/phanbon.jpg')}}");
+            padding-bottom: 1px;
         }
         hr {
             border: 1px solid #fff;
