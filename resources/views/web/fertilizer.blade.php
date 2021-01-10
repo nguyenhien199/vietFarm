@@ -12,7 +12,7 @@
         }
         .phanbon #nav-top{
             margin-top: 0;
-              background: url("{{asset('assets/img/phanbon/phanbon.jpg')}}");
+              background: url("{{asset('assets/img/phanbon/bg_phanbon.png')}}");
             padding-bottom: 1px;
         }
         hr {
