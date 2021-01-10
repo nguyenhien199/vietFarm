@@ -3,7 +3,20 @@
 @section('free-style')
     <link type="text/css" rel="stylesheet" href="css/pro-style.css"/>
 @endsection
-
+<style>
+    .content{
+        padding-top: 0 !important;
+    }
+    .content #header #nav-top{
+        background: #7FFF00;
+        margin-top: 0;
+        padding-bottom: 1px;
+    }
+    .content #nav-top h1 {
+        padding: 35px 0 0px 0;
+        color: #fff;
+    }
+</style>
 @section('content')
     <header id="header">
         <!-- NAV -->
