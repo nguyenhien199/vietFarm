@@ -28,7 +28,7 @@
           <div id="nav">
               <div id="nav-top">
                   <h1>PHÂN BÓN</h1>
-                  <hr style="width: 100px; text-align: center; border: 1px solid"/>
+                  <hr style="width: 100px; text-align: center; border: 1px solid #fff"/>
                   {{--<p>"Chọn lọc những gì tốt nhất từ thiên nhiên để chăm sóc gia đình bạn"</p>--}}
               </div>
               <div id="nav-bottom">
