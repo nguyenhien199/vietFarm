@@ -2,6 +2,20 @@
 
 @section('free-style')
     <link type="text/css" rel="stylesheet" href="css/pro-style.css"/>
+    <style>
+        .content{
+            padding-top: 0 !important;
+        }
+        .content #header #nav-top{
+            background: url("{{asset('assets/img/bg_sp.jpg')}}");
+            margin-top: 0;
+            padding-bottom: 1px;
+        }
+        .content #nav-top h1 {
+            padding: 35px 0 0px 0;
+            color: #fff;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -11,7 +25,7 @@
             <div id="nav-top">
                 <h1>SẢN PHẨM</h1>
                 <hr style="width: 100px; text-align: center; border: 1px solid"/>
-                <p>"Chọn lọc những gì tốt nhất từ thiên nhiên để chăm sóc gia đình bạn"</p>
+                <p style="color: #fff;">"Chọn lọc những gì tốt nhất từ thiên nhiên để chăm sóc gia đình bạn"</p>
             </div>
             <div id="nav-bottom">
                 <div class="container">

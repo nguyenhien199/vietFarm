@@ -8,7 +8,7 @@
         padding-top: 0 !important;
     }
     .content #header #nav-top{
-        background: #7FFF00;
+        background: url("{{asset('assets/img/bg_cn.png')}}");
         margin-top: 0;
         padding-bottom: 1px;
     }
@@ -23,7 +23,7 @@
         <div id="nav">
             <div id="nav-top">
                 <h1>CHUYỂN GIAO CÔNG NGHỆ</h1>
-                <hr style="width: 100px; text-align: center; border: 1px solid"/>
+                <hr style="width: 100px; text-align: center; border: 1px solid #fff"/>
                 {{--<p>"Chọn lọc những gì tốt nhất từ thiên nhiên để chăm sóc gia đình bạn"</p>--}}
             </div>
             <div id="nav-bottom">
