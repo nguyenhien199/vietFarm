@@ -498,6 +498,7 @@ textarea.input {
   position: relative;
   text-align: center;
   float: none;
+  margin-top: 15px;
 }
 
 .nav-menu>li {
