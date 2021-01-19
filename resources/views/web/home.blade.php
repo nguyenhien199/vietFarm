@@ -95,7 +95,7 @@
                         <div style="clear: both">
                             <h3>Thực phẩm Organic</h3>
                             <p>
-                                Luông mang trong mình tự hào với những thực
+                                Luôn mang trong mình tự hào với những thực
                                 phẩm organic có chất lượng vượt trội khác biệt
                                 hẳn so với những dòng sản phẩm cùng loại trên thị
                                 trường
@@ -109,8 +109,10 @@
                         <div class="text-right" style="clear: both">
                             <h3>Thi công nhà màng</h3>
                             <p>
-                                VietFarm cung cấp hàng trăm phương thức kinh doanh
-                                nhà hàng đang phát triển và thành công rực rỡ.
+                                Vietfarm sở hữu thiết kế thi công nhà màng
+                                nông nghiệp theo đúng quy chuẩn hiện đại được lắp đặt
+                                quạt gió  có thể điều chỉnh áp suất ,nhiệt độ, tốc độ gió
+                                và ánh sáng để trồng được nhiều loại nông sản khó tính.
                             </p>
                         </div>
                     </div>
@@ -123,8 +125,9 @@
                         <div  style="clear: both">
                             <h3>Chuyển giao công nghệ</h3>
                             <p>
-                                VietFarm cung cấp tự hàng cung cấp những công
-                                nghệ phát triển nhất áp dụng vào cây trồng.
+                                Vietfarm sẵn sàng chia sẻ những công nghệ cao độc đáo
+                                và duy nhất tại Việt Nam trong các lĩnh vực trồng trọt,
+                                chăn nuôi,sản xuất,chế biến và bảo quản phân hữu cơ vi sinh...
                             </p>
                         </div>
                     </div>
