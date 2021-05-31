@@ -16,7 +16,7 @@
         <!-- row -->
         <div class="row">
             <div class="col-md-2 hidden-xs" style="border-right: 3px solid #fff">
-                <a href="/" class="logo pull-right"><img width="150" src="{{asset('./img/thiennong.jpg')}}" alt="logo việt farm"></a>
+                <a href="/" class="logo pull-right"><img width="150" src="{{asset('../assets/img/thiennong.jpg')}}" alt="logo việt farm"></a>
             </div>
             <div class="col-md-3" style="border-right: 3px solid #fff">
                 <div class="footer-widget">

@@ -19,7 +19,7 @@
             {{--                </div>--}}
             <!-- logo -->
                 <div class="nav-logo">
-                    <a href="/" class="logo"><img src="{{url('./img/thiennong.jpg')}}" alt=""></a>
+                    <a href="/" class="logo"><img src="{{url('../assets/img/thiennong.jpg')}}" alt=""></a>
                 </div>
                 <!-- /logo -->
                 <!-- /logo -->
