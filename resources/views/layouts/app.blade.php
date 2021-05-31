@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>VietFarmSolution</title>
+    <title>thiennongbiochemical</title>
 
     <link href="{{asset('cms/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('cms/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
@@ -24,9 +24,9 @@
                 <li class="nav-header">
                     <div class="dropdown profile-element">
                         <span>
-                            <a href="{{url('/')}}"><img alt="image" height="40" src="{{asset('./img/logo-viet-farm.png')}}" /></a>
+                            <a href="{{url('/')}}"><img alt="image" height="40" src="{{asset('./thiennong.jpg')}}" /></a>
                         </span>
-                        <span class="block m-t-xs"> <strong class="font-bold" style="color: #fff;">VietFarmSolution</strong>
+                        <span class="block m-t-xs"> <strong class="font-bold" style="color: #fff;">thiennongbiochemical</strong>
                         </span>
                     </div>
                 </li>
